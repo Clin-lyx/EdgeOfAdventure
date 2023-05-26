@@ -89,7 +89,7 @@ public class PlayerController : MonoBehaviour
                 if(physicsCheck.onGround && !toDojump) { 
                 
                 // jump will be performed after 0.1f
-                delaytime = Time.time + 0.1f;
+                delaytime = Time.time + 0.01f;
                 toDojump = true;
                 
                 }
