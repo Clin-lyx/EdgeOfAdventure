@@ -20,24 +20,8 @@ public class PlayerAnimation : MonoBehaviour
         physicsCheck = GetComponent<PhysicsCheck>();
         inputControl = new PlayerInputControl();
         
-        // once space or south button on gamepad is pressed the jumpPrep animation starts
-        inputControl.Gameplay.Jump.started += OnJumpDown;
-        
     }
 
-    private void OnEnable() {
-        inputControl.Enable();
-    }
-
-    private void OnDisable() {
-        inputControl.Disable();
-    }
-
-    private void OnJumpDown(InputAction.CallbackContext context)
-    {
-        // only if the player object is on the ground
-        if(physicsCheck.onGround) anim.SetTrigger("pressJump");
-    }
 
     private void Update() {
         SetAnimation();
