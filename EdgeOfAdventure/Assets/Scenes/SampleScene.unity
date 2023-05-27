@@ -1739,7 +1739,7 @@ MonoBehaviour:
   Ground:
     serializedVersion: 2
     m_Bits: 64
-  bottomOffset: {x: 0, y: 0}
+  bottomOffset: {x: -0.03, y: 0}
   onGround: 0
   checkRadius: 0.12
 --- !u!114 &1909171899
