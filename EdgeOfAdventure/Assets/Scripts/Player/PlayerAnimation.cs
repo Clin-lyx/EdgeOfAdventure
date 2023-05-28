@@ -10,7 +10,7 @@ public class PlayerAnimation : MonoBehaviour
     private Animator anim;
     private Rigidbody2D rb;
     private PhysicsCheck physicsCheck;
-    private PlayerInputControl inputControl;
+    private PlayerController playerController;
     
     private void Awake() {
 
@@ -18,8 +18,8 @@ public class PlayerAnimation : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         physicsCheck = GetComponent<PhysicsCheck>();
-        inputControl = new PlayerInputControl();
-        
+        playerController = GetComponent<PlayerController>();
+
     }
 
 
@@ -37,6 +37,9 @@ public class PlayerAnimation : MonoBehaviour
 
         // if the object is not OnGround the animation in blend tree starts
         anim.SetBool("onGround", physicsCheck.onGround);
+
+        // if the object is crouching
+        anim.SetBool("isCrouch", playerController.isCrouch);
     }
     
 }
