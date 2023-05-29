@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2371d10bea8881c4d8264f6b31825170
+guid: d52e2c3dc4ffdee4bb1d71696c7a564a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -101,28 +101,16 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: stand_0
+      name: idle_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 110
-        width: 352
+        y: 622
+        width: 402
         height: 402
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -131,61 +119,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 588782d24a97c4f49a07090d4af66829
-      internalID: 1685049164
+      spriteID: ce29c4b0b159da84ba22d368b5af9810
+      internalID: -833445109
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: stand_1
+      name: idle_1
       rect:
         serializedVersion: 2
-        x: 20
-        y: 107
-        width: 216
-        height: 387
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2458eefe9e663c54eaf5546a597ea05f
-      internalID: 1607603952
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: stand_2
-      rect:
-        serializedVersion: 2
-        x: 362
-        y: 107
-        width: 352
-        height: 405
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 676c1bad9f99dd344a924a379cf31f91
-      internalID: -1429268166
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: stand_3
-      rect:
-        serializedVersion: 2
-        x: 724
-        y: 110
-        width: 352
+        x: 412
+        y: 622
+        width: 402
         height: 402
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -194,61 +140,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f89ae8a7fe6c4dd4d84fbe7596baf22a
-      internalID: 674026772
+      spriteID: 221c5cf8a1e146f4dbb72d7953933a3e
+      internalID: -2030233012
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: stand_4
+      name: idle_2
       rect:
         serializedVersion: 2
-        x: 755
-        y: 107
-        width: 205
-        height: 383
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7e5dcc6c22372c749921a741be2c8696
-      internalID: -1152175033
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: stand_5
-      rect:
-        serializedVersion: 2
-        x: 1086
-        y: 107
-        width: 352
-        height: 405
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fcb0bf1e2d961da42886da39a97ae49a
-      internalID: 2002707465
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: stand_6
-      rect:
-        serializedVersion: 2
-        x: 1448
-        y: 110
-        width: 352
+        x: 824
+        y: 622
+        width: 402
         height: 402
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -257,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c07680f18a06734d9960c87e04fc204
-      internalID: -1745197838
+      spriteID: 51fa26dd90b3abb44a868ea9f91e52fd
+      internalID: -2107753485
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: stand_7
+      name: idle_3
       rect:
         serializedVersion: 2
-        x: 1486
-        y: 107
-        width: 198
-        height: 379
+        x: 1236
+        y: 622
+        width: 402
+        height: 402
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,8 +182,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d1d3dc304724674d8a21b9c167832bd
-      internalID: -1018465532
+      spriteID: 737dc929b10b2da42afba01a99d38afb
+      internalID: -1237829997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 210
+        width: 402
+        height: 402
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 641568174e4d1da4caab80b1390a62ee
+      internalID: -1166419227
       vertices: []
       indices: 
       edges: []
@@ -295,14 +220,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      stand_0: 1685049164
-      stand_1: 1607603952
-      stand_2: -1429268166
-      stand_3: 674026772
-      stand_4: -1152175033
-      stand_5: 2002707465
-      stand_6: -1745197838
-      stand_7: -1018465532
+      idle_0: -833445109
+      idle_1: -2030233012
+      idle_2: -2107753485
+      idle_3: -1237829997
+      idle_4: -1166419227
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
