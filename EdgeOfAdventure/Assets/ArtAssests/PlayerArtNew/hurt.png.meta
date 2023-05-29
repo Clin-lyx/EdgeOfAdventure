@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6388850b9884a0a42855a39281dbd66c
+guid: e317fbb8bb288214daf6fcebf06ae1d9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: stop_0
+      name: hurt_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1646
-        width: 552
-        height: 402
+        y: 572
+        width: 502
+        height: 452
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f73eaab4731aaad4f83c204e4763fb07
-      internalID: 1675484875
+      spriteID: d91d8df9a7899724ead5c54ad09f89d7
+      internalID: -1107528712
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: stop_1
+      name: hurt_1
       rect:
         serializedVersion: 2
-        x: 562
-        y: 1646
-        width: 552
-        height: 402
+        x: 512
+        y: 572
+        width: 502
+        height: 452
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01b9d930f1a27c74f9b86c8d4092153f
-      internalID: -2039314456
+      spriteID: e5cedcc2381c8404b9148bbdca965518
+      internalID: -1320004226
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: stop_2
+      name: hurt_2
       rect:
         serializedVersion: 2
-        x: 1124
-        y: 1646
-        width: 552
-        height: 402
+        x: 1024
+        y: 572
+        width: 502
+        height: 452
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f9a7342c25e77e49b4457c4d3ce32a4
-      internalID: -2391839
+      spriteID: 180e6773f6e54e04d96b0fcc9bb3afd2
+      internalID: -880419582
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: stop_3
+      name: hurt_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1234
-        width: 552
-        height: 402
+        x: 1536
+        y: 572
+        width: 502
+        height: 452
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,62 +182,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ff2626355dd3ab4f8a3b7c2e8398f27
-      internalID: -1777596200
+      spriteID: 82222a08860b45a469c1519728d09da3
+      internalID: 878992252
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: stop_4
-      rect:
-        serializedVersion: 2
-        x: 562
-        y: 1234
-        width: 552
-        height: 402
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ea3d45437bd111345b3afd8ea7ad8c39
-      internalID: 642579586
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: stop_5
-      rect:
-        serializedVersion: 2
-        x: 1124
-        y: 1234
-        width: 552
-        height: 402
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7b009eb69ccd5d94e80c072b3db4c28d
-      internalID: 2054021207
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: stop_6
+      name: hurt_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 822
-        width: 552
-        height: 402
+        y: 110
+        width: 502
+        height: 452
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,29 +203,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c980351cbd1141d40a358c06f4aaba02
-      internalID: -1326323680
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: stop_7
-      rect:
-        serializedVersion: 2
-        x: 562
-        y: 822
-        width: 552
-        height: 402
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a5868617256fd064d92750d9e62e6a8d
-      internalID: 687262295
+      spriteID: 9f266baf76d727140a8ef9861862fbec
+      internalID: 1287341107
       vertices: []
       indices: 
       edges: []
@@ -283,14 +220,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      stop_0: 1675484875
-      stop_1: -2039314456
-      stop_2: -2391839
-      stop_3: -1777596200
-      stop_4: 642579586
-      stop_5: 2054021207
-      stop_6: -1326323680
-      stop_7: 687262295
+      hurt_0: -1107528712
+      hurt_1: -1320004226
+      hurt_2: -880419582
+      hurt_3: 878992252
+      hurt_4: 1287341107
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
