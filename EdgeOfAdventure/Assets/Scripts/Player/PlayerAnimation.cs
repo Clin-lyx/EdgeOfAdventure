@@ -35,11 +35,25 @@ public class PlayerAnimation : MonoBehaviour
         // setting velocityY to trigger different animation in the blend tree
         anim.SetFloat("velocityY", rb.velocity.y);
 
-        // if the object is not OnGround the animation in blend tree starts
+        // if the player is not OnGround the animation in blend tree starts
         anim.SetBool("onGround", physicsCheck.onGround);
 
-        // if the object is crouching
+        // if the player is crouching
         anim.SetBool("isCrouch", playerController.isCrouch);
+
+        // if the player is dead
+        anim.SetBool("isDead", playerController.isDead);
+
+        // if the player tries to attack
+        anim.SetBool("isAttack", playerController.isAttack);
+
     }
     
+    public void PlayerHurt() {
+        anim.SetTrigger("isHurt");
+    }
+
+    public void PlayAttack() {
+        anim.SetTrigger("attack");
+    }
 }

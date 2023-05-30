@@ -13,24 +13,32 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private PhysicsCheck physicsCheck;
     private CapsuleCollider2D cap;
+    private PlayerAnimation playerAnimation;
 
     
     [Header("Fundamental Arguments")]
     public float speed;
     public float runSpeed;
-    public bool isCrouch;
-    private Vector2 originalOffset;
-    private Vector2 orginalSize;
     public float walkSpeed => speed / 3f;
     public float jumpForce;
     public float jumpWhencrouch;
+    public float reactionForce; 
+    private Vector2 originalOffset;
+    private Vector2 orginalSize;
+
+    [Header("Player States")]
+    public bool isHurt;
+    public bool isDead;
+    public bool isCrouch;
+    public bool isAttack;
     
     private void Awake() {
-        // recieving info from keyboard / controller input and rigibody
+        // Initialization
         rb = GetComponent<Rigidbody2D>();
         inputControl = new PlayerInputControl();
         physicsCheck = GetComponent<PhysicsCheck>();
         cap = GetComponent<CapsuleCollider2D>();
+        playerAnimation = GetComponent<PlayerAnimation>();
         
         // setting running speed
         runSpeed = speed;
@@ -55,9 +63,12 @@ public class PlayerController : MonoBehaviour
                 speed = runSpeed;
             }
         };
+
+        // Attack
+        inputControl.Gameplay.Attack.started += PlayerAttack;
     }
 
-    
+
 
     private void OnEnable() {
         inputControl.Enable();
@@ -73,7 +84,7 @@ public class PlayerController : MonoBehaviour
     }
 
     private void FixedUpdate() {
-        Move();
+        if (!isHurt) Move();
     }
 
     private void Move() {
@@ -106,4 +117,25 @@ public class PlayerController : MonoBehaviour
         // Jump if the character is on the ground and crouching
         if (physicsCheck.onGround && isCrouch) rb.AddForce(transform.up * jumpWhencrouch, ForceMode2D.Impulse);
     }
+    private void PlayerAttack(InputAction.CallbackContext context)
+    {
+        if (!isCrouch) {
+            playerAnimation.PlayAttack();
+            isAttack = true;
+        }
+    }
+
+    public void GetHurt(Transform attack) {
+        isHurt = true;
+        rb.velocity = Vector2.zero;
+        Vector2 dir = new Vector2(rb.position.x - attack.position.x, 0).normalized;
+
+        rb.AddForce(dir * reactionForce, ForceMode2D.Impulse);
+    }
+
+    public void PlayerDead() {
+        isDead = true;
+        inputControl.Gameplay.Disable();
+    }    
+
 }
