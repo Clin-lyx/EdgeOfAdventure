@@ -31,7 +31,6 @@ public class Character : MonoBehaviour
     }
 
     public void TakeDamage(Attack attacker) {
-        Debug.Log(attacker.name);
         if (invulnerable) return;
         if (currentHealth - attacker.damage > 0) {
             this.currentHealth -= attacker.damage;
