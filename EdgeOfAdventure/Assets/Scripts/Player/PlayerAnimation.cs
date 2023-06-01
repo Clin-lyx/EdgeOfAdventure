@@ -48,7 +48,7 @@ public class PlayerAnimation : MonoBehaviour
         anim.SetBool("isAttack", playerController.isAttack);
 
     }
-    
+
     public void PlayerHurt() {
         anim.SetTrigger("isHurt");
     }
