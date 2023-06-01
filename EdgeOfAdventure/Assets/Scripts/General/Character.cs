@@ -59,6 +59,9 @@ public class Character : MonoBehaviour
     public void MoveEvent(float disX)
     {
         int temp = (int)transform.localScale.x;
-        rb.transform.Translate(temp * disX, 0, 0);
+        //rb.transform.Translate(temp * disX, 0, 0);
+        Vector2 forceDir = new Vector2(temp, 0);
+        Vector2 forceX = new Vector2(disX, 0);
+        rb.AddForce(forceX * forceDir * 10, ForceMode2D.Impulse);
     }
 }

@@ -2046,8 +2046,9 @@ GameObject:
   - component: {fileID: 1279340422}
   - component: {fileID: 1279340424}
   - component: {fileID: 1279340425}
+  - component: {fileID: 1279340426}
   m_Layer: 8
-  m_Name: Enemy
+  m_Name: Axe
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2200,6 +2201,22 @@ MonoBehaviour:
   IsDead:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1279340426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279340419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5693a62c3d927414aaa251e4c5f259e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalSpeed: 150
+  chaseSpeed: 200
+  currentSpeed: 0
+  faceDir: 0
 --- !u!1 &1436401736
 GameObject:
   m_ObjectHideFlags: 0
@@ -2501,6 +2518,8 @@ MonoBehaviour:
   jumpForce: 17
   jumpWhencrouch: 20
   reactionForce: 4
+  normal: {fileID: 6200000, guid: e901fd0f8d1a32745b62b3ada19b5af2, type: 2}
+  wall: {fileID: 6200000, guid: ec040c21a6100ec4a98eccf936adb3c0, type: 2}
   isHurt: 0
   isDead: 0
   isCrouch: 0

@@ -25,6 +25,11 @@ public class PlayerController : MonoBehaviour
     public float reactionForce; 
     private Vector2 originalOffset;
     private Vector2 orginalSize;
+    private CapsuleCollider2D coll;
+    
+    [Header("physics material")]
+    public PhysicsMaterial2D normal;
+    public PhysicsMaterial2D wall;
 
     [Header("Player States")]
     public bool isHurt;
@@ -39,6 +44,7 @@ public class PlayerController : MonoBehaviour
         physicsCheck = GetComponent<PhysicsCheck>();
         cap = GetComponent<CapsuleCollider2D>();
         playerAnimation = GetComponent<PlayerAnimation>();
+        coll = GetComponent<CapsuleCollider2D>();
         
         // setting running speed
         runSpeed = speed;
@@ -81,6 +87,9 @@ public class PlayerController : MonoBehaviour
     private void Update() {
         // consistently reading input from input devices.
         inputDirection = inputControl.Gameplay.Move.ReadValue<Vector2>();
+
+        // checking which physics material to use
+        checkState();
     }
 
     private void FixedUpdate() {
@@ -141,5 +150,7 @@ public class PlayerController : MonoBehaviour
         inputControl.Gameplay.Disable();
     }    
 
-
+    private void checkState() {
+        coll.sharedMaterial = physicsCheck.onGround ? normal : wall;
+    }
 }
