@@ -84,7 +84,7 @@ public class PlayerController : MonoBehaviour
     }
 
     private void FixedUpdate() {
-        if (!isHurt) Move();
+        if (!isHurt && !isAttack) Move();
     }
 
     private void Move() {
@@ -112,14 +112,17 @@ public class PlayerController : MonoBehaviour
     
     private void Jump(InputAction.CallbackContext context)
     {
-        // Jump if the character is on the ground and not crouch
-        if (physicsCheck.onGround && !isCrouch) rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
-        // Jump if the character is on the ground and crouching
-        if (physicsCheck.onGround && isCrouch) rb.AddForce(transform.up * jumpWhencrouch, ForceMode2D.Impulse);
+        // Jump if the character is on the ground and not attack and not crouch
+        if (physicsCheck.onGround && !isCrouch && !isAttack) 
+            rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+        // Jump if the character is on the ground and not attack and crouching
+        if (physicsCheck.onGround && isCrouch && !isAttack) 
+            rb.AddForce(transform.up * jumpWhencrouch, ForceMode2D.Impulse);
     }
     private void PlayerAttack(InputAction.CallbackContext context)
     {
-        if (!isCrouch) {
+        if (!isCrouch && physicsCheck.onGround) {
+            rb.velocity = new Vector2(0, rb.velocity.y);
             playerAnimation.PlayAttack();
             isAttack = true;
         }

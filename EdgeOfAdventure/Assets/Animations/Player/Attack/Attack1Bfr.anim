@@ -73,9 +73,16 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.041666668
-    functionName: 
+    functionName: MoveEvent
     data: 
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
+    floatParameter: 0.065
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.083333336
+    functionName: MoveEvent
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0.1
     intParameter: 0
     messageOptions: 0

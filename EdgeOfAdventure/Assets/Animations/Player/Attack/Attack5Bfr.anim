@@ -77,4 +77,39 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0
+    functionName: MoveEvent
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0.1
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.041666668
+    functionName: MoveEvent
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0.25
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.083333336
+    functionName: MoveEvent
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0.75
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.125
+    functionName: MoveEvent
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0.6
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.16666667
+    functionName: MoveEvent
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0.08
+    intParameter: 0
+    messageOptions: 0
