@@ -9,6 +9,7 @@ public class Character : MonoBehaviour
     public float maxHealth;
     public float currentHealth;
     private Rigidbody2D rb;
+    private PhysicsCheck physicsCheck;
 
     [Header("invulnerable")]
     public float invulnerableDuration;
@@ -21,6 +22,7 @@ public class Character : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        physicsCheck = GetComponent<PhysicsCheck>();
     }
 
     private void Start() {
@@ -59,9 +61,12 @@ public class Character : MonoBehaviour
     public void MoveEvent(float disX)
     {
         int temp = (int)transform.localScale.x;
-        //rb.transform.Translate(temp * disX, 0, 0);
-        Vector2 forceDir = new Vector2(temp, 0);
-        Vector2 forceX = new Vector2(disX, 0);
-        rb.AddForce(forceX * forceDir * 10, ForceMode2D.Impulse);
+        if (!physicsCheck.touchLeftwall && !physicsCheck.touchRightwall) 
+        {
+            rb.transform.Translate(temp * disX, 0, 0);
+        }
+        // Vector2 forceDir = new Vector2(temp, 0);
+        // Vector2 forceX = new Vector2(disX, 0);
+        // rb.AddForce(forceX * forceDir * 10, ForceMode2D.Impulse);
     }
 }
