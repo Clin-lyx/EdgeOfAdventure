@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Unity Components")]
     private PlayerInputControl inputControl;
-    private Vector2 inputDirection;
+    public Vector2 inputDirection;
     private Rigidbody2D rb;
     private PhysicsCheck physicsCheck;
     private CapsuleCollider2D cap;
@@ -130,11 +130,13 @@ public class PlayerController : MonoBehaviour
     }
     private void PlayerAttack(InputAction.CallbackContext context)
     {
+
         if (!isCrouch && physicsCheck.onGround) {
             rb.velocity = new Vector2(0, rb.velocity.y);
             playerAnimation.PlayAttack();
             isAttack = true;
         }
+
     }
 
     public void GetHurt(Transform attack) {
