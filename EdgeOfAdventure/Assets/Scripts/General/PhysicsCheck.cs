@@ -11,13 +11,13 @@ public class PhysicsCheck : MonoBehaviour
     public Vector2 bottomOffset;
     public Vector2 leftOffset;
     public Vector2 rightOffset;
+    public float checkRadius;
     private CapsuleCollider2D coll;
     
     [Header("States")]
     public bool onGround;
     public bool touchRightwall;
     public bool touchLeftwall;
-    public float checkRadius;
 
     private void Awake() {
         coll = GetComponent<CapsuleCollider2D>();
@@ -34,13 +34,13 @@ public class PhysicsCheck : MonoBehaviour
 
     private void Check(){
         // checks if player object is overlapping with the platform layer mask
-        onGround = Physics2D.OverlapCircle((Vector2) transform.position + bottomOffset, checkRadius, Ground);
-        
+        onGround = Physics2D.OverlapCircle((Vector2)transform.position + new Vector2(bottomOffset.x * transform.localScale.x, bottomOffset.y), checkRadius, Ground);
+
         // check if player is overlapping with the left wall
-        touchLeftwall = Physics2D.OverlapCircle((Vector2) transform.position + leftOffset, checkRadius, Ground);
+        touchLeftwall = Physics2D.OverlapCircle((Vector2)transform.position + new Vector2(leftOffset.x, leftOffset.y), checkRadius, Ground);
 
         // check if player is overlapping with the right wall
-        touchRightwall = Physics2D.OverlapCircle((Vector2) transform.position + rightOffset, checkRadius, Ground);
+        touchRightwall = Physics2D.OverlapCircle((Vector2)transform.position + new Vector2(rightOffset.x, rightOffset.y), checkRadius, Ground);
     }
 
     private void OnDrawGizmosSelected() {

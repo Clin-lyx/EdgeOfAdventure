@@ -1,4 +1,0 @@
-repository "EdgeOfAdventure@FlatDyn_Games@cloud"
-  path "/"
-    br "/main"
-    co "/main"
