@@ -139,12 +139,14 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    public void GetHurt(Transform attack) {
+    public void GetHurt(Transform attacker) {
         isHurt = true;
         rb.velocity = Vector2.zero;
-        Vector2 dir = new Vector2(rb.position.x - attack.position.x, 0).normalized;
+        Vector2 dir = new Vector2(rb.position.x - attacker.position.x, 0).normalized;
 
+        //Adding force on player
         rb.AddForce(dir * reactionForce, ForceMode2D.Impulse);
+        rb.AddForce(transform.up * reactionForce, ForceMode2D.Impulse);
     }
 
     public void PlayerDead() {

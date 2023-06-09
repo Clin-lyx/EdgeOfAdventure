@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    protected Rigidbody2D rb;
+    Rigidbody2D rb;
     [HideInInspector]public Animator anim;
     [HideInInspector]public PhysicsCheck physicsCheck;
 
@@ -14,13 +14,20 @@ public class Enemy : MonoBehaviour
     [HideInInspector]public float currentSpeed;
     public float hurtForce;
     public float faceDir;
-
     public Transform attacker;
+
+    [Header("Check")]
+    public Vector2 centerOffset;
+    public Vector2 checkSize;
+    public float checkDistance;
+    public LayerMask attackLayer;
 
     [Header("Timer")]
     public float waitTime;
     public float waitTimeCounter;
     public bool wait;
+    public float lostTime;
+    public float lostTimeCounter;
 
     [Header("State")]
     public bool isHurt;
@@ -83,7 +90,37 @@ public class Enemy : MonoBehaviour
                 transform.localScale = new Vector3(-faceDir, 1, 1);
             }
         }
+
+        if (!FoundPlayer() && lostTimeCounter > 0)
+        {
+            lostTimeCounter -= Time.deltaTime;
+        }
+        else if (FoundPlayer())
+        {
+            lostTimeCounter = lostTime;
+        }
     }
+    public bool FoundPlayer()
+    {
+        return Physics2D.BoxCast(transform.position + (Vector3)centerOffset, checkSize, 0, new Vector3(faceDir, 0, 0), checkDistance, attackLayer);
+    }
+
+    //Switching state
+    public void SwitchState(NPCState state)
+    {
+        var newState = state switch
+        {
+            NPCState.Patrol => patrolState,
+            NPCState.Chase => chaseState,
+            _ => null
+        };
+
+        currentState.OnExit();
+        currentState = newState;
+        currentState.OnEnter(this);
+    }
+
+    #region Events
     public void OnTakeDamage(Transform attackTrans)
     {
         attacker = attackTrans;
@@ -118,9 +155,15 @@ public class Enemy : MonoBehaviour
         anim.SetBool("dead", true);
         isDead = true;
     }
-
     public void DestroyAfterAnimation()
     {
         Destroy(this.gameObject);
+    }
+
+    #endregion
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(transform.position + (Vector3)centerOffset + new Vector3(checkDistance * transform.localScale.x, 0), 0.2f);
     }
 }

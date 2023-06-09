@@ -11,7 +11,7 @@ public class Character : MonoBehaviour
     private Rigidbody2D rb;
     private PhysicsCheck physicsCheck;
 
-    [Header("invulnerable")]
+    [Header("Invulnerable")]
     public float invulnerableDuration;
     private float invulnerableCounter;
     public bool invulnerable;
@@ -39,7 +39,9 @@ public class Character : MonoBehaviour
     }
 
     public void TakeDamage(Attack attacker) {
-        if (invulnerable) return;
+        if (invulnerable) 
+            return;
+
         if (currentHealth - attacker.damage > 0) {
             this.currentHealth -= attacker.damage;
             TriggerInvulnerable();
@@ -60,10 +62,11 @@ public class Character : MonoBehaviour
     //Event for displacement attack
     public void MoveEvent(float disX)
     {
-        int temp = (int)transform.localScale.x;
-        if (!physicsCheck.touchLeftwall && !physicsCheck.touchRightwall) 
+        int faceDir = (int)transform.localScale.x;
+        if (!(physicsCheck.touchLeftwall && faceDir < 0) ||
+            !(physicsCheck.touchRightwall && faceDir > 0)) 
         {
-            rb.transform.Translate(temp * disX, 0, 0);
+            rb.transform.Translate(faceDir * disX, 0, 0);
         }
         // Vector2 forceDir = new Vector2(temp, 0);
         // Vector2 forceX = new Vector2(disX, 0);
