@@ -123,31 +123,32 @@ public class Enemy : MonoBehaviour
     }
 
     #region Events
-    public void OnTakeDamage(Transform attackTrans)
+    public void OnTakeDamage(Attack attacker)
     {
-        attacker = attackTrans;
+        //attacker = attackTrans;
         //Turn around
-        if (attackTrans.position.x - transform.position.x > 0)
+        if (attacker.transform.position.x - transform.position.x > 0)
             transform.localScale = new Vector3(1, 1, 1);
-        if (attackTrans.position.x - transform.position.x < 0)
+        if (attacker.transform.position.x - transform.position.x < 0)
             transform.localScale = new Vector3(-1, 1, 1);
 
         //Hurted and repelled
         isHurt = true;
         anim.SetTrigger("hurt");
-        Vector2 dir = new Vector2(transform.position.x - attackTrans.position.x, 0).normalized;
+        Vector2 dir = new Vector2(transform.position.x - attacker.transform.position.x, 0).normalized;
 
         //Start coroutine
-        StartCoroutine(OnHurt(dir));
+        rb.velocity = new Vector2(0f, 0f);
+        StartCoroutine(OnHurt(dir, attacker));
     }
 
     //Return the result of being attacked
-    private IEnumerator OnHurt(Vector2 dir)
+    private IEnumerator OnHurt(Vector2 dir, Attack attacker)
     {
         //rb.AddForce(dir * hurtForce, ForceMode2D.Impulse);
         //rb.AddForce(transform.up * hurtForce * 0.5f, ForceMode2D.Impulse);
-        rb.AddForce(dir * attack.hurtForce, ForceMode2D.Impulse);
-        rb.AddForce(transform.up * attack.hurtForce * 0.5f, ForceMode2D.Impulse);
+        rb.AddForce(dir * attacker.hurtForce, ForceMode2D.Impulse);
+        rb.AddForce(transform.up * attacker.hurtForce * 0.5f, ForceMode2D.Impulse);
 
         yield return new WaitForSeconds(0.45f);
         isHurt = false;

@@ -16,7 +16,7 @@ public class Character : MonoBehaviour
     private float invulnerableCounter;
     public bool invulnerable;
 
-    public UnityEvent<Transform> OnTakeDamage;
+    public UnityEvent<Attack> OnTakeDamage;
     public UnityEvent IsDead;
 
     private void Awake()
@@ -45,7 +45,7 @@ public class Character : MonoBehaviour
         if (currentHealth - attacker.damage > 0) {
             this.currentHealth -= attacker.damage;
             TriggerInvulnerable();
-            OnTakeDamage?.Invoke(attacker.transform);
+            OnTakeDamage?.Invoke(attacker);
         } else {
             currentHealth = 0;
             IsDead?.Invoke();
