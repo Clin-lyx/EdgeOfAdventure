@@ -217,6 +217,7 @@ MonoBehaviour:
   damage: 5
   attackRange: 0
   attackRate: 0
+  hurtForce: 5
 --- !u!50 &369977520
 Rigidbody2D:
   serializedVersion: 4
@@ -1866,6 +1867,7 @@ MonoBehaviour:
   damage: 10
   attackRange: 0
   attackRate: 0
+  hurtForce: 5
 --- !u!50 &626363429
 Rigidbody2D:
   serializedVersion: 4
@@ -1973,6 +1975,7 @@ MonoBehaviour:
   damage: 5
   attackRange: 0
   attackRate: 0
+  hurtForce: 5
 --- !u!61 &851482461
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2105,7 +2108,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!70 &1184166876
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2272,7 +2275,7 @@ MonoBehaviour:
   normalSpeed: 200
   chaseSpeed: 400
   currentSpeed: 0
-  hurtForce: 5
+  attack: {fileID: 0}
   faceDir: 0
   attacker: {fileID: 0}
   centerOffset: {x: 0, y: 1.5}
@@ -2545,7 +2548,7 @@ MonoBehaviour:
   normalSpeed: 140
   chaseSpeed: 200
   currentSpeed: 0
-  hurtForce: 4
+  attack: {fileID: 0}
   faceDir: 0
   attacker: {fileID: 0}
   centerOffset: {x: 0, y: 1.5}
@@ -2633,6 +2636,7 @@ MonoBehaviour:
   damage: 5
   attackRange: 0
   attackRate: 0
+  hurtForce: 5
 --- !u!50 &1436401740
 Rigidbody2D:
   serializedVersion: 4
@@ -2756,6 +2760,7 @@ MonoBehaviour:
   damage: 5
   attackRange: 0
   attackRate: 0
+  hurtForce: 5
 --- !u!50 &1827657157
 Rigidbody2D:
   serializedVersion: 4
@@ -2851,6 +2856,7 @@ MonoBehaviour:
   damage: 5
   attackRange: 0
   attackRate: 0
+  hurtForce: 0
 --- !u!61 &1879225845
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2894,7 +2900,6 @@ GameObject:
   - component: {fileID: 1909171904}
   - component: {fileID: 1909171905}
   - component: {fileID: 1909171907}
-  - component: {fileID: 1909171906}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -3087,21 +3092,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ce6aad019df903499c42e697c29e5db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1909171906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1909171897}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d7a57519e837044b4e0d396d80ff0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 0
-  attackRange: 0
-  attackRate: 0
 --- !u!114 &1909171907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3209,6 +3199,7 @@ MonoBehaviour:
   damage: 5
   attackRange: 0
   attackRate: 0
+  hurtForce: 5
 --- !u!50 &2133178015
 Rigidbody2D:
   serializedVersion: 4

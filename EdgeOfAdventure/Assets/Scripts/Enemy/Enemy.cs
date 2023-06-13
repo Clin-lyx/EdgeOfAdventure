@@ -12,7 +12,8 @@ public class Enemy : MonoBehaviour
     public float normalSpeed;
     public float chaseSpeed;
     [HideInInspector]public float currentSpeed;
-    public float hurtForce;
+    //public float hurtForce;
+    public Attack attack;
     public float faceDir;
     public Transform attacker;
 
@@ -43,6 +44,7 @@ public class Enemy : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         physicsCheck = GetComponent<PhysicsCheck>();
+        attack = GetComponent<Attack>();
         currentSpeed = normalSpeed;
         waitTimeCounter = waitTime;
 
@@ -142,8 +144,10 @@ public class Enemy : MonoBehaviour
     //Return the result of being attacked
     private IEnumerator OnHurt(Vector2 dir)
     {
-        rb.AddForce(dir * hurtForce, ForceMode2D.Impulse);
-        rb.AddForce(transform.up * hurtForce * 0.5f, ForceMode2D.Impulse);
+        //rb.AddForce(dir * hurtForce, ForceMode2D.Impulse);
+        //rb.AddForce(transform.up * hurtForce * 0.5f, ForceMode2D.Impulse);
+        rb.AddForce(dir * attack.hurtForce, ForceMode2D.Impulse);
+        rb.AddForce(transform.up * attack.hurtForce * 0.5f, ForceMode2D.Impulse);
 
         yield return new WaitForSeconds(0.45f);
         isHurt = false;
