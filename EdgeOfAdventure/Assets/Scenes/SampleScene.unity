@@ -1867,7 +1867,7 @@ MonoBehaviour:
   damage: 10
   attackRange: 0
   attackRate: 0
-  hurtForce: 5
+  hurtForce: 10
 --- !u!50 &626363429
 Rigidbody2D:
   serializedVersion: 4
@@ -2108,7 +2108,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!70 &1184166876
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
