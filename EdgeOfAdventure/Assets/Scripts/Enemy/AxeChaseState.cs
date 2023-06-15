@@ -5,6 +5,7 @@ using UnityEngine;
 public class AxeChaseState : BaseState
 {
     private Transform prevTrans;
+    private static Transform final;
         public override void OnEnter(Enemy enemy)
     { 
         currentEnemy = enemy;
@@ -34,6 +35,7 @@ public class AxeChaseState : BaseState
         Axe axe = (Axe) currentEnemy;
         Transform playerTransform = axe.PlayerTransformWhenChase();
         playerTransform ??= prevTrans;
+        playerTransform ??= final;
         float diff  = axe.transform.position.x - playerTransform.position.x;
         int facing = diff < 0 ? 1 : -1;
         prevTrans = playerTransform;
@@ -58,6 +60,7 @@ public class AxeChaseState : BaseState
     }
     public override void OnExit()
     {
+        AxeChaseState.final = prevTrans;
         currentEnemy.anim.SetBool("speedWalk", false);
         currentEnemy.anim.SetBool("foundPlayer", false);
         currentEnemy.lostTimeCounter = currentEnemy.lostTime;
