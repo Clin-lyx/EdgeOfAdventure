@@ -11,13 +11,15 @@ public class Enemy : MonoBehaviour
     [Header("Arguments")]
     public float normalSpeed;
     public float chaseSpeed;
+    public float encounterSpeed = 0;
     [HideInInspector]public float currentSpeed;
+    
     //public float hurtForce;
     public Attack attack;
     public float faceDir;
     public Transform attacker;
 
-    [Header("Check")]
+    [Header("Player Detect")]
     public Vector2 centerOffset;
     public Vector2 checkSize;
     public float checkDistance;
@@ -38,6 +40,7 @@ public class Enemy : MonoBehaviour
     private BaseState currentState;
     protected BaseState patrolState;
     protected BaseState chaseState;
+    protected BaseState encounterState;
 
     protected virtual void Awake() {
 
@@ -58,7 +61,6 @@ public class Enemy : MonoBehaviour
 
     private void Update() {
         faceDir = rb.transform.localScale.x;
-
         currentState.LogicUpdate();
         TimeCounter();
     }
@@ -79,7 +81,7 @@ public class Enemy : MonoBehaviour
     }
 
     //Timer
-    public void TimeCounter()
+    protected virtual void TimeCounter()
     {
         //If touching the wall, wait
         if (wait)
@@ -97,14 +99,12 @@ public class Enemy : MonoBehaviour
         {
             lostTimeCounter -= Time.deltaTime;
         }
-        else if (FoundPlayer())
-        {
-            lostTimeCounter = lostTime;
-        }
+        
     }
     public bool FoundPlayer()
     {
-        return Physics2D.BoxCast(transform.position + (Vector3)centerOffset, checkSize, 0, new Vector3(faceDir, 0, 0), checkDistance, attackLayer);
+        return Physics2D.BoxCast(transform.position + (Vector3)centerOffset, 
+            checkSize, 0, new Vector3(faceDir, 0, 0), checkDistance, attackLayer);
     }
 
     //Switching state
@@ -114,6 +114,7 @@ public class Enemy : MonoBehaviour
         {
             NPCState.Patrol => patrolState,
             NPCState.Chase => chaseState,
+            NPCState.Encounter => encounterState,
             _ => null
         };
 

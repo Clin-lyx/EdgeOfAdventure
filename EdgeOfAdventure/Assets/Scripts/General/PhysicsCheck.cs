@@ -45,7 +45,7 @@ public class PhysicsCheck : MonoBehaviour
 
     private void OnDrawGizmosSelected() {
         // to visualize the size of overlapping area so as to set a better checkRadius and bottomOffset
-        Gizmos.DrawSphere((Vector2) transform.position + bottomOffset, checkRadius);
+        Gizmos.DrawSphere((Vector2) transform.position + bottomOffset * transform.localScale.x, checkRadius);
         Gizmos.DrawSphere((Vector2) transform.position + leftOffset, checkRadius);
         Gizmos.DrawSphere((Vector2) transform.position + rightOffset, checkRadius);
     }

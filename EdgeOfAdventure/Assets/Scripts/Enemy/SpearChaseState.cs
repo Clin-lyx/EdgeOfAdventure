@@ -15,15 +15,14 @@ public class SpearChaseState : BaseState
 
     public override void LogicUpdate()
     {
-        if (currentEnemy.lostTimeCounter <= 0)
-            currentEnemy.SwitchState(NPCState.Patrol);
+        if (currentEnemy.lostTimeCounter <= 0) currentEnemy.SwitchState(NPCState.Patrol);
 
-        //µ±¼ì²âµ½Ãæ³¯Ç½µÄ¼ì²âÆ÷ÅöÇ½£¬¾Í×ªÉí
+        //ï¿½ï¿½ï¿½ï¿½âµ½ï¿½æ³¯Ç½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½
         if (!currentEnemy.physicsCheck.onGround ||
                 (currentEnemy.physicsCheck.touchLeftwall && currentEnemy.faceDir < 0) ||
                 (currentEnemy.physicsCheck.touchRightwall && currentEnemy.faceDir > 0))
         {
-            //µ±ÅöÇ½Ê±£¬Ã»ÓÐwaitÖ±½Ó×ªÉí
+            //ï¿½ï¿½ï¿½ï¿½Ç½Ê±ï¿½ï¿½Ã»ï¿½ï¿½waitÖ±ï¿½ï¿½×ªï¿½ï¿½
             currentEnemy.transform.localScale = new Vector3(-currentEnemy.faceDir, 1, 1);
         }
     }
@@ -35,5 +34,6 @@ public class SpearChaseState : BaseState
     public override void OnExit()
     {
         currentEnemy.anim.SetBool("run", false);
+        currentEnemy.lostTimeCounter = currentEnemy.lostTime;
     }
 }

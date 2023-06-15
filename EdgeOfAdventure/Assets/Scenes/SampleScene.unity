@@ -1700,7 +1700,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.39, y: 4.17, z: -10}
+  m_LocalPosition: {x: 3.02, y: 3.81, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2079,7 +2079,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1121302425}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.8935, y: 3.18, z: 0}
+  m_LocalPosition: {x: 5.02, y: 3.22, z: 0}
   m_LocalScale: {x: 1.3832, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2227,7 +2227,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1184166875}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.93, y: 0, z: 0}
+  m_LocalPosition: {x: -7.67, y: 4.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2251,7 +2251,7 @@ MonoBehaviour:
   Ground:
     serializedVersion: 2
     m_Bits: 64
-  bottomOffset: {x: 0, y: 0}
+  bottomOffset: {x: 1, y: 0}
   leftOffset: {x: -1, y: 1.5}
   rightOffset: {x: 1, y: 1.5}
   checkRadius: 0.1
@@ -2274,6 +2274,7 @@ MonoBehaviour:
   physicsCheck: {fileID: 0}
   normalSpeed: 200
   chaseSpeed: 400
+  encounterSpeed: 0
   currentSpeed: 0
   attack: {fileID: 0}
   faceDir: 0
@@ -2420,7 +2421,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1279340419}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.64, y: 3, z: 0}
+  m_LocalPosition: {x: -4.59, y: 0.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2547,13 +2548,14 @@ MonoBehaviour:
   physicsCheck: {fileID: 0}
   normalSpeed: 140
   chaseSpeed: 200
+  encounterSpeed: 0
   currentSpeed: 0
   attack: {fileID: 0}
   faceDir: 0
   attacker: {fileID: 0}
   centerOffset: {x: 0, y: 1.5}
-  checkSize: {x: 0, y: 0}
-  checkDistance: -4
+  checkSize: {x: 1, y: 1}
+  checkDistance: 6
   attackLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -2580,7 +2582,7 @@ MonoBehaviour:
   Ground:
     serializedVersion: 2
     m_Bits: 64
-  bottomOffset: {x: 0.93, y: 0}
+  bottomOffset: {x: 0.75, y: 0}
   leftOffset: {x: -0.75, y: 1.4}
   rightOffset: {x: 0.75, y: 1.4}
   checkRadius: 0.1
@@ -3051,7 +3053,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1909171897}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.31, y: 4.41, z: 0}
+  m_LocalPosition: {x: 5.16, y: -0.08, z: 0}
   m_LocalScale: {x: 1, y: 0.99999994, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

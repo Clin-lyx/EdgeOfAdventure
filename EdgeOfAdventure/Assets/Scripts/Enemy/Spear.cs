@@ -10,4 +10,9 @@ public class Spear : Enemy
         patrolState = new SpearPatrolState();
         chaseState = new SpearChaseState();
     }
+
+    protected override void TimeCounter()
+    {
+        base.TimeCounter();
+    }
 }
