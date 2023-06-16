@@ -5,6 +5,8 @@ using UnityEngine;
 public class Axe : Enemy
 {
     private Transform playerTransform;
+    public bool isAttack;
+
     protected override void Awake()
     {
         base.Awake();
@@ -43,4 +45,10 @@ public class Axe : Enemy
 
     }
     
+    //Frame event to finish attack
+    public void EndAttack()
+    {
+        isAttack = false;
+    }
+
 }

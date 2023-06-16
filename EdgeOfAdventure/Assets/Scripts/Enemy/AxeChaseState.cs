@@ -6,7 +6,8 @@ public class AxeChaseState : BaseState
 {
     private Transform prevTrans;
     private static Transform final;
-        public override void OnEnter(Enemy enemy)
+
+    public override void OnEnter(Enemy enemy)
     { 
         currentEnemy = enemy;
         Axe axe = (Axe) enemy;

@@ -6,7 +6,8 @@ public class AxeEncounterState : BaseState
 {
     private Transform prevTrans;
     private static Transform final;
-        public override void OnEnter(Enemy enemy)
+
+    public override void OnEnter(Enemy enemy)
     { 
         currentEnemy = enemy;
         Axe axe = (Axe) enemy;
@@ -16,6 +17,9 @@ public class AxeEncounterState : BaseState
         currentEnemy.anim.SetBool("walk", false);
         currentEnemy.anim.SetBool("speedWalk", false);
         currentEnemy.anim.SetBool("foundPlayer", true);
+
+        axe.isAttack = true;
+        currentEnemy.anim.SetBool("isAttack", true);
     }
 
     public override void LogicUpdate()
@@ -29,11 +33,17 @@ public class AxeEncounterState : BaseState
         int facing = diff < 0 ? 1 : -1;
         prevTrans = playerTransform;
 
-        if (Mathf.Abs(diff) > 2f) {
+        if (Mathf.Abs(diff) > 2f && !axe.isAttack)
+        {
+            currentEnemy.anim.SetBool("isAttack", false);
             currentEnemy.SwitchState(NPCState.Chase);  
-        } 
+        }
 
-        currentEnemy.transform.localScale = new Vector3(facing, 1, 1);
+        if (!axe.isAttack)
+        {
+            currentEnemy.transform.localScale = new Vector3(facing, 1, 1);
+        }
+        
 
 
         
@@ -41,12 +51,13 @@ public class AxeEncounterState : BaseState
 
     public override void PhysicsUpdate()
     {
-
+        
     }
     public override void OnExit()
     {
         AxeEncounterState.final = prevTrans;
         currentEnemy.anim.SetBool("speedWalk", true);
         currentEnemy.anim.SetBool("foundPlayer", true);
+        currentEnemy.anim.SetBool("isAttack", false);
     }
 }
