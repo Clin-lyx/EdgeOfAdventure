@@ -5,7 +5,9 @@ using UnityEngine;
 public class Axe : Enemy
 {
     private Transform playerTransform;
-    public bool isAttack;
+    private float timer;
+    private float attackTimer = 0.2f;
+    
 
     protected override void Awake()
     {
@@ -13,6 +15,7 @@ public class Axe : Enemy
         patrolState = new AxePatrolState();
         chaseState = new AxeChaseState();
         encounterState = new AxeEncounterState();
+        timer = attackTimer;
     }
 
     protected override void TimeCounter() {
@@ -41,6 +44,17 @@ public class Axe : Enemy
         return temp;
     }
 
+    public void AttackRunDown() {
+        if (!anim.GetBool("isAttack")){
+            if (timer <= 0){
+                anim.SetBool("isAttack", true);
+                timer = attackTimer;
+            } else {
+                timer -= Time.deltaTime;
+            }
+        }
+    }
+
     private void Chase() {
 
     }
@@ -48,7 +62,7 @@ public class Axe : Enemy
     //Frame event to finish attack
     public void EndAttack()
     {
-        isAttack = false;
+        anim.SetBool("isAttack", false);
     }
 
 }

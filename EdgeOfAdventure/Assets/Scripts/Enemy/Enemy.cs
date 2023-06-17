@@ -60,6 +60,8 @@ public class Enemy : MonoBehaviour
     }
 
     private void Update() {
+        //Axe axe = (Axe) this;
+        //Debug.Log(axe.isAttack);
         faceDir = rb.transform.localScale.x;
         currentState.LogicUpdate();
         TimeCounter();
