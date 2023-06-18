@@ -10,6 +10,7 @@ public class SpearChaseState : BaseState
         Debug.Log("Chase");
         currentEnemy.currentSpeed = currentEnemy.chaseSpeed;
         currentEnemy.anim.SetBool("run", true);
+        currentEnemy.PatrolAfterPlayerDead();
 
     }
 

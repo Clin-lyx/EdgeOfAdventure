@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    Rigidbody2D rb;
+    private Rigidbody2D rb;
     [HideInInspector]public Animator anim;
     [HideInInspector]public PhysicsCheck physicsCheck;
+
+    private GameObject player;
 
     [Header("Arguments")]
     public float normalSpeed;
@@ -48,6 +50,7 @@ public class Enemy : MonoBehaviour
         anim = GetComponent<Animator>();
         physicsCheck = GetComponent<PhysicsCheck>();
         attack = GetComponent<Attack>();
+        player = GameObject.FindWithTag("Player");
         currentSpeed = normalSpeed;
         waitTimeCounter = waitTime;
 
@@ -80,6 +83,15 @@ public class Enemy : MonoBehaviour
 
     public virtual void Move() {
         rb.velocity = new Vector2(currentSpeed * faceDir * Time.deltaTime, rb.velocity.y);
+    }
+
+    public void PatrolAfterPlayerDead() {
+        float health = player.GetComponent<Character>().currentHealth;
+        
+        if (health <= 0) {
+            this.SwitchState(NPCState.Patrol);
+            
+        }
     }
 
     //Timer
@@ -150,6 +162,7 @@ public class Enemy : MonoBehaviour
     {
         //rb.AddForce(dir * hurtForce, ForceMode2D.Impulse);
         //rb.AddForce(transform.up * hurtForce * 0.5f, ForceMode2D.Impulse);
+        anim.SetBool("isAttack", false);
         rb.AddForce(dir * attacker.hurtForce, ForceMode2D.Impulse);
         rb.AddForce(transform.up * attacker.hurtForce * 0.5f, ForceMode2D.Impulse);
 

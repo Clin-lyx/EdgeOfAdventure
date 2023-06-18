@@ -63,6 +63,7 @@ public class Axe : Enemy
     public void EndAttack()
     {
         anim.SetBool("isAttack", false);
+        this.PatrolAfterPlayerDead();
     }
 
 }

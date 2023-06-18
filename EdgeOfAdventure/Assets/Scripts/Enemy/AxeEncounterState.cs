@@ -19,14 +19,17 @@ public class AxeEncounterState : BaseState
         currentEnemy.anim.SetBool("speedWalk", false);
         currentEnemy.anim.SetBool("foundPlayer", true);
         currentEnemy.anim.SetBool("isAttack", true);
+        
 
     }
 
     public override void LogicUpdate()
     {
+        
         Animator anim = currentEnemy.GetComponent<Animator>();
         Axe axe = (Axe) currentEnemy;
         
+
         Transform playerTransform = axe.PlayerTransformWhenChase();
         playerTransform ??= prevTrans;
         playerTransform ??= final;

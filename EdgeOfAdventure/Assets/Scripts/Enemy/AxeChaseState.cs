@@ -16,6 +16,8 @@ public class AxeChaseState : BaseState
         currentEnemy.currentSpeed = currentEnemy.chaseSpeed;
         currentEnemy.anim.SetBool("speedWalk", true);
         currentEnemy.anim.SetBool("foundPlayer", true);
+        currentEnemy.PatrolAfterPlayerDead();
+        
     }
 
     public override void LogicUpdate()
@@ -33,6 +35,7 @@ public class AxeChaseState : BaseState
             
         }
         
+
         Axe axe = (Axe) currentEnemy;
         Transform playerTransform = axe.PlayerTransformWhenChase();
         playerTransform ??= prevTrans;
