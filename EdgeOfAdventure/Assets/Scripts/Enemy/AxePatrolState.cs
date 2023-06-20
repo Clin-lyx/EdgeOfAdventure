@@ -7,7 +7,7 @@ public class AxePatrolState : BaseState
     public override void OnEnter(Enemy enemy)
     {
         currentEnemy = enemy;
-        //Debug.Log("Patrol");
+        Debug.Log("Patrol");
         currentEnemy.currentSpeed = currentEnemy.normalSpeed;
         currentEnemy.anim.SetBool("walk", true);
     }

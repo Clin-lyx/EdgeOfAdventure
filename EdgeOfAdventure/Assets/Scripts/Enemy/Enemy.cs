@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     [HideInInspector]public Animator anim;
     [HideInInspector]public PhysicsCheck physicsCheck;
 
-    private GameObject player;
+    public GameObject player;
 
     [Header("Arguments")]
     public float normalSpeed;

@@ -30,18 +30,18 @@ public class Axe : Enemy
             }
         }
 
-        if (PlayerTransformWhenChase() == null && lostTimeCounter > 0)
+        if (!FoundPlayer() && lostTimeCounter > 0)
         {
             lostTimeCounter -= Time.deltaTime;
         }
     }
 
     public Transform PlayerTransformWhenChase () {
-        Transform temp = Physics2D.BoxCast(transform.position + (Vector3)centerOffset, 
-            checkSize, 0, new Vector3(faceDir, 0, 0), checkDistance, attackLayer).transform;
-        temp ??= Physics2D.BoxCast(transform.position + (Vector3)centerOffset, 
-            checkSize, 0, new Vector3(faceDir * -1, 0, 0), checkDistance, attackLayer).transform;
-        return temp;
+        return player.transform; 
+    }
+
+    public bool PlayerOnGround() {
+        return player.GetComponent<PhysicsCheck>().onGround;
     }
 
     public void AttackRunDown() {

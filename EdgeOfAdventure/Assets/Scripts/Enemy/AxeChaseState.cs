@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class AxeChaseState : BaseState
 {
-    private Transform prevTrans;
-    private static Transform final;
+
 
     public override void OnEnter(Enemy enemy)
     { 
         currentEnemy = enemy;
         Axe axe = (Axe) enemy;
-        prevTrans = axe.PlayerTransformWhenChase();
-        //Debug.Log("Chase");
+        Debug.Log("Chase");
         currentEnemy.currentSpeed = currentEnemy.chaseSpeed;
         currentEnemy.anim.SetBool("speedWalk", true);
         currentEnemy.anim.SetBool("foundPlayer", true);
@@ -38,13 +36,12 @@ public class AxeChaseState : BaseState
 
         Axe axe = (Axe) currentEnemy;
         Transform playerTransform = axe.PlayerTransformWhenChase();
-        playerTransform ??= prevTrans;
-        playerTransform ??= final;
+        
         float diff  = axe.transform.position.x - playerTransform.position.x;
         int facing = diff < 0 ? 1 : -1;
-        prevTrans = playerTransform;
+        
 
-        if (Mathf.Abs(diff) <= 2f) {
+        if (Mathf.Abs(diff) <= 2f && axe.FoundPlayer()) {
             currentEnemy.SwitchState(NPCState.Encounter);
             
         } 
@@ -64,7 +61,7 @@ public class AxeChaseState : BaseState
     }
     public override void OnExit()
     {
-        AxeChaseState.final = prevTrans;
+        
         currentEnemy.anim.SetBool("speedWalk", false);
         currentEnemy.anim.SetBool("foundPlayer", false);
         currentEnemy.lostTimeCounter = currentEnemy.lostTime;
