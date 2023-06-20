@@ -115,6 +115,11 @@ public class Enemy : MonoBehaviour
         }
         
     }
+
+    public bool TouchingWalls() {
+        return physicsCheck.touchLeftwall || physicsCheck.touchRightwall;
+    }
+
     public bool FoundPlayer()
     {
         return Physics2D.BoxCast(transform.position + (Vector3)centerOffset, 

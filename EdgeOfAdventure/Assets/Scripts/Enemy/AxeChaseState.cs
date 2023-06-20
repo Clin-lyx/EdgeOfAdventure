@@ -25,12 +25,16 @@ public class AxeChaseState : BaseState
 
             currentEnemy.SwitchState(NPCState.Patrol);
         }
-        
-        if (!currentEnemy.physicsCheck.onGround) {
+
+        if (currentEnemy.TouchingWalls()) {
             currentEnemy.anim.SetBool("speedWalk", false);
+            currentEnemy.anim.SetBool("walk", false);
         } else {
-            currentEnemy.anim.SetBool("speedWalk", true);
-            
+            if (!currentEnemy.physicsCheck.onGround) {
+                currentEnemy.anim.SetBool("speedWalk", false);
+            } else {
+                currentEnemy.anim.SetBool("speedWalk", true);
+            }
         }
         
 
@@ -48,10 +52,7 @@ public class AxeChaseState : BaseState
 
         currentEnemy.transform.localScale = new Vector3(facing, 1, 1);
 
-        if (currentEnemy.physicsCheck.touchLeftwall || currentEnemy.physicsCheck.touchRightwall) {
-            currentEnemy.anim.SetBool("speedWalk", false);
-            
-        }
+        
         
     }
 
@@ -65,5 +66,6 @@ public class AxeChaseState : BaseState
         currentEnemy.anim.SetBool("speedWalk", false);
         currentEnemy.anim.SetBool("foundPlayer", false);
         currentEnemy.lostTimeCounter = currentEnemy.lostTime;
+
     }
 }

@@ -9,7 +9,13 @@ public class AxePatrolState : BaseState
         currentEnemy = enemy;
         Debug.Log("Patrol");
         currentEnemy.currentSpeed = currentEnemy.normalSpeed;
-        currentEnemy.anim.SetBool("walk", true);
+        
+        currentEnemy.anim.SetBool("speedWalk", false);
+        if (currentEnemy.TouchingWalls()) {
+            currentEnemy.anim.SetBool("walk", false);  
+        } else {
+            currentEnemy.anim.SetBool("walk", true);
+        }
     }
 
     public override void LogicUpdate()
