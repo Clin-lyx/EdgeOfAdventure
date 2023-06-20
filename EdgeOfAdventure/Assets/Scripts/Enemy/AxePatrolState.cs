@@ -9,7 +9,6 @@ public class AxePatrolState : BaseState
         currentEnemy = enemy;
         Debug.Log("Patrol");
         currentEnemy.currentSpeed = currentEnemy.normalSpeed;
-        
         currentEnemy.anim.SetBool("speedWalk", false);
         if (currentEnemy.TouchingWalls()) {
             currentEnemy.anim.SetBool("walk", false);  
@@ -21,6 +20,7 @@ public class AxePatrolState : BaseState
     public override void LogicUpdate()
     {
         //If the player is found, start chasing
+        
         if (currentEnemy.FoundPlayer()) {
             currentEnemy.SwitchState(NPCState.Chase);
         } 

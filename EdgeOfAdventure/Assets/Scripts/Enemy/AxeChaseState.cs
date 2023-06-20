@@ -20,7 +20,7 @@ public class AxeChaseState : BaseState
 
     public override void LogicUpdate()
     {
-        if (currentEnemy.lostTimeCounter <= 0) 
+        if (currentEnemy.lostTimeCounter <= 0 || !currentEnemy.physicsCheck.onGround) 
         {
 
             currentEnemy.SwitchState(NPCState.Patrol);
@@ -64,7 +64,7 @@ public class AxeChaseState : BaseState
     {
         
         currentEnemy.anim.SetBool("speedWalk", false);
-        currentEnemy.anim.SetBool("foundPlayer", false);
+        currentEnemy.anim.SetBool("foundPlayer", currentEnemy.FoundPlayer());
         currentEnemy.lostTimeCounter = currentEnemy.lostTime;
 
     }
