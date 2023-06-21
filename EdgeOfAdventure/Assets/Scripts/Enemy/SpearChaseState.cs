@@ -16,14 +16,14 @@ public class SpearChaseState : BaseState
 
     public override void LogicUpdate()
     {
-        if (currentEnemy.lostTimeCounter <= 0) currentEnemy.SwitchState(NPCState.Patrol);
+        if (currentEnemy.lostTimeCounter <= 0 || !currentEnemy.physicsCheck.onGround) 
+            currentEnemy.SwitchState(NPCState.Patrol);
 
-        //����⵽�泯ǽ�ļ������ǽ����ת��
-        if (!currentEnemy.physicsCheck.onGround ||
-                (currentEnemy.physicsCheck.touchLeftwall && currentEnemy.faceDir < 0) ||
-                (currentEnemy.physicsCheck.touchRightwall && currentEnemy.faceDir > 0))
+        if ((currentEnemy.physicsCheck.touchLeftwall && currentEnemy.faceDir < 0) || (currentEnemy.physicsCheck.touchRightwall && currentEnemy.faceDir > 0))
         {
-            //����ǽʱ��û��waitֱ��ת��
+            currentEnemy.transform.localScale = new Vector3(-currentEnemy.faceDir, 1, 1);
+        } else if (!currentEnemy.physicsCheck.onGround)
+        {
             currentEnemy.transform.localScale = new Vector3(-currentEnemy.faceDir, 1, 1);
         }
     }

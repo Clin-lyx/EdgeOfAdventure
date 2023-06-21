@@ -41,17 +41,20 @@ public class AxeEncounterState : BaseState
 
         if (Mathf.Abs(diff) > 2f && !anim.GetBool("isAttack"))
         {
+            currentEnemy.waitTimeCounter = 0;
             currentEnemy.anim.SetBool("isAttack", false);
-            currentEnemy.SwitchState(NPCState.Chase);  
+            currentEnemy.SwitchState(NPCState.Chase);
         } 
 
         if (Mathf.Abs(diff) < 2f && axe.PlayerOnGround() && !axe.FoundPlayer() && !anim.GetBool("isAttack")) {
+            currentEnemy.waitTimeCounter = 0;
             currentEnemy.anim.SetBool("isAttack", false);
-            currentEnemy.SwitchState(NPCState.Chase); 
+            currentEnemy.SwitchState(NPCState.Chase);
         }
 
         if (currentEnemy.lostTimeCounter <= 0) 
         {
+            currentEnemy.waitTimeCounter = 0;
             currentEnemy.SwitchState(NPCState.Patrol);
         }
         

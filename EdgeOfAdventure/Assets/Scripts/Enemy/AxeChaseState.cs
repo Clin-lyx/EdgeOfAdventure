@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class AxeChaseState : BaseState
 {
-
-
     public override void OnEnter(Enemy enemy)
     { 
         currentEnemy = enemy;
@@ -22,7 +20,7 @@ public class AxeChaseState : BaseState
     {
         if (currentEnemy.lostTimeCounter <= 0 || !currentEnemy.physicsCheck.onGround) 
         {
-
+            currentEnemy.waitTimeCounter = 0;
             currentEnemy.SwitchState(NPCState.Patrol);
         }
 
@@ -46,8 +44,8 @@ public class AxeChaseState : BaseState
         
 
         if (Mathf.Abs(diff) <= 2f && axe.FoundPlayer()) {
+            currentEnemy.waitTimeCounter = 0;
             currentEnemy.SwitchState(NPCState.Encounter);
-            
         } 
 
         currentEnemy.transform.localScale = new Vector3(facing, 1, 1);
