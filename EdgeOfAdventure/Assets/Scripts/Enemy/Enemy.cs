@@ -165,8 +165,7 @@ public class Enemy : MonoBehaviour
     //Return the result of being attacked
     private IEnumerator OnHurt(Vector2 dir, Attack attacker)
     {
-        //rb.AddForce(dir * hurtForce, ForceMode2D.Impulse);
-        //rb.AddForce(transform.up * hurtForce * 0.5f, ForceMode2D.Impulse);
+
         anim.SetBool("isAttack", false);
         rb.AddForce(dir * attacker.hurtForce, ForceMode2D.Impulse);
         rb.AddForce(transform.up * attacker.hurtForce * 0.5f, ForceMode2D.Impulse);
@@ -179,8 +178,10 @@ public class Enemy : MonoBehaviour
     {
         gameObject.layer = 2;
         anim.SetBool("dead", true);
+        anim.SetBool("isAttack", false);
         isDead = true;
     }
+
     public void DestroyAfterAnimation()
     {
         Destroy(this.gameObject);

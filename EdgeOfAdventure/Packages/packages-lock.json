@@ -94,6 +94,14 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.unity.cinemachine": {
+      "version": "file:../New packages/com.unity.cinemachine@2.9.7",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {
+        "com.unity.test-framework": "1.1.31"
+      }
+    },
     "com.unity.collab-proxy": {
       "version": "2.0.4",
       "depth": 0,
