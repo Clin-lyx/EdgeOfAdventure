@@ -18,23 +18,6 @@ public class Axe : Enemy
         timer = attackTimer;
     }
 
-    protected override void TimeCounter() {
-        if (wait)
-        {
-            waitTimeCounter -= Time.deltaTime;
-            if (waitTimeCounter <= 0)
-            {
-                wait = false;
-                waitTimeCounter = waitTime;
-                transform.localScale = new Vector3(-faceDir, 1, 1);
-            }
-        }
-
-        if (!FoundPlayer() && lostTimeCounter > 0)
-        {
-            lostTimeCounter -= Time.deltaTime;
-        }
-    }
 
     public Transform PlayerTransformWhenChase () {
         return player.transform; 

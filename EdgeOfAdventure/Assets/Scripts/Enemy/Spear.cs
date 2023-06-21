@@ -11,8 +11,4 @@ public class Spear : Enemy
         chaseState = new SpearChaseState();
     }
 
-    protected override void TimeCounter()
-    {
-        base.TimeCounter();
-    }
 }

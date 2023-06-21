@@ -95,7 +95,7 @@ public class Enemy : MonoBehaviour
     }
 
     //Timer
-    protected virtual void TimeCounter()
+    public void TimeCounter()
     {
         //If touching the wall, wait
         if (wait)
