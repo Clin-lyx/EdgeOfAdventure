@@ -6,6 +6,7 @@ public class SpearPatrolState : BaseState
 {
     public override void OnEnter(Enemy enemy)
     {
+        Debug.Log("spear patrol");
         currentEnemy = enemy;
         currentEnemy.currentSpeed = currentEnemy.normalSpeed;
     }
@@ -13,7 +14,7 @@ public class SpearPatrolState : BaseState
     public override void LogicUpdate()
     {
         //If the player is found, start chasing
-        if (currentEnemy.FoundPlayer())
+        if (currentEnemy.FoundPlayer() && currentEnemy.physicsCheck.onGround)
         {
             currentEnemy.SwitchState(NPCState.Chase);
         }
@@ -40,6 +41,5 @@ public class SpearPatrolState : BaseState
     public override void OnExit()
     {
         currentEnemy.anim.SetBool("walk", false);
-        Debug.Log("Exit");
     }
 }

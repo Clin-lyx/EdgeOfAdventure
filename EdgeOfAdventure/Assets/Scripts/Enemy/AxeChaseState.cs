@@ -19,7 +19,7 @@ public class AxeChaseState : BaseState
 
     public override void LogicUpdate()
     {
-        if (currentEnemy.lostTimeCounter <= 0 || !currentEnemy.physicsCheck.onGround) 
+        if (currentEnemy.lostTimeCounter <= 0) 
         {
             currentEnemy.SwitchState(NPCState.Patrol);
         }
@@ -49,8 +49,6 @@ public class AxeChaseState : BaseState
 
         currentEnemy.transform.localScale = new Vector3(facing, 1, 1);
 
-        
-        
     }
 
     public override void PhysicsUpdate()

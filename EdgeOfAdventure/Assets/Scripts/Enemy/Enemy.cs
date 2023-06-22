@@ -71,7 +71,7 @@ public class Enemy : MonoBehaviour
     }
 
     private void FixedUpdate(){
-        if (!isHurt && !isDead && !wait)
+        if (!isHurt && !isDead && !wait && physicsCheck.onGround)
             Move();
         currentState.PhysicsUpdate();
     }
@@ -105,7 +105,8 @@ public class Enemy : MonoBehaviour
             {
                 wait = false;
                 waitTimeCounter = waitTime;
-                transform.localScale = new Vector3(-faceDir, 1, 1);
+                if (!isHurt)
+                    transform.localScale = new Vector3(-faceDir, 1, 1);
             }
         }
 
@@ -113,6 +114,11 @@ public class Enemy : MonoBehaviour
         {
             lostTimeCounter -= Time.deltaTime;
         } else if (FoundPlayer())
+        {
+            waitTimeCounter = 0;
+        }
+
+        if (anim.GetBool("walk"))
         {
             waitTimeCounter = 0;
         }
@@ -173,7 +179,7 @@ public class Enemy : MonoBehaviour
         rb.AddForce(dir * attacker.hurtForce, ForceMode2D.Impulse);
         rb.AddForce(transform.up * attacker.hurtForce * 0.5f, ForceMode2D.Impulse);
 
-        yield return new WaitForSeconds(0.45f);
+        yield return new WaitForSeconds(0.5f);
         isHurt = false;
     }
 
