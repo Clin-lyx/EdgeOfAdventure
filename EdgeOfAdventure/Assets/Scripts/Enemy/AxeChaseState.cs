@@ -9,6 +9,7 @@ public class AxeChaseState : BaseState
         currentEnemy = enemy;
         Axe axe = (Axe) enemy;
         Debug.Log("Chase");
+        currentEnemy.waitTimeCounter = 0;
         currentEnemy.currentSpeed = currentEnemy.chaseSpeed;
         currentEnemy.anim.SetBool("speedWalk", true);
         currentEnemy.anim.SetBool("foundPlayer", true);
@@ -20,7 +21,6 @@ public class AxeChaseState : BaseState
     {
         if (currentEnemy.lostTimeCounter <= 0 || !currentEnemy.physicsCheck.onGround) 
         {
-            currentEnemy.waitTimeCounter = 0;
             currentEnemy.SwitchState(NPCState.Patrol);
         }
 
@@ -44,7 +44,6 @@ public class AxeChaseState : BaseState
         
 
         if (Mathf.Abs(diff) <= 2f && axe.FoundPlayer()) {
-            currentEnemy.waitTimeCounter = 0;
             currentEnemy.SwitchState(NPCState.Encounter);
         } 
 

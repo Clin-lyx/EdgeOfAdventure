@@ -112,6 +112,9 @@ public class Enemy : MonoBehaviour
         if (!FoundPlayer() && lostTimeCounter > 0)
         {
             lostTimeCounter -= Time.deltaTime;
+        } else if (FoundPlayer())
+        {
+            waitTimeCounter = 0;
         }
         
     }

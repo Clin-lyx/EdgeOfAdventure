@@ -15,7 +15,6 @@ public class SpearPatrolState : BaseState
         //If the player is found, start chasing
         if (currentEnemy.FoundPlayer())
         {
-            currentEnemy.waitTimeCounter = 0;
             currentEnemy.SwitchState(NPCState.Chase);
         }
         //If touching the wall, trun around

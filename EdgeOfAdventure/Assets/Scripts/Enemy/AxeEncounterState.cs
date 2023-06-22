@@ -54,7 +54,6 @@ public class AxeEncounterState : BaseState
 
         if (currentEnemy.lostTimeCounter <= 0) 
         {
-            currentEnemy.waitTimeCounter = 0;
             currentEnemy.SwitchState(NPCState.Patrol);
         }
         

@@ -21,8 +21,7 @@ public class AxePatrolState : BaseState
     {
         //If the player is found, start chasing
         
-        if (currentEnemy.FoundPlayer()) {
-            currentEnemy.waitTimeCounter = 0;
+        if (currentEnemy.FoundPlayer() && currentEnemy.physicsCheck.onGround) {
             currentEnemy.SwitchState(NPCState.Chase);
         } 
         //When touching the wall, trun around
@@ -33,6 +32,7 @@ public class AxePatrolState : BaseState
             currentEnemy.wait = true;
             //When touching the wall, idle
             currentEnemy.anim.SetBool("walk", false);
+            currentEnemy.anim.SetBool("speedWalk", false);
         }
         else
         {
