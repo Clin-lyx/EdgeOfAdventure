@@ -47,6 +47,8 @@ public class PlayerAnimation : MonoBehaviour
         // if the player tries to attack
         anim.SetBool("isAttack", playerController.isAttack);
 
+        anim.SetBool("isDash", playerController.isDash);
+
     }
 
     public void PlayerHurt() {

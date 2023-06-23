@@ -23,9 +23,6 @@ public class Axe : Enemy
         return player.transform; 
     }
 
-    public bool PlayerOnGround() {
-        return player.GetComponent<PhysicsCheck>().onGround;
-    }
 
     public void AttackRunDown() {
         if (!anim.GetBool("isAttack")){

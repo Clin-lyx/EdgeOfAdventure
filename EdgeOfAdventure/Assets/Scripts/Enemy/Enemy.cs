@@ -125,6 +125,10 @@ public class Enemy : MonoBehaviour
         
     }
 
+    public bool PlayerOnGround() {
+        return player.GetComponent<PhysicsCheck>().onGround;
+    }
+
     public bool TouchingWalls() {
         return physicsCheck.touchLeftwall || physicsCheck.touchRightwall;
     }

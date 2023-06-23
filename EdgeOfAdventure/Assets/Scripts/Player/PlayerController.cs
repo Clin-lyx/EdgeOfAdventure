@@ -23,6 +23,10 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
     public float jumpWhencrouch;
     public float reactionForce; 
+    public float dashDistance;
+    public float dashSpeed;
+    public float dashCooldown;
+    public float dashTimer;
     private Vector2 originalOffset;
     private Vector2 orginalSize;
     private CapsuleCollider2D coll;
@@ -36,6 +40,7 @@ public class PlayerController : MonoBehaviour
     public bool isDead;
     public bool isCrouch;
     public bool isAttack;
+    public bool isDash;
     
     private void Awake() {
         // Initialization
@@ -70,6 +75,9 @@ public class PlayerController : MonoBehaviour
             }
         };
 
+        // Player Dash
+        inputControl.Gameplay.Dash.started += Dash;
+
         // Attack
         inputControl.Gameplay.Attack.started += PlayerAttack;
     }
@@ -90,6 +98,9 @@ public class PlayerController : MonoBehaviour
 
         // checking which physics material to use
         checkState();
+
+        // Dash cool down
+        dashTimer -= Time.deltaTime;
     }
 
     private void FixedUpdate() {
@@ -124,6 +135,11 @@ public class PlayerController : MonoBehaviour
         // Jump if the character is on the ground and not attack and not crouch
         if (physicsCheck.onGround && !isCrouch && !isAttack) 
             rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+            
+            //Stops Dash
+            //isDash = false;
+            //StopAllCoroutines();
+
         // Jump if the character is on the ground and not attack and crouching
         if (physicsCheck.onGround && isCrouch && !isAttack) 
             rb.AddForce(transform.up * jumpWhencrouch, ForceMode2D.Impulse);
@@ -137,6 +153,49 @@ public class PlayerController : MonoBehaviour
             isAttack = true;
         }
 
+    }
+
+    private void Dash(InputAction.CallbackContext context)
+    {
+       if (!isDash && physicsCheck.onGround && !isAttack && dashTimer <= 0f) {
+            isDash = true;
+
+            var targetPos = new Vector2(transform.position.x + dashDistance * transform.localScale.x, 
+                transform.position.y);
+            
+            gameObject.layer = LayerMask.NameToLayer("Enemy");
+
+            StartCoroutine(TriggerDash(targetPos));
+            dashTimer = dashCooldown;
+       }
+    }
+
+    private IEnumerator TriggerDash(Vector2 target) 
+    {
+        float faceDir = transform.localScale.x;
+        do {
+            
+            yield return null;
+            if (!physicsCheck.onGround) {
+                break;
+            }
+            
+            if (faceDir != transform.localScale.x) break;
+
+            if (physicsCheck.touchLeftwall && transform.localScale.x < 0f 
+                || physicsCheck.touchRightwall && transform.localScale.x > 0f) {
+                isDash = false;
+                break;
+            }
+            
+            rb.MovePosition(new Vector2(transform.position.x + transform.localScale.x * dashSpeed,
+                transform.position.y));
+            
+            
+            
+        } while (MathF.Abs(target.x - transform.position.x) > 0.5f);
+        isDash = false;
+        gameObject.layer = LayerMask.NameToLayer("Player");
     }
 
     public void GetHurt(Attack attacker) {

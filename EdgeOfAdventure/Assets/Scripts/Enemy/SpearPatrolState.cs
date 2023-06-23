@@ -14,7 +14,7 @@ public class SpearPatrolState : BaseState
     public override void LogicUpdate()
     {
         //If the player is found, start chasing
-        if (currentEnemy.FoundPlayer() && currentEnemy.physicsCheck.onGround)
+        if (currentEnemy.FoundPlayer() && currentEnemy.PlayerOnGround())
         {
             currentEnemy.SwitchState(NPCState.Chase);
         }

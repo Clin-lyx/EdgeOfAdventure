@@ -2173,7 +2173,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.309996, y: 3.75508, z: -10}
+  m_LocalPosition: {x: -1.0982571, y: 3.75508, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2866,7 +2866,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!70 &1184166876
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -3222,7 +3222,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1279340420
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3547,7 +3547,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1280990619}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.3099997, y: 2.13, z: -10}
+  m_LocalPosition: {x: -5.51, y: 2.3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4131,12 +4131,17 @@ MonoBehaviour:
   jumpForce: 17
   jumpWhencrouch: 20
   reactionForce: 10
+  dashDistance: 4.5
+  dashSpeed: 1
+  dashCooldown: 0.5
+  dashTimer: 0
   normal: {fileID: 6200000, guid: e901fd0f8d1a32745b62b3ada19b5af2, type: 2}
   wall: {fileID: 6200000, guid: ec040c21a6100ec4a98eccf936adb3c0, type: 2}
   isHurt: 0
   isDead: 0
   isCrouch: 0
   isAttack: 0
+  isDash: 0
 --- !u!70 &1909171900
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -4234,7 +4239,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1909171897}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.31, y: -0.07, z: 0}
+  m_LocalPosition: {x: -5.51, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 0.99999994, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
