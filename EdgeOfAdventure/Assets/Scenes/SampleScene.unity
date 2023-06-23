@@ -2173,7 +2173,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.0982571, y: 3.75508, z: -10}
+  m_LocalPosition: {x: 10.74, y: 5.3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2880,8 +2880,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1.3124052}
-  m_Size: {x: 1.75, y: 2.6248105}
+  m_Offset: {x: 0.22850299, y: 1.3124052}
+  m_Size: {x: 2.207006, y: 2.6248105}
   m_Direction: 0
 --- !u!95 &1184166878
 Animator:
@@ -2985,7 +2985,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1184166875}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.69, y: 4.38, z: 0}
+  m_LocalPosition: {x: 2.69, y: 3.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3051,6 +3051,11 @@ MonoBehaviour:
   lostTimeCounter: 0
   isHurt: 0
   isDead: 0
+  collid: {fileID: 0}
+  offsetWhenrun: {x: 0, y: 0}
+  sizeWhenrun: {x: 0, y: 0}
+  offsetWhenidle: {x: 0, y: 0}
+  sizeWhenidle: {x: 0, y: 0}
 --- !u!114 &1184166884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3222,7 +3227,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1279340420
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3547,7 +3552,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1280990619}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.51, y: 2.3, z: -10}
+  m_LocalPosition: {x: 10.74, y: 5.3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4239,7 +4244,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1909171897}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.51, y: 0.1, z: 0}
+  m_LocalPosition: {x: 10.74, y: 3.1, z: 0}
   m_LocalScale: {x: 1, y: 0.99999994, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4295,7 +4300,7 @@ MonoBehaviour:
   maxHealth: 40
   currentHealth: 0
   invulnerableDuration: 0.5
-  invulnerable: 0
+  invulnerable: 1
   OnHealthChange:
     m_PersistentCalls:
       m_Calls:

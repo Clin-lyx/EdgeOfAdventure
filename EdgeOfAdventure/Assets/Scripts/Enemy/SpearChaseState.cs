@@ -11,7 +11,15 @@ public class SpearChaseState : BaseState
         currentEnemy.currentSpeed = currentEnemy.chaseSpeed;
         currentEnemy.anim.SetBool("run", true);
         currentEnemy.PatrolAfterPlayerDead();
+        
 
+        Spear spear = (Spear) currentEnemy;
+        spear.collid.offset = spear.offsetWhenrun;
+        spear.collid.size = spear.sizeWhenrun;
+        spear.physicsCheck.rightOffset =  new Vector2((spear.sizeWhenrun.x + spear.offsetWhenrun.x) / 2 + 0.1f, 
+            spear.sizeWhenrun.y / 2);
+        spear.physicsCheck.leftOffset = new Vector2(-spear.physicsCheck.rightOffset.x,
+            spear.physicsCheck.rightOffset.y);
     }
 
     public override void LogicUpdate()

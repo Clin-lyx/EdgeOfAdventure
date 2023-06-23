@@ -9,6 +9,14 @@ public class SpearPatrolState : BaseState
         Debug.Log("spear patrol");
         currentEnemy = enemy;
         currentEnemy.currentSpeed = currentEnemy.normalSpeed;
+
+        Spear spear = (Spear) currentEnemy;
+        spear.collid.offset = spear.offsetWhenidle;
+        spear.collid.size = spear.sizeWhenidle;
+        spear.physicsCheck.rightOffset =  new Vector2((spear.sizeWhenidle.x + spear.offsetWhenidle.x) / 2, 
+            spear.sizeWhenidle.y / 2);
+        spear.physicsCheck.leftOffset = new Vector2(-spear.physicsCheck.rightOffset.x,
+            spear.physicsCheck.rightOffset.y);
     }
 
     public override void LogicUpdate()

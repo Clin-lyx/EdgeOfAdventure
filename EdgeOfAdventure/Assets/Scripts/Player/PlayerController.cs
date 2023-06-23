@@ -147,7 +147,7 @@ public class PlayerController : MonoBehaviour
     private void PlayerAttack(InputAction.CallbackContext context)
     {
 
-        if (!isCrouch && physicsCheck.onGround) {
+        if (!isCrouch && physicsCheck.onGround && !isHurt) {
             rb.velocity = new Vector2(0, rb.velocity.y);
             playerAnimation.PlayAttack();
             isAttack = true;

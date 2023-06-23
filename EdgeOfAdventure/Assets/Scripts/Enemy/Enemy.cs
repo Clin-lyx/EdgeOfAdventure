@@ -7,7 +7,6 @@ public class Enemy : MonoBehaviour
     private Rigidbody2D rb;
     [HideInInspector]public Animator anim;
     [HideInInspector]public PhysicsCheck physicsCheck;
-
     public GameObject player;
 
     [Header("Arguments")]
