@@ -8,7 +8,8 @@ public class AttackStart : StateMachineBehaviour
     private Vector2 inputDirection;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
+    {   
+        // player can switch its facing direction when attempting attack at the very beginning 
         transform = animator.GetComponent<Transform>();
         inputDirection = animator.GetComponent<PlayerController>().inputDirection;
         int temp = (int)transform.localScale.x;

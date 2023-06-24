@@ -24,7 +24,7 @@ public class Axe : Enemy
     }
 
 
-    public void AttackRunDown() {
+    public void AttackCoolDown() {
         if (!anim.GetBool("isAttack")){
             if (timer <= 0){
                 anim.SetBool("isAttack", true);

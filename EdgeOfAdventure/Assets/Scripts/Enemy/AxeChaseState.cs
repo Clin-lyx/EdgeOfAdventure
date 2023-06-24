@@ -35,20 +35,15 @@ public class AxeChaseState : BaseState
             }
         }
         
-
         Axe axe = (Axe) currentEnemy;
         Transform playerTransform = axe.PlayerTransformWhenChase();
         
+        // if player is within 2f, switch to encounter state and attack player
         float diff  = axe.transform.position.x - playerTransform.position.x;
-        int facing = diff < 0 ? 1 : -1;
-        
-
         if (Mathf.Abs(diff) <= 2f && axe.FoundPlayer()) {
             currentEnemy.SwitchState(NPCState.Encounter);
         } 
-
-        currentEnemy.transform.localScale = new Vector3(facing, 1, 1);
-
+        
     }
 
     public override void PhysicsUpdate()

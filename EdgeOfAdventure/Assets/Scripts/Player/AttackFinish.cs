@@ -19,7 +19,8 @@ public class AttackFinish : StateMachineBehaviour
     // OnStateExit is called before OnStateExit is called on any state inside this state machine
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-       animator.GetComponent<PlayerController>().isAttack = false;
+        // set isAttack to false when attack animation is done
+        animator.GetComponent<PlayerController>().isAttack = false;
     }
 
     // OnStateMove is called before OnStateMove is called on any state inside this state machine

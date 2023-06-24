@@ -16,6 +16,7 @@ public class Character : MonoBehaviour
     private float invulnerableCounter;
     public bool invulnerable;
 
+    [Header("Events")]
     public UnityEvent<Character> OnHealthChange;
     public UnityEvent<Attack> OnTakeDamage;
     public UnityEvent IsDead;
@@ -56,6 +57,7 @@ public class Character : MonoBehaviour
         OnHealthChange?.Invoke(this);
     }
 
+    // make character stop receiving damage
     private void TriggerInvulnerable() {
         if (!invulnerable) {
             invulnerable = true;
@@ -72,8 +74,6 @@ public class Character : MonoBehaviour
         {
             rb.transform.Translate(faceDir * disX, 0, 0);
         }
-        // Vector2 forceDir = new Vector2(temp, 0);
-        // Vector2 forceX = new Vector2(disX, 0);
-        // rb.AddForce(forceX * forceDir * 10, ForceMode2D.Impulse);
+    
     }
 }

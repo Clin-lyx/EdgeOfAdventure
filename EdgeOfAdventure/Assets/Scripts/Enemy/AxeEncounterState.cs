@@ -14,9 +14,6 @@ public class AxeEncounterState : BaseState
         currentEnemy.anim.SetBool("walk", false);
         currentEnemy.anim.SetBool("speedWalk", false);
         currentEnemy.anim.SetBool("foundPlayer", true);
-        
-        
-
     }
 
     public override void LogicUpdate()
@@ -30,15 +27,13 @@ public class AxeEncounterState : BaseState
         float diff  = axe.transform.position.x - playerTransform.position.x;
         int facing = diff < 0 ? 1 : -1;
         
-        axe.AttackRunDown();
-
+        axe.AttackCoolDown();
 
         if (!anim.GetBool("isAttack"))
         {
             currentEnemy.transform.localScale = new Vector3(facing, 1, 1);
         }
         
-
         if (Mathf.Abs(diff) > 2f && !anim.GetBool("isAttack"))
         {
             currentEnemy.waitTimeCounter = 0;

@@ -99,7 +99,11 @@ public class Enemy : MonoBehaviour
         //If touching the wall, wait
         if (wait)
         {
-            waitTimeCounter -= Time.deltaTime;
+            if (TouchingWalls() || !physicsCheck.onGround) {
+                waitTimeCounter -= Time.deltaTime;
+            } else {
+                waitTimeCounter = -1f;
+            }
             if (waitTimeCounter <= 0)
             {
                 wait = false;
@@ -109,18 +113,6 @@ public class Enemy : MonoBehaviour
             }
         }
 
-        if (!FoundPlayer() && lostTimeCounter > 0)
-        {
-            lostTimeCounter -= Time.deltaTime;
-        } else if (FoundPlayer())
-        {
-            waitTimeCounter = 0;
-        }
-
-        if (anim.GetBool("walk"))
-        {
-            waitTimeCounter = 0;
-        }
         
     }
 

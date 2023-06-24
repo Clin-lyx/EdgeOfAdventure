@@ -47,6 +47,7 @@ public class PlayerAnimation : MonoBehaviour
         // if the player tries to attack
         anim.SetBool("isAttack", playerController.isAttack);
 
+        // if player triggers dash
         anim.SetBool("isDash", playerController.isDash);
 
     }

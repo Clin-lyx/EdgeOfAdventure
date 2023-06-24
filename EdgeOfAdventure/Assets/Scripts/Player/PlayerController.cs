@@ -136,9 +136,6 @@ public class PlayerController : MonoBehaviour
         if (physicsCheck.onGround && !isCrouch && !isAttack) 
             rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
             
-            //Stops Dash
-            //isDash = false;
-            //StopAllCoroutines();
 
         // Jump if the character is on the ground and not attack and crouching
         if (physicsCheck.onGround && isCrouch && !isAttack) 
@@ -146,7 +143,7 @@ public class PlayerController : MonoBehaviour
     }
     private void PlayerAttack(InputAction.CallbackContext context)
     {
-
+        // Player only throws attack when standing on Ground
         if (!isCrouch && physicsCheck.onGround && !isHurt) {
             rb.velocity = new Vector2(0, rb.velocity.y);
             playerAnimation.PlayAttack();
@@ -157,12 +154,15 @@ public class PlayerController : MonoBehaviour
 
     private void Dash(InputAction.CallbackContext context)
     {
-       if (!isDash && physicsCheck.onGround && !isAttack && dashTimer <= 0f) {
+        // Player can only dash when on ground not throwing attacks, and the dash is cooled down
+        if (!isDash && physicsCheck.onGround && !isAttack && dashTimer <= 0f) {
             isDash = true;
 
+            // target position after dash
             var targetPos = new Vector2(transform.position.x + dashDistance * transform.localScale.x, 
                 transform.position.y);
             
+            // avoid being attack from enemies;
             gameObject.layer = LayerMask.NameToLayer("Enemy");
 
             StartCoroutine(TriggerDash(targetPos));
@@ -176,31 +176,41 @@ public class PlayerController : MonoBehaviour
         do {
             
             yield return null;
+
+            // if player is on air the dash is terminates.
             if (!physicsCheck.onGround) {
                 break;
             }
             
+            // if player turns the dash terminates
             if (faceDir != transform.localScale.x) break;
 
+            // if player hits wall the dash terminates
             if (physicsCheck.touchLeftwall && transform.localScale.x < 0f 
                 || physicsCheck.touchRightwall && transform.localScale.x > 0f) {
-                isDash = false;
                 break;
             }
             
+            // moving towards target position
             rb.MovePosition(new Vector2(transform.position.x + transform.localScale.x * dashSpeed,
                 transform.position.y));
             
             
             
         } while (MathF.Abs(target.x - transform.position.x) > 0.5f);
+
         isDash = false;
+        // turns back layer once the player is done dashing
         gameObject.layer = LayerMask.NameToLayer("Player");
     }
 
     public void GetHurt(Attack attacker) {
         isHurt = true;
+        
+        // reset player velocity so that it wont fly away after receiving damage frequently 
         rb.velocity = Vector2.zero;
+        
+        // direction of attack
         Vector2 dir = new Vector2(rb.position.x - attacker.transform.position.x, 0).normalized;
 
         //Adding force on player

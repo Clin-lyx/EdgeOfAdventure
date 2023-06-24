@@ -12,11 +12,6 @@ public class Spear : Enemy
     public Vector2 offsetWhenidle;
     public Vector2 sizeWhenidle;
 
-    // wall detection
-    // public Vector2 leftOffsetidle;
-    // public Vector2 rightOffsetidle;
-    // public Vector2 leftOffsetrun;
-    // public Vector2 rightOffsetrun;
     protected override void Awake()
     {
         base.Awake();
@@ -25,13 +20,10 @@ public class Spear : Enemy
 
         collid = GetComponent<CapsuleCollider2D>();
         
-
         offsetWhenidle = new Vector2(0f, 1.312f);
         sizeWhenidle = new Vector2(1.75f, 2.625f);
         offsetWhenrun = new Vector2(0.23f, 1.312f);
         sizeWhenrun = new Vector2(2.21f, 2.625f);
-
-
     }
 
 }
