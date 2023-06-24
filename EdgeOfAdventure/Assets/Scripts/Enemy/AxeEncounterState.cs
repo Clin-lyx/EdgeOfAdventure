@@ -18,10 +18,8 @@ public class AxeEncounterState : BaseState
 
     public override void LogicUpdate()
     {
-        
         Animator anim = currentEnemy.GetComponent<Animator>();
         Axe axe = (Axe) currentEnemy;
-        axe.PatrolAfterPlayerDead();
 
         Transform playerTransform = axe.PlayerTransformWhenChase();
         float diff  = axe.transform.position.x - playerTransform.position.x;
@@ -34,6 +32,7 @@ public class AxeEncounterState : BaseState
             currentEnemy.transform.localScale = new Vector3(facing, 1, 1);
         }
         
+        // if player gets out off attack range
         if (Mathf.Abs(diff) > 2f && !anim.GetBool("isAttack"))
         {
             currentEnemy.waitTimeCounter = 0;
@@ -41,6 +40,7 @@ public class AxeEncounterState : BaseState
             currentEnemy.SwitchState(NPCState.Chase);
         } 
 
+        // when player and axe is not at the same level
         if (Mathf.Abs(diff) < 2f && axe.PlayerOnGround() && !axe.FoundPlayer() && !anim.GetBool("isAttack")) {
             currentEnemy.waitTimeCounter = 0;
             currentEnemy.anim.SetBool("isAttack", false);
@@ -50,20 +50,18 @@ public class AxeEncounterState : BaseState
         if (currentEnemy.lostTimeCounter <= 0) 
         {
             currentEnemy.SwitchState(NPCState.Patrol);
-        }
-        
+        }        
     }
 
     public override void PhysicsUpdate()
     {
         
     }
+    
     public override void OnExit()
     {   
-        
         currentEnemy.anim.SetBool("speedWalk", true);
         currentEnemy.anim.SetBool("foundPlayer", true);
         currentEnemy.anim.SetBool("isAttack", false);
-
     }
 }

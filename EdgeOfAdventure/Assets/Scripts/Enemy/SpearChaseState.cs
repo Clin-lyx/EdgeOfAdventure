@@ -10,9 +10,8 @@ public class SpearChaseState : BaseState
         Debug.Log("spear chase");
         currentEnemy.currentSpeed = currentEnemy.chaseSpeed;
         currentEnemy.anim.SetBool("run", true);
-        currentEnemy.PatrolAfterPlayerDead();
-        
 
+        // resizing physics check and collider
         Spear spear = (Spear) currentEnemy;
         spear.collid.offset = spear.offsetWhenrun;
         spear.collid.size = spear.sizeWhenrun;
@@ -27,12 +26,18 @@ public class SpearChaseState : BaseState
         if (currentEnemy.lostTimeCounter <= 0 || (currentEnemy.isHurt && !currentEnemy.physicsCheck.onGround)) 
             currentEnemy.SwitchState(NPCState.Patrol);
 
+        // switiching facing when hits wall or hits an edge
         if ((currentEnemy.physicsCheck.touchLeftwall && currentEnemy.faceDir < 0) || (currentEnemy.physicsCheck.touchRightwall && currentEnemy.faceDir > 0))
         {
             currentEnemy.transform.localScale = new Vector3(-currentEnemy.faceDir, 1, 1);
         } else if (!currentEnemy.physicsCheck.onGround && !currentEnemy.isHurt)
         {
             currentEnemy.transform.localScale = new Vector3(-currentEnemy.faceDir, 1, 1);
+        }
+
+        // if player is dead stop chasing
+        if (currentEnemy.PlayerDead()) {
+            currentEnemy.SwitchState(NPCState.Patrol);
         }
     }
 

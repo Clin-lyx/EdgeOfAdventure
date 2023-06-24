@@ -80,6 +80,9 @@ public class PlayerController : MonoBehaviour
 
         // Attack
         inputControl.Gameplay.Attack.started += PlayerAttack;
+
+        // object layer
+        gameObject.layer = LayerMask.NameToLayer("Player");
     }
 
 
@@ -221,6 +224,7 @@ public class PlayerController : MonoBehaviour
     public void PlayerDead() {
         isDead = true;
         inputControl.Gameplay.Disable();
+        gameObject.layer = LayerMask.NameToLayer("Enemy");
     }    
 
     private void checkState() {

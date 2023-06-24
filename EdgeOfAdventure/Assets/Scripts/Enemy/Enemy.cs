@@ -84,15 +84,6 @@ public class Enemy : MonoBehaviour
         rb.velocity = new Vector2(currentSpeed * faceDir * Time.deltaTime, rb.velocity.y);
     }
 
-    public void PatrolAfterPlayerDead() {
-        float health = player.GetComponent<Character>().currentHealth;
-        
-        if (health <= 0) {
-            this.SwitchState(NPCState.Patrol);
-            
-        }
-    }
-
     //Timer
     public void TimeCounter()
     {
@@ -118,6 +109,10 @@ public class Enemy : MonoBehaviour
 
     public bool PlayerOnGround() {
         return player.GetComponent<PhysicsCheck>().onGround;
+    }
+
+    public bool PlayerDead() {
+        return player.GetComponent<PlayerController>().isDead;
     }
 
     public bool TouchingWalls() {

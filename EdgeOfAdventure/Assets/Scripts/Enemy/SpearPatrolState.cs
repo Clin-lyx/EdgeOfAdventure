@@ -10,6 +10,7 @@ public class SpearPatrolState : BaseState
         currentEnemy = enemy;
         currentEnemy.currentSpeed = currentEnemy.normalSpeed;
 
+        // resizing collider and physics check
         Spear spear = (Spear) currentEnemy;
         spear.collid.offset = spear.offsetWhenidle;
         spear.collid.size = spear.sizeWhenidle;
