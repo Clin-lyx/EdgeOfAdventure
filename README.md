@@ -65,11 +65,15 @@ Game flow diagram
 ## Project display
 
 ### Project Log
+![屏幕截图 2023-06-25 180913](https://github.com/Clin-lyx/EdgeOfAdventure/assets/110957868/bf770bdd-7de6-457a-868c-7dcc3d377945)
 
 ### Project Poster
 ![5609](https://github.com/Clin-lyx/EdgeOfAdventure/assets/110957868/c116e44e-34ea-418f-a8fe-4ebeefee379b)
 
 ### Project Video Demonstration
+https://github.com/Clin-lyx/EdgeOfAdventure/assets/110957868/4b00749a-ee8b-4cab-bc9c-1bf68976f14f
+
+
 
 # Contributors
 [Clin-lyx](https://github.com/Clin-lyx)
