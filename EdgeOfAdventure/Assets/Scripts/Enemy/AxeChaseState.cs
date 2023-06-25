@@ -9,7 +9,7 @@ public class AxeChaseState : BaseState
         currentEnemy = enemy;
         Axe axe = (Axe) enemy;
         Debug.Log("Chase");
-        currentEnemy.waitTimeCounter = 0;
+        currentEnemy.waitTimeCounter = -1f;
         currentEnemy.currentSpeed = currentEnemy.chaseSpeed;
         currentEnemy.anim.SetBool("speedWalk", true);
         currentEnemy.anim.SetBool("foundPlayer", true);        

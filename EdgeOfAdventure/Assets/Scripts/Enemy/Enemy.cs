@@ -104,7 +104,11 @@ public class Enemy : MonoBehaviour
             }
         }
 
-        
+        if (!FoundPlayer() && lostTimeCounter > 0)
+        {
+            lostTimeCounter -= Time.deltaTime;
+        }
+
     }
 
     public bool PlayerOnGround() {
