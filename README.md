@@ -1,7 +1,6 @@
 # Edge-of-Adventure
 Game development
 
-# Milestone 2 submission
 ## Team name
 FlatDyn Games
 
