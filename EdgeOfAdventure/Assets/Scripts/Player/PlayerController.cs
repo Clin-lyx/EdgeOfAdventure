@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("Unity Components")]
+    [Header("Components")]
     private PlayerInputControl inputControl;
     public Vector2 inputDirection;
     private Rigidbody2D rb;
