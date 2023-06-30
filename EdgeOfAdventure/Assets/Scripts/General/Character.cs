@@ -65,7 +65,7 @@ public class Character : MonoBehaviour
         }
     }
 
-    //Event for displacement attack
+    //Frame event for attack displacement
     public void MoveEvent(float disX)
     {
         int faceDir = (int)transform.localScale.x;
@@ -76,4 +76,10 @@ public class Character : MonoBehaviour
         }
     
     }
+
+    public void ForceOnAir(float force)
+    {
+        rb.AddForce(transform.up * force, ForceMode2D.Impulse);
+    }
+
 }

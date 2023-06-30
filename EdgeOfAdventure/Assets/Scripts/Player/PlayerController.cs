@@ -146,8 +146,7 @@ public class PlayerController : MonoBehaviour
     }
     private void PlayerAttack(InputAction.CallbackContext context)
     {
-        // Player only throws attack when standing on Ground
-        if (!isCrouch && physicsCheck.onGround && !isHurt) {
+        if (!isCrouch && !isHurt) {
             rb.velocity = new Vector2(0, rb.velocity.y);
             playerAnimation.PlayAttack();
             isAttack = true;
