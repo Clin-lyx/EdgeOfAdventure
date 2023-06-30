@@ -69,8 +69,8 @@ public class Character : MonoBehaviour
     public void MoveEvent(float disX)
     {
         int faceDir = (int)transform.localScale.x;
-        if (!(physicsCheck.touchLeftwall && faceDir < 0) ||
-            !(physicsCheck.touchRightwall && faceDir > 0)) 
+        if (!(physicsCheck.TouchLeftWall() && faceDir < 0) ||
+            !(physicsCheck.TouchRightWall() && faceDir > 0)) 
         {
             rb.transform.Translate(faceDir * disX, 0, 0);
         }
@@ -79,6 +79,7 @@ public class Character : MonoBehaviour
 
     public void ForceOnAir(float force)
     {
+        rb.velocity = new Vector2(0f, -6f);
         rb.AddForce(transform.up * force, ForceMode2D.Impulse);
     }
 

@@ -10,7 +10,7 @@ public class AxeEncounterState : BaseState
         currentEnemy = enemy;
         Axe axe = (Axe) enemy;
         Debug.Log("Encounter");
-        currentEnemy.currentSpeed = currentEnemy.encounterSpeed;
+        currentEnemy.ChangeSpeedEncounter();
         currentEnemy.anim.SetBool("walk", false);
         currentEnemy.anim.SetBool("speedWalk", false);
         currentEnemy.anim.SetBool("foundPlayer", true);

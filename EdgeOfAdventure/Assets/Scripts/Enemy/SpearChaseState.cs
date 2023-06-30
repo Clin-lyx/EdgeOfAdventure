@@ -8,7 +8,7 @@ public class SpearChaseState : BaseState
     {
         currentEnemy = enemy;
         Debug.Log("spear chase");
-        currentEnemy.currentSpeed = currentEnemy.chaseSpeed;
+        currentEnemy.ChangeSpeedChase();
         currentEnemy.anim.SetBool("run", true);
         currentEnemy.waitTimeCounter = -1f;
 
@@ -24,14 +24,15 @@ public class SpearChaseState : BaseState
 
     public override void LogicUpdate()
     {
-        if (currentEnemy.lostTimeCounter <= 0 || (currentEnemy.isHurt && !currentEnemy.physicsCheck.onGround)) 
+        if (currentEnemy.lostTimeCounter <= 0 || (currentEnemy.isHurt && !currentEnemy.physicsCheck.OnGround())) 
             currentEnemy.SwitchState(NPCState.Patrol);
 
         // switiching facing when hits wall or hits an edge
-        if ((currentEnemy.physicsCheck.touchLeftwall && currentEnemy.faceDir < 0) || (currentEnemy.physicsCheck.touchRightwall && currentEnemy.faceDir > 0))
+        if ((currentEnemy.physicsCheck.TouchLeftWall() && currentEnemy.faceDir < 0) 
+            || (currentEnemy.physicsCheck.TouchRightWall() && currentEnemy.faceDir > 0))
         {
             currentEnemy.transform.localScale = new Vector3(-currentEnemy.faceDir, 1, 1);
-        } else if (!currentEnemy.physicsCheck.onGround && !currentEnemy.isHurt)
+        } else if (!currentEnemy.physicsCheck.OnGround() && !currentEnemy.isHurt)
         {
             currentEnemy.transform.localScale = new Vector3(-currentEnemy.faceDir, 1, 1);
         }

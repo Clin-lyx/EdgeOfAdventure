@@ -8,7 +8,7 @@ public class SpearPatrolState : BaseState
     {
         Debug.Log("spear patrol");
         currentEnemy = enemy;
-        currentEnemy.currentSpeed = currentEnemy.normalSpeed;
+        currentEnemy.ChangeSpeedIdle();
 
         // resizing collider and physics check
         Spear spear = (Spear) currentEnemy;
@@ -28,9 +28,9 @@ public class SpearPatrolState : BaseState
             currentEnemy.SwitchState(NPCState.Chase);
         }
         //If touching the wall, trun around
-        if (!currentEnemy.physicsCheck.onGround ||
-                (currentEnemy.physicsCheck.touchLeftwall && currentEnemy.faceDir < 0) ||
-                (currentEnemy.physicsCheck.touchRightwall && currentEnemy.faceDir > 0))
+        if (!currentEnemy.physicsCheck.OnGround() ||
+                (currentEnemy.physicsCheck.TouchLeftWall() && currentEnemy.faceDir < 0) ||
+                (currentEnemy.physicsCheck.TouchRightWall() && currentEnemy.faceDir > 0))
         {
             currentEnemy.wait = true;
             //If touching the wall, idle

@@ -10,7 +10,7 @@ public class AxeChaseState : BaseState
         Axe axe = (Axe) enemy;
         Debug.Log("Chase");
         currentEnemy.waitTimeCounter = -1f;
-        currentEnemy.currentSpeed = currentEnemy.chaseSpeed;
+        currentEnemy.ChangeSpeedChase();
         currentEnemy.anim.SetBool("speedWalk", true);
         currentEnemy.anim.SetBool("foundPlayer", true);        
     }
@@ -26,7 +26,7 @@ public class AxeChaseState : BaseState
             currentEnemy.anim.SetBool("speedWalk", false);
             currentEnemy.anim.SetBool("walk", false);
         } else {
-            if (!currentEnemy.physicsCheck.onGround) {
+            if (!currentEnemy.physicsCheck.OnGround()) {
                 currentEnemy.anim.SetBool("speedWalk", false);
             } else {
                 currentEnemy.anim.SetBool("speedWalk", true);

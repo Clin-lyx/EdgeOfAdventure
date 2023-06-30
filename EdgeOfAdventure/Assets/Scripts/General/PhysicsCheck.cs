@@ -15,9 +15,9 @@ public class PhysicsCheck : MonoBehaviour
     private CapsuleCollider2D coll;
     
     [Header("States")]
-    public bool onGround;
-    public bool touchRightwall;
-    public bool touchLeftwall;
+    private bool onGround;
+    private bool touchRightwall;
+    private bool touchLeftwall;
 
     private void Awake() {
         coll = GetComponent<CapsuleCollider2D>();
@@ -48,5 +48,17 @@ public class PhysicsCheck : MonoBehaviour
         Gizmos.DrawSphere((Vector2) transform.position + bottomOffset * transform.localScale.x, checkRadius);
         Gizmos.DrawSphere((Vector2) transform.position + leftOffset, checkRadius);
         Gizmos.DrawSphere((Vector2) transform.position + rightOffset, checkRadius);
+    }
+
+    public bool OnGround() {
+        return onGround;
+    }
+
+    public bool TouchLeftWall() {
+        return touchLeftwall;
+    }
+
+    public bool TouchRightWall() {
+        return touchRightwall;
     }
 }

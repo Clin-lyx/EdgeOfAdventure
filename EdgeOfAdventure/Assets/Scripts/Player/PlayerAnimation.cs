@@ -36,7 +36,7 @@ public class PlayerAnimation : MonoBehaviour
         anim.SetFloat("velocityY", rb.velocity.y);
 
         // if the player is not OnGround the animation in blend tree starts
-        anim.SetBool("onGround", physicsCheck.onGround);
+        anim.SetBool("onGround", physicsCheck.OnGround());
 
         // if the player is crouching
         anim.SetBool("isCrouch", playerController.isCrouch);

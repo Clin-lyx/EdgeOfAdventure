@@ -8,7 +8,7 @@ public class AxePatrolState : BaseState
     {
         currentEnemy = enemy;
         Debug.Log("Patrol");
-        currentEnemy.currentSpeed = currentEnemy.normalSpeed;
+        currentEnemy.ChangeSpeedIdle();
         currentEnemy.anim.SetBool("speedWalk", false);
         if (currentEnemy.TouchingWalls()) {
             currentEnemy.anim.SetBool("walk", false);  
@@ -21,13 +21,13 @@ public class AxePatrolState : BaseState
     {
         //If the player is found, start chasing
         
-        if (currentEnemy.FoundPlayer() && currentEnemy.physicsCheck.onGround) {
+        if (currentEnemy.FoundPlayer() && currentEnemy.physicsCheck.OnGround()) {
             currentEnemy.SwitchState(NPCState.Chase);
         } 
         //When touching the wall, trun around
-        if (!currentEnemy.physicsCheck.onGround ||
-                (currentEnemy.physicsCheck.touchLeftwall && currentEnemy.faceDir < 0) ||
-                (currentEnemy.physicsCheck.touchRightwall && currentEnemy.faceDir > 0))
+        if (!currentEnemy.physicsCheck.OnGround() ||
+                (currentEnemy.physicsCheck.TouchLeftWall() && currentEnemy.faceDir < 0) ||
+                (currentEnemy.physicsCheck.TouchRightWall() && currentEnemy.faceDir > 0))
         {
             currentEnemy.wait = true;
             //When touching the wall, idle

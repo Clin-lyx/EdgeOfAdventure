@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
     public float normalSpeed;
     public float chaseSpeed;
     public float encounterSpeed = 0;
-    [HideInInspector]public float currentSpeed;
+    private float currentSpeed;
     
     //public float hurtForce;
     public Attack attack;
@@ -70,7 +70,7 @@ public class Enemy : MonoBehaviour
     }
 
     private void FixedUpdate(){
-        if (!isHurt && !isDead && !wait && physicsCheck.onGround)
+        if (!isHurt && !isDead && !wait && physicsCheck.OnGround())
             Move();
         currentState.PhysicsUpdate();
     }
@@ -79,7 +79,17 @@ public class Enemy : MonoBehaviour
     {
         currentState.OnExit();
     }
+    public void ChangeSpeedIdle() {
+        currentSpeed = normalSpeed;
+    }
 
+    public void ChangeSpeedChase() {
+        currentSpeed = chaseSpeed;
+    }
+
+    public void ChangeSpeedEncounter() {
+        currentSpeed = encounterSpeed;
+    }
     public virtual void Move() {
         rb.velocity = new Vector2(currentSpeed * faceDir * Time.deltaTime, rb.velocity.y);
     }
@@ -90,7 +100,7 @@ public class Enemy : MonoBehaviour
         //If touching the wall, wait
         if (wait)
         {
-            if (TouchingWalls() || !physicsCheck.onGround) {
+            if (TouchingWalls() || !physicsCheck.OnGround()) {
                 waitTimeCounter -= Time.deltaTime;
             } else {
                 waitTimeCounter = -1f;
@@ -112,7 +122,7 @@ public class Enemy : MonoBehaviour
     }
 
     public bool PlayerOnGround() {
-        return player.GetComponent<PhysicsCheck>().onGround;
+        return player.GetComponent<PhysicsCheck>().OnGround();
     }
 
     public bool PlayerDead() {
@@ -120,7 +130,7 @@ public class Enemy : MonoBehaviour
     }
 
     public bool TouchingWalls() {
-        return physicsCheck.touchLeftwall || physicsCheck.touchRightwall;
+        return physicsCheck.TouchLeftWall() || physicsCheck.TouchRightWall();
     }
 
     public bool FoundPlayer()
@@ -196,4 +206,6 @@ public class Enemy : MonoBehaviour
     {
         Gizmos.DrawWireSphere(transform.position + (Vector3)centerOffset + new Vector3(checkDistance * transform.localScale.x, 0), 0.2f);
     }
+
+
 }

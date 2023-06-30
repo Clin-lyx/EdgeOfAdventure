@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     public float dashDistance;
     public float dashSpeed;
     public float dashCooldown;
-    public float dashTimer;
+    private float dashTimer;
     private Vector2 originalOffset;
     private Vector2 orginalSize;
     private CapsuleCollider2D coll;
@@ -63,14 +63,14 @@ public class PlayerController : MonoBehaviour
 
         // Walking performed when left shift is being pressed
         inputControl.Gameplay.Walk.performed += ctx => {
-            if(physicsCheck.onGround) {
+            if(physicsCheck.OnGround()) {
                 speed = walkSpeed;
             }
         };
 
         // Back to running once left shift is released
         inputControl.Gameplay.Walk.canceled += ctx => {
-            if (physicsCheck.onGround){
+            if (physicsCheck.OnGround()){
                 speed = runSpeed;
             }
         };
@@ -111,7 +111,7 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Move() {
-        isCrouch = physicsCheck.onGround && inputDirection.y < -0.5f;
+        isCrouch = physicsCheck.OnGround() && inputDirection.y < -0.5f;
         if (isCrouch) {
             // adjusting collider size when crouching and immediately goes stop
             cap.size = new Vector2(1.4f, 1.7f);
@@ -136,16 +136,17 @@ public class PlayerController : MonoBehaviour
     private void Jump(InputAction.CallbackContext context)
     {
         // Jump if the character is on the ground and not attack and not crouch
-        if (physicsCheck.onGround && !isCrouch && !isAttack) 
+        if (physicsCheck.OnGround() && !isCrouch && !isAttack) 
             rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
             
 
         // Jump if the character is on the ground and not attack and crouching
-        if (physicsCheck.onGround && isCrouch && !isAttack) 
+        if (physicsCheck.OnGround() && isCrouch && !isAttack) 
             rb.AddForce(transform.up * jumpWhencrouch, ForceMode2D.Impulse);
     }
     private void PlayerAttack(InputAction.CallbackContext context)
     {
+        // Player only throws attack when standing on Ground
         if (!isCrouch && !isHurt) {
             rb.velocity = new Vector2(0, rb.velocity.y);
             playerAnimation.PlayAttack();
@@ -157,7 +158,7 @@ public class PlayerController : MonoBehaviour
     private void Dash(InputAction.CallbackContext context)
     {
         // Player can only dash when on ground not throwing attacks, and the dash is cooled down
-        if (!isDash && physicsCheck.onGround && !isAttack && dashTimer <= 0f) {
+        if (!isDash && physicsCheck.OnGround() && !isAttack && dashTimer <= 0f) {
             isDash = true;
 
             // target position after dash
@@ -180,7 +181,7 @@ public class PlayerController : MonoBehaviour
             yield return null;
 
             // if player is on air the dash is terminates.
-            if (!physicsCheck.onGround) {
+            if (!physicsCheck.OnGround()) {
                 break;
             }
             
@@ -188,8 +189,8 @@ public class PlayerController : MonoBehaviour
             if (faceDir != transform.localScale.x) break;
 
             // if player hits wall the dash terminates
-            if (physicsCheck.touchLeftwall && transform.localScale.x < 0f 
-                || physicsCheck.touchRightwall && transform.localScale.x > 0f) {
+            if (physicsCheck.TouchLeftWall() && transform.localScale.x < 0f 
+                || physicsCheck.TouchRightWall() && transform.localScale.x > 0f) {
                 break;
             }
             
@@ -227,6 +228,6 @@ public class PlayerController : MonoBehaviour
     }    
 
     private void checkState() {
-        coll.sharedMaterial = physicsCheck.onGround ? normal : wall;
+        coll.sharedMaterial = physicsCheck.OnGround() ? normal : wall;
     }
 }
