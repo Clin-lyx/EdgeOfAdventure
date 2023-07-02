@@ -1377,7 +1377,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Base-UI_60
+      name: Settings
       rect:
         serializedVersion: 2
         x: 50
@@ -1883,7 +1883,6 @@ TextureImporter:
       Base-UI_58: 1375371421
       Base-UI_59: 1593963251
       Base-UI_6: -1220081334
-      Base-UI_60: 1427114431
       Base-UI_61: 1181897430
       Base-UI_62: 2041296252
       Base-UI_63: -724819103
@@ -1909,6 +1908,7 @@ TextureImporter:
       Base-UI_HP1: 32058401
       Base-UI_HP2: 32058401
       Base-UI_HP3: -1117827385
+      Settings: 1593963251
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
