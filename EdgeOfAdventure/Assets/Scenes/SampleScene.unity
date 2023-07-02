@@ -33606,12 +33606,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 690a70b0b338ab342bc11962c065b354, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStatBar: {fileID: 0}
+  playerStatBar: {fileID: 453894120}
   healthEvent: {fileID: 11400000, guid: c265cc2ab7fe7164c8f7b33e551b9c65, type: 2}
   syncVolumeEvent: {fileID: 11400000, guid: 95fed5b6ec6e8c84798b755bb0b6ee22, type: 2}
   SettingsBtn: {fileID: 436949765}
-  pausePanel: {fileID: 1497646620}
-  volumeSlider: {fileID: 0}
+  pausePanel: {fileID: 1973102436}
+  volumeSlider: {fileID: 1497646622}
   pauseEvent: {fileID: 11400000, guid: edb18f8db3cf322449235fe98e0cba5c, type: 2}
 --- !u!4 &1978472026
 Transform:
