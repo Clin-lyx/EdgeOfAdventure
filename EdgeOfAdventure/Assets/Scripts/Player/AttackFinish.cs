@@ -21,6 +21,7 @@ public class AttackFinish : StateMachineBehaviour
     {
         // set isAttack to false when attack animation is done
         animator.GetComponent<PlayerController>().isAttack = false;
+        animator.GetComponent<PlayerController>().isSkill = false;
     }
 
     // OnStateMove is called before OnStateMove is called on any state inside this state machine

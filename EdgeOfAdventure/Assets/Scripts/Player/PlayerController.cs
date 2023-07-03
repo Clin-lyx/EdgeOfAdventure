@@ -41,6 +41,8 @@ public class PlayerController : MonoBehaviour
     public bool isCrouch;
     public bool isAttack;
     public bool isDash;
+    public bool holdS;
+    public bool isSkill;
     
     private void Awake() {
         // Initialization
@@ -108,10 +110,12 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate() {
         if (!isHurt && !isAttack) Move();
+
+        holdS = inputDirection.y < -0.5f;
     }
 
     private void Move() {
-        isCrouch = physicsCheck.OnGround() && inputDirection.y < -0.5f;
+        isCrouch = physicsCheck.OnGround() && inputDirection.y < -0.5f && !isAttack;
         if (isCrouch) {
             // adjusting collider size when crouching and immediately goes stop
             cap.size = new Vector2(1.4f, 1.7f);
@@ -147,10 +151,15 @@ public class PlayerController : MonoBehaviour
     private void PlayerAttack(InputAction.CallbackContext context)
     {
         // Player only throws attack when standing on Ground
-        if (!isCrouch && !isHurt) {
+        if (!isHurt) {
             rb.velocity = new Vector2(0, rb.velocity.y);
             playerAnimation.PlayAttack();
             isAttack = true;
+
+            if (holdS && isAttack)
+            {
+                isSkill = true;
+            }
         }
 
     }

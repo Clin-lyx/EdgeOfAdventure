@@ -50,6 +50,12 @@ public class PlayerAnimation : MonoBehaviour
         // if player triggers dash
         anim.SetBool("isDash", playerController.isDash);
 
+        // if holding S key
+        anim.SetBool("holdS", playerController.holdS);
+
+        // if using skill
+        anim.SetBool("isSkill", playerController.isSkill);
+
     }
 
     public void PlayerHurt() {
@@ -59,4 +65,5 @@ public class PlayerAnimation : MonoBehaviour
     public void PlayAttack() {
         anim.SetTrigger("attack");
     }
+
 }
