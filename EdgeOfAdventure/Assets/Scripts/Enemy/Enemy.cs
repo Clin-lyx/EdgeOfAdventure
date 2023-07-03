@@ -180,8 +180,8 @@ public class Enemy : MonoBehaviour
     {
 
         anim.SetBool("isAttack", false);
-        rb.AddForce(dir * attacker.hurtForce, ForceMode2D.Impulse);
-        rb.AddForce(transform.up * attacker.hurtForce * 0.5f, ForceMode2D.Impulse);
+        rb.AddForce(dir * attacker.hurtForceX, ForceMode2D.Impulse);
+        rb.AddForce(transform.up * attacker.hurtForceY, ForceMode2D.Impulse);
 
         yield return new WaitForSeconds(0.5f);
         isHurt = false;
