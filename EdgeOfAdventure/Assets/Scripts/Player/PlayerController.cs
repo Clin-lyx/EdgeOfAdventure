@@ -218,7 +218,7 @@ public class PlayerController : MonoBehaviour
 
     public void GetHurt(Attack attacker) {
         isHurt = true;
-        isAttack = false;
+        
         // reset player velocity so that it wont fly away after receiving damage frequently 
         rb.velocity = Vector2.zero;
         

@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     private Rigidbody2D rb;
     [HideInInspector]public Animator anim;
     [HideInInspector]public PhysicsCheck physicsCheck;
-    public GameObject player;
+    private GameObject player;
 
     [Header("Arguments")]
     public float normalSpeed;
@@ -119,6 +119,10 @@ public class Enemy : MonoBehaviour
             lostTimeCounter -= Time.deltaTime;
         }
 
+    }
+
+    public Transform PlayerTransformWhenChase () {
+        return player.transform; 
     }
 
     public bool PlayerOnGround() {

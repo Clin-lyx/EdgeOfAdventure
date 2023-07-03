@@ -350,4 +350,5 @@ MonoBehaviour:
   damage: 5
   attackRange: 0
   attackRate: 0
-  hurtForce: 0
+  hurtForceX: 0
+  hurtForceY: 0

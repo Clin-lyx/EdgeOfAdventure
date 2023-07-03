@@ -8,7 +8,7 @@ public class AxeEncounterState : BaseState
     public override void OnEnter(Enemy enemy)
     { 
         currentEnemy = enemy;
-        Axe axe = (Axe) enemy;
+        
         Debug.Log("Encounter");
         currentEnemy.ChangeSpeedEncounter();
         currentEnemy.anim.SetBool("walk", false);
@@ -19,8 +19,8 @@ public class AxeEncounterState : BaseState
     public override void LogicUpdate()
     {
         Animator anim = currentEnemy.GetComponent<Animator>();
+        
         Axe axe = (Axe) currentEnemy;
-
         Transform playerTransform = axe.PlayerTransformWhenChase();
         float diff  = axe.transform.position.x - playerTransform.position.x;
         int facing = diff < 0 ? 1 : -1;

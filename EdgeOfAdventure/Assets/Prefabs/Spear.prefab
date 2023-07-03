@@ -74,7 +74,8 @@ MonoBehaviour:
   damage: 5
   attackRange: 0
   attackRate: 0
-  hurtForce: 0
+  hurtForceX: 0
+  hurtForceY: 0
 --- !u!1 &1274684585026115007
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,7 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 965a9fa56810c9446a9447de7ab8cf76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 60
+  maxHealth: 99999
   currentHealth: 0
   invulnerableDuration: 0
   invulnerable: 0

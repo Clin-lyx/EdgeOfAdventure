@@ -18,12 +18,6 @@ public class Axe : Enemy
         timer = attackTimer;
     }
 
-
-    public Transform PlayerTransformWhenChase () {
-        return player.transform; 
-    }
-
-
     public void AttackCoolDown() {
         if (!anim.GetBool("isAttack")){
             if (timer <= 0){
