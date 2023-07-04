@@ -50,6 +50,7 @@ public class Enemy : MonoBehaviour
         physicsCheck = GetComponent<PhysicsCheck>();
         attack = GetComponent<Attack>();
         player = GameObject.FindWithTag("Player");
+        Debug.Log(player);
         currentSpeed = normalSpeed;
         waitTimeCounter = waitTime;
 

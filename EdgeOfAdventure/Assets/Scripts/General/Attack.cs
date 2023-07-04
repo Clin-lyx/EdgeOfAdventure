@@ -5,8 +5,6 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
     public int damage;
-    public float attackRange;
-    public float attackRate;
     public float hurtForceX;
     public float hurtForceY;
 
