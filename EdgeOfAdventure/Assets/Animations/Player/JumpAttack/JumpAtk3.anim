@@ -82,6 +82,34 @@ AnimationClip:
     path: JumpAtk Area/JumpAtk3 (1)
     classID: 1
     script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.083333336
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.125
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_IsActive
+    path: Audio/WaveFX_
+    classID: 1
+    script: {fileID: 0}
   m_PPtrCurves:
   - curve:
     - time: 0
@@ -97,6 +125,8 @@ AnimationClip:
     - time: 0.20833333
       value: {fileID: -1984015691, guid: cd82855b28f784947804707e1301a997, type: 3}
     - time: 0.25
+      value: {fileID: 427871534, guid: cd82855b28f784947804707e1301a997, type: 3}
+    - time: 0.29166666
       value: {fileID: 427871534, guid: cd82855b28f784947804707e1301a997, type: 3}
     attribute: m_Sprite
     path: 
@@ -124,6 +154,13 @@ AnimationClip:
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
+      path: 535068436
+      attribute: 2086281974
+      script: {fileID: 0}
+      typeID: 1
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
       path: 0
       attribute: 0
       script: {fileID: 0}
@@ -138,12 +175,13 @@ AnimationClip:
     - {fileID: 218556133, guid: cd82855b28f784947804707e1301a997, type: 3}
     - {fileID: -1984015691, guid: cd82855b28f784947804707e1301a997, type: 3}
     - {fileID: 427871534, guid: cd82855b28f784947804707e1301a997, type: 3}
+    - {fileID: 427871534, guid: cd82855b28f784947804707e1301a997, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.29166666
+    m_StopTime: 0.3333333
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -222,6 +260,34 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_IsActive
     path: JumpAtk Area/JumpAtk3 (1)
+    classID: 1
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.083333336
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.125
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_IsActive
+    path: Audio/WaveFX_
     classID: 1
     script: {fileID: 0}
   m_EulerEditorCurves: []
