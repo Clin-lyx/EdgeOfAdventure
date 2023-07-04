@@ -41,6 +41,17 @@ public class Character : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Death Trigger"))
+        {
+            // make character die, and update the health
+            currentHealth = 0;
+            OnHealthChange?.Invoke(this);
+            IsDead?.Invoke();
+        }
+    }
+
     public void TakeDamage(Attack attacker) {
         if (invulnerable) 
             return;

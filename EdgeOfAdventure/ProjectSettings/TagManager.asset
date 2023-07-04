@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Bounds
+  - Death Trigger
   layers:
   - Default
   - TransparentFX
