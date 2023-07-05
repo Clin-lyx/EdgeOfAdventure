@@ -48,8 +48,14 @@ TagManager:
   - name: Back
     uniqueID: 2339468775
     locked: 0
+  - name: SFX_Back
+    uniqueID: 1824741233
+    locked: 0
   - name: Middle
     uniqueID: 1166163455
+    locked: 0
+  - name: SFX_Front
+    uniqueID: 1376409507
     locked: 0
   - name: Front
     uniqueID: 3155603835

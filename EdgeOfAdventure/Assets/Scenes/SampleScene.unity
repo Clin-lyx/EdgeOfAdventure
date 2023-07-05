@@ -256,7 +256,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1139363461
-  m_SortingLayer: 3
+  m_SortingLayer: 5
   m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -1939,7 +1939,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1139363461
-  m_SortingLayer: 3
+  m_SortingLayer: 5
   m_SortingOrder: 10
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -19607,8 +19607,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1166163455
-  m_SortingLayer: 2
+  m_SortingLayerID: -1955498521
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -40757,7 +40757,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000ff3d82457bb116bce775718b
+  m_ApplyToSortingLayers: 00000000e775718b7157c36cff3d8245a3570a527bb116bc
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -41066,7 +41066,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1139363461
-  m_SortingLayer: 3
+  m_SortingLayer: 5
   m_SortingOrder: 9
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -41807,8 +41807,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
-  hurtForceX: 5
-  hurtForceY: 5
+  hurtForceX: 0
+  hurtForceY: 20
 --- !u!66 &1032067529
 CompositeCollider2D:
   m_ObjectHideFlags: 0
@@ -54438,11 +54438,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1274684584800523152, guid: b6bb02c03c6682542adeb9162e8e5be9, type: 3}
       propertyPath: hurtForceX
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1274684584800523152, guid: b6bb02c03c6682542adeb9162e8e5be9, type: 3}
       propertyPath: hurtForceY
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1274684585026114944, guid: b6bb02c03c6682542adeb9162e8e5be9, type: 3}
       propertyPath: maxHealth
@@ -54567,11 +54567,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5659735367239626327, guid: 4fd62ac2100a6f4418c9970de63d5338, type: 3}
       propertyPath: hurtForceX
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5659735367239626327, guid: 4fd62ac2100a6f4418c9970de63d5338, type: 3}
       propertyPath: hurtForceY
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fd62ac2100a6f4418c9970de63d5338, type: 3}

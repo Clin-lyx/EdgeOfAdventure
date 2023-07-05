@@ -22,7 +22,6 @@ public class PlayerController : MonoBehaviour
     public float walkSpeed => speed / 3f;
     public float jumpForce;
     public float jumpWhencrouch;
-    public float reactionForce; 
     public float dashDistance;
     public float dashSpeed;
     public float dashCooldown;
@@ -226,8 +225,8 @@ public class PlayerController : MonoBehaviour
         Vector2 dir = new Vector2(rb.position.x - attacker.transform.position.x, 0).normalized;
 
         //Adding force on player
-        rb.AddForce(dir * reactionForce, ForceMode2D.Impulse);
-        rb.AddForce(transform.up * reactionForce, ForceMode2D.Impulse);
+        rb.AddForce(dir * attacker.hurtForceX, ForceMode2D.Impulse);
+        rb.AddForce(transform.up * attacker.hurtForceY, ForceMode2D.Impulse);
     }
 
     public void PlayerDead() {
