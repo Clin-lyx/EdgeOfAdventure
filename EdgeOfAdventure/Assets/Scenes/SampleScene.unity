@@ -40841,8 +40841,9 @@ GameObject:
   m_Component:
   - component: {fileID: 681120193}
   - component: {fileID: 681120192}
+  - component: {fileID: 681120194}
   m_Layer: 0
-  m_Name: Entrance
+  m_Name: Teleport
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40861,7 +40862,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.15787506, y: 0.3444705}
+  m_Offset: {x: 0.19051361, y: 0.3444705}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -40872,7 +40873,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.998703, y: 5.90364}
+  m_Size: {x: 5.889267, y: 5.90364}
   m_EdgeRadius: 0
 --- !u!4 &681120193
 Transform:
@@ -40889,6 +40890,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &681120194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681120191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 107f67510f88aae4c97f91ae5c6824a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &938782397
 GameObject:
   m_ObjectHideFlags: 0

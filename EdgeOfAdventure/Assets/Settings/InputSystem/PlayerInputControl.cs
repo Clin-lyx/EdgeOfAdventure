@@ -80,6 +80,15 @@ public partial class @PlayerInputControl: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Confirm"",
+                    ""type"": ""Button"",
+                    ""id"": ""a4fa78f0-5543-4526-a800-5aa00d21e8d3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -322,6 +331,17 @@ public partial class @PlayerInputControl: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""eb8f2093-bafe-4c31-8dc0-528823cb3100"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Confirm"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -915,6 +935,7 @@ public partial class @PlayerInputControl: IInputActionCollection2, IDisposable
         m_Gameplay_Attack = m_Gameplay.FindAction("Attack", throwIfNotFound: true);
         m_Gameplay_Look = m_Gameplay.FindAction("Look", throwIfNotFound: true);
         m_Gameplay_Dash = m_Gameplay.FindAction("Dash", throwIfNotFound: true);
+        m_Gameplay_Confirm = m_Gameplay.FindAction("Confirm", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -994,6 +1015,7 @@ public partial class @PlayerInputControl: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Attack;
     private readonly InputAction m_Gameplay_Look;
     private readonly InputAction m_Gameplay_Dash;
+    private readonly InputAction m_Gameplay_Confirm;
     public struct GameplayActions
     {
         private @PlayerInputControl m_Wrapper;
@@ -1004,6 +1026,7 @@ public partial class @PlayerInputControl: IInputActionCollection2, IDisposable
         public InputAction @Attack => m_Wrapper.m_Gameplay_Attack;
         public InputAction @Look => m_Wrapper.m_Gameplay_Look;
         public InputAction @Dash => m_Wrapper.m_Gameplay_Dash;
+        public InputAction @Confirm => m_Wrapper.m_Gameplay_Confirm;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1031,6 +1054,9 @@ public partial class @PlayerInputControl: IInputActionCollection2, IDisposable
             @Dash.started += instance.OnDash;
             @Dash.performed += instance.OnDash;
             @Dash.canceled += instance.OnDash;
+            @Confirm.started += instance.OnConfirm;
+            @Confirm.performed += instance.OnConfirm;
+            @Confirm.canceled += instance.OnConfirm;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -1053,6 +1079,9 @@ public partial class @PlayerInputControl: IInputActionCollection2, IDisposable
             @Dash.started -= instance.OnDash;
             @Dash.performed -= instance.OnDash;
             @Dash.canceled -= instance.OnDash;
+            @Confirm.started -= instance.OnConfirm;
+            @Confirm.performed -= instance.OnConfirm;
+            @Confirm.canceled -= instance.OnConfirm;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -1241,6 +1270,7 @@ public partial class @PlayerInputControl: IInputActionCollection2, IDisposable
         void OnAttack(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
+        void OnConfirm(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
