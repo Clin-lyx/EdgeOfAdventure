@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class TeleportPoint : MonoBehaviour, IInteractable
 {   
+    public SceneLoadEventSO loadEventSO;
     [SerializeField]private Vector3 destPos;
+    [SerializeField]private GameSceneSO sceneTogo;
     public void TriggerAction()
     {
         Debug.Log("Teleport");
+        loadEventSO.RaiseLoadRequestEvent(sceneTogo, destPos, true);
     }
 }

@@ -1,11 +1,9 @@
 fileFormatVersion: 2
-guid: 107f67510f88aae4c97f91ae5c6824a0
+guid: 38e1e4cfac639f54dbf56362b0229a0c
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - loadEventSO: {fileID: 11400000, guid: 1b3c4b33eb8f8ec4ca94ae77d799a7b9, type: 2}
-  - sceneTogo: {instanceID: 0}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
