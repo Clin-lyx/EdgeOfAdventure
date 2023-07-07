@@ -7,12 +7,13 @@ using Cinemachine;
 public class CameraControl : MonoBehaviour
 {
     [Header("Event listeners")]
-    public VoidEventSO aftSceneLoadedEvent;
+    
 
     private CinemachineConfiner2D confiner2D;
-    public CinemachineImpulseSource impulseSource;
-    public VoidEventSO cameraShakeEvent;
-
+    [SerializeField]private CinemachineImpulseSource impulseSource;
+    [SerializeField]private VoidEventSO cameraShakeEvent;
+    [SerializeField]private VoidEventSO aftSceneLoadedEvent;
+    
     private void Awake()
     {
         confiner2D = GetComponent<CinemachineConfiner2D>();

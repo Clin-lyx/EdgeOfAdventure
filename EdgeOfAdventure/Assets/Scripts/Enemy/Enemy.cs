@@ -62,6 +62,7 @@ public class Enemy : MonoBehaviour
         currentState.OnEnter(this);
     }
 
+    
     private void Update() {
         //Axe axe = (Axe) this;
         //Debug.Log(axe.isAttack);
@@ -74,6 +75,10 @@ public class Enemy : MonoBehaviour
         if (!isHurt && !isDead && !wait && physicsCheck.OnGround())
             Move();
         currentState.PhysicsUpdate();
+    }
+
+    private void LateUpdate() {
+        player = GameObject.FindWithTag("Player");
     }
 
     private void OnDisable()

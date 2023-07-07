@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TeleportPoint : MonoBehaviour, IInteractable
 {   
-    public SceneLoadEventSO loadEventSO;
+    [SerializeField]private SceneLoadEventSO loadEventSO;
     [SerializeField]private Vector3 destPos;
     [SerializeField]private GameSceneSO sceneTogo;
     public void TriggerAction()

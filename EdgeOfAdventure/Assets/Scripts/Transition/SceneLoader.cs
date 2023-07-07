@@ -9,8 +9,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    public Transform playerTrans;
-    public Vector3 firstPosition;
+
 
     [Header("Event listeners")]
     [SerializeField]private SceneLoadEventSO loadEventSO; 
@@ -25,6 +24,8 @@ public class SceneLoader : MonoBehaviour
     private bool fadeScreen;
     private bool isLoading;
     [SerializeField]private float fadeDuration;
+    [SerializeField]public Transform playerTrans;
+    [SerializeField]public Vector3 firstPosition;
 
     private void Awake() {
         //Addressables.LoadSceneAsync(firstLoadscene.GetRef(), LoadSceneMode.Additive);
