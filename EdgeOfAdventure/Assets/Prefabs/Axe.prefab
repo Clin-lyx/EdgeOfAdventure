@@ -78,7 +78,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1166163455
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: -833445109, guid: d52e2c3dc4ffdee4bb1d71696c7a564a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -236,7 +236,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
   physicsCheck: {fileID: 0}
-  player: {fileID: 0}
   normalSpeed: 140
   chaseSpeed: 200
   encounterSpeed: 0
@@ -348,7 +347,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
-  attackRange: 0
-  attackRate: 0
-  hurtForceX: 0
-  hurtForceY: 0
+  hurtForceX: 10
+  hurtForceY: 10

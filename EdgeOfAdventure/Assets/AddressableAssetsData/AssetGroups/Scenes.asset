@@ -29,6 +29,10 @@ MonoBehaviour:
     m_Address: GameScene_1
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: fc39b02578cb7514c8212c82752795e3
+    m_Address: TutorialScene
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: cf2b9488711db3b49a9da385dd642f36, type: 2}
   m_SchemaSet:

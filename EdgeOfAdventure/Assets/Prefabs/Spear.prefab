@@ -72,10 +72,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
-  attackRange: 0
-  attackRate: 0
-  hurtForceX: 0
-  hurtForceY: 0
+  hurtForceX: 10
+  hurtForceY: 10
 --- !u!1 &1274684585026115007
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,7 +152,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1166163455
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 2
   m_Sprite: {fileID: -1194464790, guid: 11e685a7b945c5c4bb1cb23df3157c5f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -312,7 +310,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
   physicsCheck: {fileID: 0}
-  player: {fileID: 0}
   normalSpeed: 200
   chaseSpeed: 400
   encounterSpeed: 0
