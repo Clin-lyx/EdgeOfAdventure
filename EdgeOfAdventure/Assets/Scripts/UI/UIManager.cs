@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     [Header("Event listeners")]
     public CharacterEventSO healthEvent;
     public FloatEventSO syncVolumeEvent;
+    public SceneLoadEventSO loadEvent;
 
     [Header("Component")]
     public Button SettingsBtn;
@@ -19,7 +20,7 @@ public class UIManager : MonoBehaviour
     public Slider volumeSlider;
 
     [Header("Broadcast")]
-    public VoidEventSO pauseEvent;
+    [SerializeField]private VoidEventSO pauseEvent;
 
     private void Awake() {
         SettingsBtn.onClick.AddListener(TogglePausePanel);
@@ -29,12 +30,20 @@ public class UIManager : MonoBehaviour
     {
         healthEvent.OnEventRaised += OnHealthEvent;
         syncVolumeEvent.OnEventRaised += OnSyncVolumeEvent;
+        loadEvent.LoadRequestEvent += OnloadEvent;
     }
 
     private void OnDisable()
     {
         healthEvent.OnEventRaised -= OnHealthEvent;
         syncVolumeEvent.OnEventRaised -= OnSyncVolumeEvent;
+        loadEvent.LoadRequestEvent -= OnloadEvent;
+    }
+
+    private void OnloadEvent(GameSceneSO sceneToload, Vector3 arg1, bool arg2)
+    {
+        var isMenu = (sceneToload.GetSceneType() == SceneType.Menu); 
+        playerStatBar.gameObject.SetActive(!isMenu);    
     }
 
     private void OnSyncVolumeEvent(float amount)

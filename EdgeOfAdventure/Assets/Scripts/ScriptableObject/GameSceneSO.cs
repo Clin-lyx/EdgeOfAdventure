@@ -10,4 +10,8 @@ public class GameSceneSO : ScriptableObject
     public AssetReference GetRef() {
         return sceneReference;
     }
+
+    public SceneType GetSceneType() {
+        return type;
+    }
 }

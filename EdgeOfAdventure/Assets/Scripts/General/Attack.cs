@@ -8,7 +8,7 @@ public class Attack : MonoBehaviour
     public float hurtForceX;
     public float hurtForceY;
 
-    private void OnTriggerEnter2D(Collider2D other) {    
+    private void OnTriggerEnter2D(Collider2D other) {
         other.GetComponent<Character>()?.TakeDamage(this);
     }
 }

@@ -51,7 +51,6 @@ public class Enemy : MonoBehaviour
         anim = GetComponent<Animator>();
         physicsCheck = GetComponent<PhysicsCheck>();
         attack = GetComponent<Attack>();
-        Debug.Log(player);
         hurtSFX = GameObject.FindWithTag("SFX").transform.Find("Hurt");
         hurtAudio = GameObject.FindWithTag("Audio");
         currentSpeed = normalSpeed;

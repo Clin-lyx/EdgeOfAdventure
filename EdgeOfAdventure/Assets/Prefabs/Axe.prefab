@@ -161,6 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 965a9fa56810c9446a9447de7ab8cf76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newGameEvent: {fileID: 11400000, guid: 7e9bf69a8ca90614197e460968f8a6e0, type: 2}
   maxHealth: 60
   currentHealth: 0
   invulnerableDuration: 0
@@ -236,6 +237,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
   physicsCheck: {fileID: 0}
+  hurtSFX: {fileID: 0}
+  hurtAudio: {fileID: 0}
   normalSpeed: 140
   chaseSpeed: 200
   encounterSpeed: 0

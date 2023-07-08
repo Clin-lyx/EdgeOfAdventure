@@ -33,6 +33,10 @@ MonoBehaviour:
     m_Address: TutorialScene
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 5e0b88628f93b574aa0113b2df64800e
+    m_Address: Persistent
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: cf2b9488711db3b49a9da385dd642f36, type: 2}
   m_SchemaSet:

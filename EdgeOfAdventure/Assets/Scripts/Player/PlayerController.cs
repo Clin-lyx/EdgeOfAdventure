@@ -7,6 +7,10 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Event Listener")]
+    [SerializeField]private SceneLoadEventSO loadEvent;
+    [SerializeField]private VoidEventSO afterSceneloadedEvent;
+
     [Header("Components")]
     private PlayerInputControl inputControl;
     public Vector2 inputDirection;
@@ -90,10 +94,14 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnable() {
         inputControl.Enable();
+        loadEvent.LoadRequestEvent += OnLoadEvent;
+        afterSceneloadedEvent.OnEventRaised += OnAfterSceneLoadedEvent;
     }
 
     private void OnDisable() {
         inputControl.Disable();
+        loadEvent.LoadRequestEvent -= OnLoadEvent;
+        afterSceneloadedEvent.OnEventRaised += OnAfterSceneLoadedEvent;       
     }
 
     private void Update() {
@@ -112,6 +120,17 @@ public class PlayerController : MonoBehaviour
 
         holdS = inputDirection.y < -0.5f;
     }
+
+    private void OnLoadEvent(GameSceneSO arg0, Vector3 arg1, bool arg2)
+    {
+        inputControl.Gameplay.Disable();
+    }
+
+    private void OnAfterSceneLoadedEvent()
+    {
+        inputControl.Gameplay.Enable();
+    }
+
 
     private void Move() {
         isCrouch = physicsCheck.OnGround() && inputDirection.y < -0.5f && !isAttack;

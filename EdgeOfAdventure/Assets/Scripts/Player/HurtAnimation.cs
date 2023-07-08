@@ -6,9 +6,9 @@ public class HurtAnimation : StateMachineBehaviour
 {
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-       animator.GetComponent<PlayerController>().isAttack = false;
-       animator.GetComponent<PlayerController>().isSkill = false;
+    { 
+        animator.GetComponent<PlayerController>().isAttack = false;
+        animator.GetComponent<PlayerController>().isSkill = false;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -22,6 +22,7 @@ public class HurtAnimation : StateMachineBehaviour
     {
         // set isHurt back to false once hurt animation is done
         animator.GetComponent<PlayerController>().isHurt = false;
+        animator.GetComponent<PlayerController>().isAttack = false;
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
