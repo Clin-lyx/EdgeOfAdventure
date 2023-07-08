@@ -49,7 +49,6 @@ public class Enemy : MonoBehaviour
         anim = GetComponent<Animator>();
         physicsCheck = GetComponent<PhysicsCheck>();
         attack = GetComponent<Attack>();
-        player = GameObject.FindWithTag("Player");
         Debug.Log(player);
         currentSpeed = normalSpeed;
         waitTimeCounter = waitTime;
@@ -75,10 +74,6 @@ public class Enemy : MonoBehaviour
         if (!isHurt && !isDead && !wait && physicsCheck.OnGround())
             Move();
         currentState.PhysicsUpdate();
-    }
-
-    private void LateUpdate() {
-        player = GameObject.FindWithTag("Player");
     }
 
     private void OnDisable()
@@ -145,8 +140,10 @@ public class Enemy : MonoBehaviour
 
     public bool FoundPlayer()
     {
-        return Physics2D.BoxCast(transform.position + (Vector3)centerOffset, 
+        RaycastHit2D feedback = Physics2D.BoxCast(transform.position + (Vector3)centerOffset, 
             checkSize, 0, new Vector3(faceDir, 0, 0), checkDistance, attackLayer);
+        if (feedback != false) player = feedback.transform.gameObject;
+        return feedback;
     }
 
     //Switching state
