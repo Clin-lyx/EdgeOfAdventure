@@ -743,7 +743,6 @@ GameObject:
   - component: {fileID: 363842143}
   - component: {fileID: 363842146}
   - component: {fileID: 363842145}
-  - component: {fileID: 363842144}
   m_Layer: 9
   m_Name: JumpAtk3
   m_TagString: Untagged
@@ -766,27 +765,6 @@ Transform:
   m_Father: {fileID: 1634444608}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &363842144
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 363842142}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.0001
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 0
 --- !u!114 &363842145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -839,7 +817,6 @@ GameObject:
   - component: {fileID: 369977517}
   - component: {fileID: 369977521}
   - component: {fileID: 369977519}
-  - component: {fileID: 369977520}
   m_Layer: 9
   m_Name: Attack1
   m_TagString: Untagged
@@ -877,27 +854,6 @@ MonoBehaviour:
   damage: 4
   hurtForceX: 5
   hurtForceY: 3
---- !u!50 &369977520
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 369977516}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.0001
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 0
 --- !u!61 &369977521
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2193,7 +2149,6 @@ GameObject:
   - component: {fileID: 626363426}
   - component: {fileID: 626363430}
   - component: {fileID: 626363428}
-  - component: {fileID: 626363429}
   m_Layer: 9
   m_Name: Attack 5
   m_TagString: Untagged
@@ -2231,27 +2186,6 @@ MonoBehaviour:
   damage: 10
   hurtForceX: 10
   hurtForceY: 3
---- !u!50 &626363429
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 626363425}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.0001
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 0
 --- !u!70 &626363430
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2521,7 +2455,6 @@ GameObject:
   - component: {fileID: 679905014}
   - component: {fileID: 679905017}
   - component: {fileID: 679905016}
-  - component: {fileID: 679905015}
   m_Layer: 9
   m_Name: JumpAtk2
   m_TagString: Untagged
@@ -2544,27 +2477,6 @@ Transform:
   m_Father: {fileID: 1634444608}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &679905015
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 679905013}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.0001
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 0
 --- !u!114 &679905016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2823,7 +2735,6 @@ GameObject:
   - component: {fileID: 770004210}
   - component: {fileID: 770004213}
   - component: {fileID: 770004212}
-  - component: {fileID: 770004211}
   m_Layer: 9
   m_Name: JumpAtk1
   m_TagString: Untagged
@@ -2846,27 +2757,6 @@ Transform:
   m_Father: {fileID: 1634444608}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &770004211
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 770004209}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &770004212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3025,7 +2915,6 @@ GameObject:
   - component: {fileID: 851482458}
   - component: {fileID: 851482461}
   - component: {fileID: 851482460}
-  - component: {fileID: 851482459}
   m_Layer: 9
   m_Name: Attack2 (1)
   m_TagString: Untagged
@@ -3048,27 +2937,6 @@ Transform:
   m_Father: {fileID: 1745620831}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &851482459
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 851482457}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.0001
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 0
 --- !u!114 &851482460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3330,7 +3198,6 @@ GameObject:
   - component: {fileID: 991302180}
   - component: {fileID: 991302183}
   - component: {fileID: 991302182}
-  - component: {fileID: 991302181}
   m_Layer: 9
   m_Name: Upward Slash
   m_TagString: Untagged
@@ -3353,27 +3220,6 @@ Transform:
   m_Father: {fileID: 1811201174}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &991302181
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 991302179}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.0001
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 0
 --- !u!114 &991302182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4119,7 +3965,6 @@ GameObject:
   - component: {fileID: 1282414149}
   - component: {fileID: 1282414152}
   - component: {fileID: 1282414151}
-  - component: {fileID: 1282414150}
   m_Layer: 9
   m_Name: JumpAtk3 (1)
   m_TagString: Untagged
@@ -4142,27 +3987,6 @@ Transform:
   m_Father: {fileID: 1634444608}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &1282414150
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1282414148}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.0001
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 0
 --- !u!114 &1282414151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4819,7 +4643,6 @@ GameObject:
   - component: {fileID: 1436401737}
   - component: {fileID: 1436401741}
   - component: {fileID: 1436401738}
-  - component: {fileID: 1436401740}
   m_Layer: 9
   m_Name: Attack4
   m_TagString: Untagged
@@ -4857,27 +4680,6 @@ MonoBehaviour:
   damage: 5
   hurtForceX: 8
   hurtForceY: 3
---- !u!50 &1436401740
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1436401736}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.0001
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 0
 --- !u!58 &1436401741
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5488,7 +5290,6 @@ GameObject:
   - component: {fileID: 1827657154}
   - component: {fileID: 1827657158}
   - component: {fileID: 1827657156}
-  - component: {fileID: 1827657157}
   m_Layer: 9
   m_Name: Attack2
   m_TagString: Untagged
@@ -5526,27 +5327,6 @@ MonoBehaviour:
   damage: 4
   hurtForceX: 8
   hurtForceY: 3
---- !u!50 &1827657157
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1827657153}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.0001
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 0
 --- !u!61 &1827657158
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6448,7 +6228,6 @@ GameObject:
   - component: {fileID: 2133178012}
   - component: {fileID: 2133178016}
   - component: {fileID: 2133178014}
-  - component: {fileID: 2133178015}
   m_Layer: 9
   m_Name: Attack3
   m_TagString: Untagged
@@ -6486,27 +6265,6 @@ MonoBehaviour:
   damage: 5
   hurtForceX: 5
   hurtForceY: 5
---- !u!50 &2133178015
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2133178011}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.0001
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 0
 --- !u!58 &2133178016
 CircleCollider2D:
   m_ObjectHideFlags: 0
