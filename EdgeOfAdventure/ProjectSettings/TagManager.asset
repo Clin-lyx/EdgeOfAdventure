@@ -8,6 +8,8 @@ TagManager:
   - Bounds
   - Death Trigger
   - Interactable
+  - SFX
+  - Audio
   layers:
   - Default
   - TransparentFX

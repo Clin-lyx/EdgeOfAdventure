@@ -8,6 +8,8 @@ public class Enemy : MonoBehaviour
     [HideInInspector]public Animator anim;
     [HideInInspector]public PhysicsCheck physicsCheck;
     private GameObject player;
+    [HideInInspector] public Transform hurtSFX;
+    [HideInInspector] public GameObject hurtAudio;
 
     [Header("Arguments")]
     public float normalSpeed;
@@ -50,6 +52,8 @@ public class Enemy : MonoBehaviour
         physicsCheck = GetComponent<PhysicsCheck>();
         attack = GetComponent<Attack>();
         Debug.Log(player);
+        hurtSFX = GameObject.FindWithTag("SFX").transform.Find("Hurt");
+        hurtAudio = GameObject.FindWithTag("Audio");
         currentSpeed = normalSpeed;
         waitTimeCounter = waitTime;
 
@@ -190,8 +194,38 @@ public class Enemy : MonoBehaviour
         rb.AddForce(dir * attacker.hurtForceX, ForceMode2D.Impulse);
         rb.AddForce(transform.up * attacker.hurtForceY, ForceMode2D.Impulse);
 
+        // Hurt SFX
+        hurtSFX.position = new Vector3(transform.position.x, transform.position.y + 2f, transform.position.z);
+        hurtSFX.gameObject.SetActive(false);
+        hurtSFX.gameObject.SetActive(true);
+
+        // Hurt FX
+        HurtFX(attacker);
+
         yield return new WaitForSeconds(0.5f);
         isHurt = false;
+    }
+
+    private void HurtFX(Attack attacker)
+    {
+        Transform hurtFX1 = hurtAudio.transform.Find("Hurt1");
+        Transform hurtFX2 = hurtAudio.transform.Find("Hurt2");
+        Transform hurtFX3 = hurtAudio.transform.Find("Hurt3");
+        if (attacker.damage == 10)
+        {
+            hurtFX2.gameObject.SetActive(true);
+            hurtFX2.gameObject.SetActive(false);
+        }
+        else if (attacker.damage == 4)
+        {
+            hurtFX3.gameObject.SetActive(true);
+            hurtFX3.gameObject.SetActive(false);
+        }
+        else
+        {
+            hurtFX1.gameObject.SetActive(true);
+            hurtFX1.gameObject.SetActive(false);
+        }
     }
 
     public void OnDie()
@@ -199,6 +233,17 @@ public class Enemy : MonoBehaviour
         gameObject.layer = 2;
         anim.SetBool("dead", true);
         anim.SetBool("isAttack", false);
+
+        // Hurt SFX
+        hurtSFX.position = new Vector3(transform.position.x, transform.position.y + 2f, transform.position.z);
+        hurtSFX.gameObject.SetActive(false);
+        hurtSFX.gameObject.SetActive(true);
+
+        // Hurt FX
+        Transform hurtFX = hurtAudio.transform.Find("Die");
+        hurtFX.gameObject.SetActive(true);
+        hurtFX.gameObject.SetActive(false);
+
         isDead = true;
     }
 

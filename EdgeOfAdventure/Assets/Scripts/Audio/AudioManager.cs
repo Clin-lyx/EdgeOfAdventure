@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour
 {
     [Header("Event listeners")]
     public PlayAudioEventSO FXEvent;
+    public PlayAudioEventSO HurtFXEvent;
     public PlayAudioEventSO BGMEvent;
     public FloatEventSO volumeEvent;
     public VoidEventSO pauseEvent;
@@ -17,12 +18,14 @@ public class AudioManager : MonoBehaviour
 
     [Header("Components")]
     public AudioSource FXSource;
+    public AudioSource HurtFXSource;
     public AudioSource BGMSource;
     public AudioMixer mixer;
 
     private void OnEnable()
     {
         FXEvent.OnEventRaised += OnFXEvent;
+        HurtFXEvent.OnEventRaised += OnHurtFXEvent;
         BGMEvent.OnEventRaised += OnBGMEvent;
         volumeEvent.OnEventRaised += OnVolumeEvent;
         pauseEvent.OnEventRaised += onPauseEvent;
@@ -31,10 +34,12 @@ public class AudioManager : MonoBehaviour
     private void OnDisable()
     {
         FXEvent.OnEventRaised -= OnFXEvent;
+        HurtFXEvent.OnEventRaised -= OnHurtFXEvent;
         BGMEvent.OnEventRaised -= OnBGMEvent;
         volumeEvent.OnEventRaised -= OnVolumeEvent;
         pauseEvent.OnEventRaised -= onPauseEvent;
     }
+
 
     private void onPauseEvent()
     {   
@@ -53,6 +58,11 @@ public class AudioManager : MonoBehaviour
     {
         BGMSource.clip = clip;
         BGMSource.Play();
+    }
+    private void OnHurtFXEvent(AudioClip clip)
+    {
+        HurtFXSource.clip = clip;
+        HurtFXSource.Play();
     }
 
     private void OnFXEvent(AudioClip clip)
