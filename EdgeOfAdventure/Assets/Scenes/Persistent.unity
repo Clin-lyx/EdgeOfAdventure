@@ -257,7 +257,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9f82af9ae315b049808332cf4cc1d70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trans: {fileID: 0}
   SFXSprite: {fileID: 35306137}
   sfx: Edge Trace2
 --- !u!95 &35306140
@@ -379,7 +378,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9f82af9ae315b049808332cf4cc1d70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trans: {fileID: 0}
   SFXSprite: {fileID: 112398705}
   sfx: Retract
 --- !u!95 &112398708
@@ -817,7 +815,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.9263778, y: 0.06175439}
+  m_Offset: {x: 0.96, y: 2.43}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1236,7 +1234,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 476753413}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.47, y: 5.39, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1328,7 +1326,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9f82af9ae315b049808332cf4cc1d70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trans: {fileID: 0}
   SFXSprite: {fileID: 476753413}
   sfx: Hurt
 --- !u!1 &496567443
@@ -1424,7 +1421,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9f82af9ae315b049808332cf4cc1d70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trans: {fileID: 0}
   SFXSprite: {fileID: 503265545}
   sfx: Retract
 --- !u!95 &503265548
@@ -2318,7 +2314,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9f82af9ae315b049808332cf4cc1d70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trans: {fileID: 0}
   SFXSprite: {fileID: 648626116}
   sfx: Air Trace2
 --- !u!95 &648626119
@@ -2598,7 +2593,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.0302987, y: -0.53207254}
+  m_Offset: {x: 1.2, y: 1.72}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2742,7 +2737,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9f82af9ae315b049808332cf4cc1d70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trans: {fileID: 0}
   SFXSprite: {fileID: 738551978}
   sfx: Edge Trace3
 --- !u!95 &738551981
@@ -2864,14 +2858,14 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.0001
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!114 &770004212
 MonoBehaviour:
@@ -2901,7 +2895,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.1490631, y: 0.20028865}
+  m_Offset: {x: 1.2, y: 2.44}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3087,7 +3081,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4d7a57519e837044b4e0d396d80ff0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 4
   hurtForceX: 5
   hurtForceY: 3
 --- !u!61 &851482461
@@ -3250,7 +3244,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9f82af9ae315b049808332cf4cc1d70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trans: {fileID: 0}
   SFXSprite: {fileID: 990719926}
   sfx: Edge Trace1
 --- !u!95 &990719931
@@ -3352,8 +3345,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 991302179}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.3607378, y: -0.6335888, z: -0.14816518}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3409,7 +3402,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.6655979, y: -0.14975978}
+  m_Offset: {x: 0.7, y: 2.09}
   serializedVersion: 2
   m_Radius: 2.0697026
 --- !u!1 &1008845626
@@ -4198,7 +4191,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.3054209, y: 0.1458795}
+  m_Offset: {x: -1.3054209, y: 2.42}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4402,7 +4395,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9f82af9ae315b049808332cf4cc1d70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trans: {fileID: 0}
   SFXSprite: {fileID: 1337288215}
   sfx: Upward Trace
 --- !u!95 &1337288218
@@ -4665,7 +4657,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9f82af9ae315b049808332cf4cc1d70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trans: {fileID: 0}
   SFXSprite: {fileID: 1394396506}
   sfx: Air Trace1
 --- !u!95 &1394396509
@@ -5153,8 +5144,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1634444607}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0442791, y: 2.24456, z: -0.013070139}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5295,7 +5286,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9f82af9ae315b049808332cf4cc1d70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trans: {fileID: 0}
   SFXSprite: {fileID: 1705762605}
   sfx: Retract
 --- !u!95 &1705762608
@@ -5478,8 +5468,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1811201173}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.405017, y: 2.8781488, z: 0.13509504}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6197,7 +6187,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9f82af9ae315b049808332cf4cc1d70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trans: {fileID: 0}
   SFXSprite: {fileID: 1942852546}
   sfx: Air Trace3
 --- !u!95 &1942852549
