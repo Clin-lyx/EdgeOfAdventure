@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-
 [CreateAssetMenu(menuName = "Event/CharacterEventSO")]
 public class CharacterEventSO : ScriptableObject
 {

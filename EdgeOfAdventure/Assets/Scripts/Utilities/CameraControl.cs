@@ -7,13 +7,14 @@ using Cinemachine;
 public class CameraControl : MonoBehaviour
 {
     [Header("Event listeners")]
-    
-
-    private CinemachineConfiner2D confiner2D;
     [SerializeField]private CinemachineImpulseSource impulseSource;
     [SerializeField]private VoidEventSO cameraShakeEvent;
     [SerializeField]private VoidEventSO aftSceneLoadedEvent;
-    
+    [SerializeField]private float playerDir;
+    [SerializeField]private float shakeForce;
+
+    private CinemachineConfiner2D confiner2D;
+
     private void Awake()
     {
         confiner2D = GetComponent<CinemachineConfiner2D>();
@@ -38,6 +39,8 @@ public class CameraControl : MonoBehaviour
 
     private void OnCameraShakeEvent()
     {
+        playerDir = GameObject.Find("Player").transform.localScale.x;
+        impulseSource.m_DefaultVelocity = new Vector3(playerDir * shakeForce, 0, 0) ;
         impulseSource.GenerateImpulse();
     }
 
