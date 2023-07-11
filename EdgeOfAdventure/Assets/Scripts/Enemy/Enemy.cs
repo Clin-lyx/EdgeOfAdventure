@@ -8,8 +8,8 @@ public class Enemy : MonoBehaviour
     [HideInInspector]public Animator anim;
     [HideInInspector]public PhysicsCheck physicsCheck;
     private GameObject player;
-    [HideInInspector] public Transform hurtSFX;
-    [HideInInspector] public GameObject hurtAudio;
+    private Transform hurtSFX;
+    private GameObject hurtAudio;
 
     [Header("Arguments")]
     public float normalSpeed;

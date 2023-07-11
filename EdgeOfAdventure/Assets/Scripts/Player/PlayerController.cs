@@ -86,6 +86,9 @@ public class PlayerController : MonoBehaviour
         // Attack
         inputControl.Gameplay.Attack.started += PlayerAttack;
 
+        // Skill
+        inputControl.Gameplay.Skill.started += PlayerSkill;
+
         // object layer
         gameObject.layer = LayerMask.NameToLayer("Player");
     }
@@ -178,6 +181,19 @@ public class PlayerController : MonoBehaviour
             {
                 isSkill = true;
             }
+        }
+
+    }
+
+    private void PlayerSkill(InputAction.CallbackContext context)
+    {
+        // Player only throws attack when standing on Ground
+        if (!isHurt && physicsCheck.OnGround())
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
+            playerAnimation.PlaySkill();
+            isAttack = true;
+            isSkill = true;
         }
 
     }

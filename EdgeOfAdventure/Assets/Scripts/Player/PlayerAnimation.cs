@@ -66,4 +66,9 @@ public class PlayerAnimation : MonoBehaviour
         anim.SetTrigger("attack");
     }
 
+    public void PlaySkill()
+    {
+        anim.SetTrigger("skill");
+    }
+
 }
