@@ -7,7 +7,7 @@ public class SpearChaseState : BaseState
     public override void OnEnter(Enemy enemy)
     {
         currentEnemy = enemy;
-        Debug.Log("spear chase");
+        //Debug.Log("spear chase");
         currentEnemy.ChangeSpeedChase();
         currentEnemy.anim.SetBool("run", true);
         currentEnemy.waitTimeCounter = -1f;

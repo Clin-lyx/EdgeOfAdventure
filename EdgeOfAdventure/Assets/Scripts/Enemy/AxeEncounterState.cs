@@ -9,7 +9,7 @@ public class AxeEncounterState : BaseState
     { 
         currentEnemy = enemy;
         
-        Debug.Log("Encounter");
+        //Debug.Log("Encounter");
         currentEnemy.ChangeSpeedEncounter();
         currentEnemy.anim.SetBool("walk", false);
         currentEnemy.anim.SetBool("speedWalk", false);

@@ -637,7 +637,7 @@ Transform:
   - {fileID: 1681518693}
   - {fileID: 1304646149}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &240836744
 GameObject:
@@ -1715,6 +1715,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 426674af46361ca4fb40eb9c6f7c6a09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy: {fileID: 0}
+  character: {fileID: 1909171907}
 --- !u!1 &511266005
 GameObject:
   m_ObjectHideFlags: 0
@@ -1874,7 +1876,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.4499998, y: 6.6099997, z: -10}
+  m_LocalPosition: {x: -3.4499996, y: 6.6099997, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3866,7 +3868,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1018557786}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3874,7 +3876,7 @@ Transform:
   - {fileID: 476753414}
   - {fileID: 917458927}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1065275156
 GameObject:
@@ -4462,7 +4464,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1280990619}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.4499998, y: 6.6099997, z: -10}
+  m_LocalPosition: {x: -3.4499996, y: 6.6099997, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6419,6 +6421,8 @@ MonoBehaviour:
   dashDistance: 4.5
   dashSpeed: 1
   dashCooldown: 0.5
+  perfectDodge: 0.2
+  dodgeTimer: 0
   normal: {fileID: 6200000, guid: e901fd0f8d1a32745b62b3ada19b5af2, type: 2}
   wall: {fileID: 6200000, guid: ec040c21a6100ec4a98eccf936adb3c0, type: 2}
   isHurt: 0
@@ -6428,6 +6432,7 @@ MonoBehaviour:
   isDash: 0
   holdS: 0
   isSkill: 0
+  perfect: 0
 --- !u!70 &1909171900
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

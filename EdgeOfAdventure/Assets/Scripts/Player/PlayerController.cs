@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour
     public float dashSpeed;
     public float dashCooldown;
     private float dashTimer;
+    [SerializeField]private float perfectDodge;
+    [SerializeField]private float dodgeTimer;
     private Vector2 originalOffset;
     private Vector2 orginalSize;
     private CapsuleCollider2D coll;
@@ -46,6 +48,7 @@ public class PlayerController : MonoBehaviour
     public bool isDash;
     public bool holdS;
     public bool isSkill;
+    public bool perfect;
     
     private void Awake() {
         // Initialization
@@ -116,6 +119,9 @@ public class PlayerController : MonoBehaviour
 
         // Dash cool down
         dashTimer -= Time.deltaTime;
+
+        // Perfect Dodge 
+        dodgeTimer -= Time.deltaTime;
     }
 
     private void FixedUpdate() {
@@ -194,6 +200,7 @@ public class PlayerController : MonoBehaviour
             playerAnimation.PlaySkill();
             isAttack = true;
             isSkill = true;
+            dodgeTimer = perfectDodge;
         }
 
     }
@@ -272,5 +279,9 @@ public class PlayerController : MonoBehaviour
 
     private void checkState() {
         coll.sharedMaterial = physicsCheck.OnGround() ? normal : wall;
+    }
+
+    public bool IsPerfectDodge() {
+        return dodgeTimer > 0;
     }
 }

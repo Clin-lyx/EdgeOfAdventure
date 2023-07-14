@@ -166,6 +166,9 @@ MonoBehaviour:
   currentHealth: 0
   invulnerableDuration: 0
   invulnerable: 0
+  EnemyDetect:
+    m_PersistentCalls:
+      m_Calls: []
   OnHealthChange:
     m_PersistentCalls:
       m_Calls: []
@@ -237,8 +240,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
   physicsCheck: {fileID: 0}
-  hurtSFX: {fileID: 0}
-  hurtAudio: {fileID: 0}
   normalSpeed: 140
   chaseSpeed: 200
   encounterSpeed: 0

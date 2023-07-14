@@ -6,7 +6,7 @@ public class SpearPatrolState : BaseState
 {
     public override void OnEnter(Enemy enemy)
     {
-        Debug.Log("spear patrol");
+        //Debug.Log("spear patrol");
         currentEnemy = enemy;
         currentEnemy.ChangeSpeedIdle();
 

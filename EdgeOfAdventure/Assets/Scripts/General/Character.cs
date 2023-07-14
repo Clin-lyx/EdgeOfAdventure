@@ -7,11 +7,13 @@ public class Character : MonoBehaviour
 {
     [Header("Event Listener")]
     [SerializeField] VoidEventSO newGameEvent;
+
     [Header("Attributes")]
     public float maxHealth;
     public float currentHealth;
     private Rigidbody2D rb;
     private PhysicsCheck physicsCheck;
+    private GameObject enemy;
 
     [Header("Invulnerable")]
     public float invulnerableDuration;
@@ -70,6 +72,15 @@ public class Character : MonoBehaviour
         if (invulnerable) 
             return;
 
+        if (this.gameObject.CompareTag("Player")) {
+            PlayerController playerController = GetComponent<PlayerController>();
+            if (playerController.IsPerfectDodge()) {
+                playerController.perfect = true;
+                enemy = attacker.transform.parent.gameObject;
+                return;
+            }
+        }
+
         if (currentHealth - attacker.damage > 0) {
             this.currentHealth -= attacker.damage;
             TriggerInvulnerable();
@@ -108,4 +119,7 @@ public class Character : MonoBehaviour
         rb.AddForce(transform.up * force, ForceMode2D.Impulse);
     }
 
+    public GameObject GetEnemy(){
+        return enemy;
+    }
 }
