@@ -107,7 +107,7 @@ public class PlayerController : MonoBehaviour
     private void OnDisable() {
         inputControl.Disable();
         loadEvent.LoadRequestEvent -= OnLoadEvent;
-        afterSceneloadedEvent.OnEventRaised += OnAfterSceneLoadedEvent;       
+        afterSceneloadedEvent.OnEventRaised -= OnAfterSceneLoadedEvent;       
     }
 
     private void Update() {

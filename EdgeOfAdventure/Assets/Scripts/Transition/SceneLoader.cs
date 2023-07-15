@@ -9,8 +9,6 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-
-
     [Header("Event listeners")]
     [SerializeField]private SceneLoadEventSO loadEventSO; 
 
