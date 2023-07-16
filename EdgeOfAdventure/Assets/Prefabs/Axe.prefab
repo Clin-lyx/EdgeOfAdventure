@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5659735366499220703}
   - component: {fileID: 5659735366499220700}
   - component: {fileID: 5659735366499220701}
+  - component: {fileID: -1532225379715269004}
   m_Layer: 8
   m_Name: Axe
   m_TagString: Enemy
@@ -162,13 +163,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newGameEvent: {fileID: 11400000, guid: 7e9bf69a8ca90614197e460968f8a6e0, type: 2}
-  maxHealth: 60
+  maxHealth: 200
   currentHealth: 0
   invulnerableDuration: 0
   invulnerable: 0
-  EnemyDetect:
-    m_PersistentCalls:
-      m_Calls: []
   OnHealthChange:
     m_PersistentCalls:
       m_Calls: []
@@ -279,6 +277,20 @@ MonoBehaviour:
   leftOffset: {x: -0.75, y: 1.4}
   rightOffset: {x: 0.75, y: 1.4}
   checkRadius: 0.1
+--- !u!114 &-1532225379715269004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5659735366499220693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca255038b82023a44bca26fb39446f9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  persistentType: 0
+  ID: 1e21cf70-9986-4c61-96fc-51209768315c
 --- !u!1 &5659735367239626665
 GameObject:
   m_ObjectHideFlags: 0

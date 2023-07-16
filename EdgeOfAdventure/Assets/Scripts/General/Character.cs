@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Character : MonoBehaviour
+public class Character : MonoBehaviour, ISaveable
 {
     [Header("Event Listener")]
     [SerializeField] VoidEventSO newGameEvent;
@@ -42,10 +42,14 @@ public class Character : MonoBehaviour
 
     private void OnEnable() {
         newGameEvent.OnEventRaised += NewGame;
+        ISaveable saveable = this;
+        saveable.RegisterSaveData();
     }
 
     private void OnDisable() {
         newGameEvent.OnEventRaised -= NewGame;
+        ISaveable saveable = this;
+        saveable.UnRegisterSaveData();
     }
 
     private void Update() {
@@ -121,5 +125,30 @@ public class Character : MonoBehaviour
 
     public GameObject GetEnemy(){
         return enemy;
+    }
+
+    public DataDefination GetDataID()
+    {
+        return GetComponent<DataDefination>();
+    }
+
+    public void GetSaveData(Data data)
+    {
+        if (data.characterPosDict.ContainsKey(GetDataID().ID))
+        {
+            data.characterPosDict[GetDataID().ID] = transform.position;
+        }
+        else
+        {
+            data.characterPosDict.Add(GetDataID().ID, transform.position);
+        }
+    }
+
+    public void LoadData(Data data)
+    {
+        if (data.characterPosDict.ContainsKey(GetDataID().ID))
+        {
+            transform.position = data.characterPosDict[GetDataID().ID];
+        }
     }
 }

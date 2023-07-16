@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 1274684585026114944}
   - component: {fileID: 1274684585026114951}
   - component: {fileID: 1274684585026114950}
+  - component: {fileID: 6651008089973317093}
   m_Layer: 8
   m_Name: Spear
   m_TagString: Enemy
@@ -356,6 +357,20 @@ MonoBehaviour:
   leftOffset: {x: -1, y: 1.5}
   rightOffset: {x: 1, y: 1.5}
   checkRadius: 0.1
+--- !u!114 &6651008089973317093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274684585026115007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca255038b82023a44bca26fb39446f9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  persistentType: 0
+  ID: 1038138a-551d-420a-8757-f6855b9774d4
 --- !u!1 &3487516096738610052
 GameObject:
   m_ObjectHideFlags: 0

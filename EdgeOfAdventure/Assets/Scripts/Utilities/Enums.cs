@@ -7,3 +7,8 @@ public enum SceneType
 {
     Location, Menu, Character
 }
+
+public enum PersistentType
+{
+    ReadWrite, DoNotPersist
+}
