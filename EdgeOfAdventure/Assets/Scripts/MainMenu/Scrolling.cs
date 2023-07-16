@@ -16,12 +16,12 @@ public class Scrolling : MonoBehaviour
     {
         if (!moveLeft) {
             _img.uvRect = new Rect(_img.uvRect.position - new Vector2(_x, 0f) * Time.deltaTime, _img.uvRect.size);
-            if (_img.uvRect.x <= 0f) {
+            if (_img.uvRect.x <= -0.03f) {
                 moveLeft = true;
             }
         } else {
             _img.uvRect = new Rect(_img.uvRect.position + new Vector2(_x, 0f) * Time.deltaTime, _img.uvRect.size);
-            if (_img.uvRect.x >= 0.08f) {
+            if (_img.uvRect.x >= 0.03f) {
                 moveLeft = false;
             }
         }

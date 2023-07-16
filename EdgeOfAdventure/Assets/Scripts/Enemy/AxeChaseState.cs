@@ -38,7 +38,7 @@ public class AxeChaseState : BaseState
         
         // if player is within 2f, switch to encounter state and attack player
         float diff  = currentEnemy.transform.position.x - playerTransform.position.x;
-        if (Mathf.Abs(diff) <= 2f && currentEnemy.FoundPlayer()) {
+        if (Mathf.Abs(diff) <= 1.5f && currentEnemy.FoundPlayer()) {
             currentEnemy.SwitchState(NPCState.Encounter);
         } 
         

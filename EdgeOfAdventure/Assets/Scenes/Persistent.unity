@@ -6544,7 +6544,7 @@ MonoBehaviour:
   currentLoadedscene: {fileID: 0}
   fadeDuration: 0.5
   playerTrans: {fileID: 1909171903}
-  firstPosition: {x: 10, y: 5, z: 0}
+  firstPosition: {x: 3, y: 5, z: 0}
 --- !u!1 &1909171897
 GameObject:
   m_ObjectHideFlags: 0
