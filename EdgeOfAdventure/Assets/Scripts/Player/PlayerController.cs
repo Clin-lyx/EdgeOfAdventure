@@ -281,6 +281,10 @@ public class PlayerController : MonoBehaviour
         coll.sharedMaterial = physicsCheck.OnGround() ? normal : wall;
     }
 
+    public void SetInputControlToDisable() {
+        inputControl.Disable();
+    }
+
     public bool IsPerfectDodge() {
         return dodgeTimer > 0;
     }

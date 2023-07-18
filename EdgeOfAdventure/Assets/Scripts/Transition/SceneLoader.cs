@@ -57,6 +57,7 @@ public class SceneLoader : MonoBehaviour
 
     private void NewGame()
     {
+        playerTrans.gameObject.layer = LayerMask.NameToLayer("Player");
         sceneToload = firstLoadscene;
         //OnLoadRequestEvent(sceneToload, firstPosition, true);
         loadEventSO.RaiseLoadRequestEvent(sceneToload, firstPosition, true);
@@ -103,6 +104,14 @@ public class SceneLoader : MonoBehaviour
     {
         var loadingOption = sceneToload.GetRef().LoadSceneAsync(LoadSceneMode.Additive, true);
         loadingOption.Completed += OnLoadCompleted;
+    }
+
+    public void BackToMain() {
+        sceneToload = menuScene;
+        Debug.Log("Back to Main");
+        playerTrans.GetComponent<PlayerController>().SetInputControlToDisable();
+        playerTrans.gameObject.layer = LayerMask.NameToLayer("Enemy");
+        OnLoadRequestEvent(sceneToload, firstPosition, true);
     }
 
     private void OnLoadCompleted(AsyncOperationHandle<SceneInstance> obj)

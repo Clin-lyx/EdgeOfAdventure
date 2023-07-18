@@ -32,4 +32,7 @@ public class JudgementCut : MonoBehaviour
         }
     }
 
+    private void OnDisable() {
+        enemy = null;
+    }
 }

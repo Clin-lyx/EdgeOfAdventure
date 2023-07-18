@@ -15,15 +15,21 @@ public class UIManager : MonoBehaviour
     public SceneLoadEventSO loadEvent;
 
     [Header("Component")]
-    public Button SettingsBtn;
-    public GameObject pausePanel;
-    public Slider volumeSlider;
+    [SerializeField]private Button SettingsBtn;
+    [SerializeField]private GameObject pausePanel;
+    [SerializeField]private Slider volumeSlider;
+    [SerializeField]private GameObject commandList;
+    [SerializeField]private Button commandListbtn;
+    [SerializeField]private Button commandListclose;
+    [SerializeField]private GameSceneSO MainMenu;
 
     [Header("Broadcast")]
     [SerializeField]private VoidEventSO pauseEvent;
 
     private void Awake() {
         SettingsBtn.onClick.AddListener(TogglePausePanel);
+        commandListbtn.onClick.AddListener(ToggleCommandList);
+        commandListclose.onClick.AddListener(CloseCommandList);
     }
 
     private void OnEnable()
@@ -67,4 +73,26 @@ public class UIManager : MonoBehaviour
             Time.timeScale = 0;
         }
     }
+
+    private void ToggleCommandList() {
+        commandListclose.gameObject.SetActive(true);
+        SettingsBtn.gameObject.SetActive(false);
+        commandList.SetActive(true);
+    }
+
+    private void CloseCommandList() {
+        commandList.SetActive(false);
+        commandListclose.gameObject.SetActive(false);
+        SettingsBtn.gameObject.SetActive(true);
+    }
+
+    public void ClickSettingsBtn() {
+        SettingsBtn.onClick.Invoke();
+    }
+
+    public void ExitGame() {
+        Debug.Log("quit");
+        Application.Quit();
+    }
+
 }
