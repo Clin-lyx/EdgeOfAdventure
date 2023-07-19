@@ -139,12 +139,12 @@ public class Character : MonoBehaviour, ISaveable
     {
         if (data.characterPosDict.ContainsKey(GetDataID().ID))
         {
-            data.characterPosDict[GetDataID().ID] = transform.position;
+            data.characterPosDict[GetDataID().ID] = new SerializeVector3(transform.position);
             data.floatSavedData[GetDataID().ID + "health"] = this.currentHealth;
         }
         else
         {
-            data.characterPosDict.Add(GetDataID().ID, transform.position);
+            data.characterPosDict.Add(GetDataID().ID, new SerializeVector3(transform.position));
             data.floatSavedData.Add(GetDataID().ID + "health", this.currentHealth);
         }
     }
@@ -153,7 +153,7 @@ public class Character : MonoBehaviour, ISaveable
     {
         if (data.characterPosDict.ContainsKey(GetDataID().ID))
         {
-            transform.position = data.characterPosDict[GetDataID().ID];
+            transform.position = data.characterPosDict[GetDataID().ID].ToVector3();
             this.currentHealth = data.floatSavedData[GetDataID().ID + "health"];
 
             // UI update

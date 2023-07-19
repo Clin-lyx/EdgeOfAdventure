@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Newtonsoft.Json;
+using System.IO;
 
+[DefaultExecutionOrder(-100)]
 public class DataManager : MonoBehaviour
 {
     public static DataManager instance;
@@ -12,6 +15,7 @@ public class DataManager : MonoBehaviour
 
     private List<ISaveable> saveableList = new List<ISaveable>();
     private Data saveData;
+    private string jsonFolder;
 
     private void Awake()
     {
@@ -21,6 +25,9 @@ public class DataManager : MonoBehaviour
             Destroy(this.gameObject);
 
         saveData = new Data();
+        jsonFolder = Application.persistentDataPath + "/SAVE DATA/";
+
+        ReadSavedData();
     }
 
     private void OnEnable()
@@ -55,16 +62,39 @@ public class DataManager : MonoBehaviour
             saveable.GetSaveData(saveData);
         }
 
-        foreach (var item in saveData.characterPosDict)
+        var resultPath = jsonFolder + "data.sav";
+        var jsonData = JsonConvert.SerializeObject(saveData);
+
+        if (!File.Exists(resultPath))
         {
-            Debug.Log(item.Key + "    " + item.Value);
+            Directory.CreateDirectory(jsonFolder);
         }
+
+        File.WriteAllText(resultPath, jsonData);
+
+        //foreach (var item in saveData.characterPosDict)
+        //{
+        //    Debug.Log(item.Key + "    " + item.Value);
+        //}
     }
     public void Load()
     {
         foreach (var saveable in saveableList)
         {
             saveable.LoadData(saveData);
+        }
+    }
+
+    private void ReadSavedData()
+    {
+        var resultPath = jsonFolder + "data.sav";
+
+        if (File.Exists(resultPath))
+        {
+            var stringData = File.ReadAllText(resultPath);
+            var jsonData = JsonConvert.DeserializeObject<Data>(stringData);
+
+            saveData = jsonData;
         }
     }
 }

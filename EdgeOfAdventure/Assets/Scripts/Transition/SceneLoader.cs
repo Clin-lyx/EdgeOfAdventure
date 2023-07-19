@@ -159,7 +159,7 @@ public class SceneLoader : MonoBehaviour, ISaveable
         var playerID = playerTrans.GetComponent<DataDefination>().ID;
         if (data.characterPosDict.ContainsKey(playerID))
         {
-            destPos = data.characterPosDict[playerID];
+            destPos = data.characterPosDict[playerID].ToVector3();
             sceneToload = data.GetSavedScene();
 
             OnLoadRequestEvent(sceneToload, destPos, true);
