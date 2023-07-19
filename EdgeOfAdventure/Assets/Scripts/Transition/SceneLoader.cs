@@ -11,8 +11,8 @@ public class SceneLoader : MonoBehaviour, ISaveable
 {
     [Header("Event listeners")]
     [SerializeField]private SceneLoadEventSO loadEventSO; 
-
     [SerializeField]private VoidEventSO newGameEvent;
+    [SerializeField]private VoidEventSO backToMenuEvent;
 
     [Header("Broadcast")]
     [SerializeField]private VoidEventSO aftSceneLoadedEvent;
@@ -48,6 +48,7 @@ public class SceneLoader : MonoBehaviour, ISaveable
     private void OnEnable() {
         loadEventSO.LoadRequestEvent += OnLoadRequestEvent; 
         newGameEvent.OnEventRaised += NewGame;
+        backToMenuEvent.OnEventRaised += OnBackToMenuEvent;
 
         ISaveable saveable = this;
         saveable.RegisterSaveData();
@@ -56,9 +57,16 @@ public class SceneLoader : MonoBehaviour, ISaveable
     private void OnDisable() {
         loadEventSO.LoadRequestEvent -= OnLoadRequestEvent; 
         newGameEvent.OnEventRaised -= NewGame;
+        backToMenuEvent.OnEventRaised -= OnBackToMenuEvent;
 
         ISaveable saveable = this;
         saveable.UnRegisterSaveData();
+    }
+
+    private void OnBackToMenuEvent()
+    {
+        sceneToload = menuScene;
+        loadEventSO.RaiseLoadRequestEvent(sceneToload, firstPosition, true);
     }
 
     private void NewGame()

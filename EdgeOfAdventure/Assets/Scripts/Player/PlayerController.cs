@@ -7,9 +7,11 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("Event Listener")]
-    [SerializeField]private SceneLoadEventSO loadEvent;
+    [Header("Event Listeners")]
+    [SerializeField]private SceneLoadEventSO sceneLoadEvent;
     [SerializeField]private VoidEventSO afterSceneloadedEvent;
+    [SerializeField]private VoidEventSO loadDataEvent;
+    [SerializeField]private VoidEventSO backToMenuEvent;
 
     [Header("Components")]
     private PlayerInputControl inputControl;
@@ -58,6 +60,7 @@ public class PlayerController : MonoBehaviour
         cap = GetComponent<CapsuleCollider2D>();
         playerAnimation = GetComponent<PlayerAnimation>();
         coll = GetComponent<CapsuleCollider2D>();
+        inputControl.Enable();
         
         // setting running speed
         runSpeed = speed;
@@ -99,16 +102,20 @@ public class PlayerController : MonoBehaviour
 
 
     private void OnEnable() {
-        inputControl.Enable();
-        loadEvent.LoadRequestEvent += OnLoadEvent;
+        sceneLoadEvent.LoadRequestEvent += OnLoadEvent;
         afterSceneloadedEvent.OnEventRaised += OnAfterSceneLoadedEvent;
+        loadDataEvent.OnEventRaised += OnLoadDataEvent;
+        backToMenuEvent.OnEventRaised += OnLoadDataEvent;
     }
 
     private void OnDisable() {
         inputControl.Disable();
-        loadEvent.LoadRequestEvent -= OnLoadEvent;
-        afterSceneloadedEvent.OnEventRaised -= OnAfterSceneLoadedEvent;       
+        sceneLoadEvent.LoadRequestEvent -= OnLoadEvent;
+        afterSceneloadedEvent.OnEventRaised -= OnAfterSceneLoadedEvent;
+        loadDataEvent.OnEventRaised -= OnLoadDataEvent;
+        backToMenuEvent.OnEventRaised -= OnLoadDataEvent;
     }
+
 
     private void Update() {
         // consistently reading input from input devices.
@@ -133,6 +140,11 @@ public class PlayerController : MonoBehaviour
     private void OnLoadEvent(GameSceneSO arg0, Vector3 arg1, bool arg2)
     {
         inputControl.Gameplay.Disable();
+    }
+
+    private void OnLoadDataEvent()
+    {
+        isDead = false;
     }
 
     private void OnAfterSceneLoadedEvent()

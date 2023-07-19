@@ -12,7 +12,10 @@ public class UIManager : MonoBehaviour
     [Header("Event listeners")]
     public CharacterEventSO healthEvent;
     public FloatEventSO syncVolumeEvent;
-    public SceneLoadEventSO loadEvent;
+    public SceneLoadEventSO unloadedSceneEvent;
+    public VoidEventSO loadDataEvent;
+    public VoidEventSO gameOverEvent;
+    public VoidEventSO backToMenuEvent;
 
     [Header("Component")]
     [SerializeField]private Button SettingsBtn;
@@ -22,6 +25,8 @@ public class UIManager : MonoBehaviour
     [SerializeField]private Button commandListbtn;
     [SerializeField]private Button commandListclose;
     [SerializeField]private GameSceneSO MainMenu;
+    [SerializeField]private GameObject gameOverPanel;
+    [SerializeField]private GameObject restartBtn;
 
     [Header("Broadcast")]
     [SerializeField]private VoidEventSO pauseEvent;
@@ -36,17 +41,34 @@ public class UIManager : MonoBehaviour
     {
         healthEvent.OnEventRaised += OnHealthEvent;
         syncVolumeEvent.OnEventRaised += OnSyncVolumeEvent;
-        loadEvent.LoadRequestEvent += OnloadEvent;
+        unloadedSceneEvent.LoadRequestEvent += OnUnLoadedSceneEvent;
+        loadDataEvent.OnEventRaised += OnLoadDataEvent;
+        gameOverEvent.OnEventRaised += OnGameOverEvent;
+        backToMenuEvent.OnEventRaised += OnLoadDataEvent;
     }
 
     private void OnDisable()
     {
         healthEvent.OnEventRaised -= OnHealthEvent;
         syncVolumeEvent.OnEventRaised -= OnSyncVolumeEvent;
-        loadEvent.LoadRequestEvent -= OnloadEvent;
+        unloadedSceneEvent.LoadRequestEvent -= OnUnLoadedSceneEvent;
+        loadDataEvent.OnEventRaised -= OnLoadDataEvent;
+        gameOverEvent.OnEventRaised -= OnGameOverEvent;
+        backToMenuEvent.OnEventRaised -= OnLoadDataEvent;
     }
 
-    private void OnloadEvent(GameSceneSO sceneToload, Vector3 arg1, bool arg2)
+    private void OnGameOverEvent()
+    {
+        gameOverPanel.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(restartBtn);
+    }
+
+    private void OnLoadDataEvent()
+    {
+        gameOverPanel.SetActive(false);
+    }
+
+    private void OnUnLoadedSceneEvent(GameSceneSO sceneToload, Vector3 arg1, bool arg2)
     {
         var isMenu = (sceneToload.GetSceneType() == SceneType.Menu); 
         playerStatBar.gameObject.SetActive(!isMenu);    

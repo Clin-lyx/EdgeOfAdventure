@@ -65,10 +65,13 @@ public class Character : MonoBehaviour, ISaveable
     {
         if (collision.CompareTag("Death Trigger"))
         {
-            // make character die, and update the health
-            currentHealth = 0;
-            OnHealthChange?.Invoke(this);
-            IsDead?.Invoke();
+            if (currentHealth > 0)
+            {
+                // make character die, and update the health
+                currentHealth = 0;
+                OnHealthChange?.Invoke(this);
+                IsDead?.Invoke();
+            }
         }
     }
 
