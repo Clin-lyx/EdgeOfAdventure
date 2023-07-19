@@ -5,13 +5,13 @@ using UnityEngine.AddressableAssets;
 public class GameSceneSO : ScriptableObject
 {
     [SerializeField]private AssetReference sceneReference;
-    [SerializeField]private SceneType type;
+    [SerializeField]private SceneType sceneType;
 
     public AssetReference GetRef() {
         return sceneReference;
     }
 
     public SceneType GetSceneType() {
-        return type;
+        return sceneType;
     }
 }

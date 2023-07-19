@@ -7,7 +7,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.SceneManagement;
 
-public class SceneLoader : MonoBehaviour
+public class SceneLoader : MonoBehaviour, ISaveable
 {
     [Header("Event listeners")]
     [SerializeField]private SceneLoadEventSO loadEventSO; 
@@ -48,11 +48,17 @@ public class SceneLoader : MonoBehaviour
     private void OnEnable() {
         loadEventSO.LoadRequestEvent += OnLoadRequestEvent; 
         newGameEvent.OnEventRaised += NewGame;
+
+        ISaveable saveable = this;
+        saveable.RegisterSaveData();
     }
 
     private void OnDisable() {
         loadEventSO.LoadRequestEvent -= OnLoadRequestEvent; 
         newGameEvent.OnEventRaised -= NewGame;
+
+        ISaveable saveable = this;
+        saveable.UnRegisterSaveData();
     }
 
     private void NewGame()
@@ -128,5 +134,27 @@ public class SceneLoader : MonoBehaviour
 
         isLoading = false;
         aftSceneLoadedEvent.RaiseEvent();
+    }
+
+    public DataDefination GetDataID()
+    {
+        return GetComponent<DataDefination>();
+    }
+
+    public void GetSaveData(Data data)
+    {
+        data.SaveGameScene(currentLoadedscene);
+    }
+
+    public void LoadData(Data data)
+    {
+        var playerID = playerTrans.GetComponent<DataDefination>().ID;
+        if (data.characterPosDict.ContainsKey(playerID))
+        {
+            destPos = data.characterPosDict[playerID];
+            sceneToload = data.GetSavedScene();
+
+            OnLoadRequestEvent(sceneToload, destPos, true);
+        }
     }
 }
