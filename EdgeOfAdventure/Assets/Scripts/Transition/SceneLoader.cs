@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -26,6 +27,7 @@ public class SceneLoader : MonoBehaviour, ISaveable
     private GameSceneSO sceneToload;
 
     [Header("Arguments")]
+    private string path;
     private Vector3 destPos;
     private bool fadeScreen;
     private bool isLoading;
@@ -37,6 +39,7 @@ public class SceneLoader : MonoBehaviour, ISaveable
         //Addressables.LoadSceneAsync(firstLoadscene.GetRef(), LoadSceneMode.Additive);
         //currentLoadedscene = firstLoadscene;
         //currentLoadedscene.GetRef().LoadSceneAsync(LoadSceneMode.Additive);
+        path = Application.persistentDataPath + "/SAVE DATA/data.sav";
     }
 
     private void Start()
@@ -75,6 +78,17 @@ public class SceneLoader : MonoBehaviour, ISaveable
         sceneToload = firstLoadscene;
         //OnLoadRequestEvent(sceneToload, firstPosition, true);
         loadEventSO.RaiseLoadRequestEvent(sceneToload, firstPosition, true);
+        try {
+            // Check if file exists with its full path
+            if (File.Exists(path)) {
+                // If file found, delete it
+                File.Delete(path);
+                Debug.Log("File deleted.");
+            } else Console.WriteLine("File not found");
+
+        } catch (IOException ioExp) {
+            Console.WriteLine(ioExp.Message);
+        }
     }
 
     private void OnLoadRequestEvent(GameSceneSO sceneToload, Vector3 destPos, bool fadeScreen)

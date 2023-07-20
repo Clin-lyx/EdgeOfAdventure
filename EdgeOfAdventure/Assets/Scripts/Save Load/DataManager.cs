@@ -1,8 +1,9 @@
+using Newtonsoft.Json;
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using Newtonsoft.Json;
 using System.IO;
+using UnityEngine;
 
 [DefaultExecutionOrder(-100)]
 public class DataManager : MonoBehaviour
@@ -12,6 +13,9 @@ public class DataManager : MonoBehaviour
     [Header("Event listeners")]
     public VoidEventSO saveDataEvent;
     public VoidEventSO loadDataEvent;
+
+    [Header("Broadcast")]
+    [SerializeField]private FadeTextEventSO fadeEvent;
 
     private List<ISaveable> saveableList = new List<ISaveable>();
     private Data saveData;
@@ -78,11 +82,23 @@ public class DataManager : MonoBehaviour
         //}
     }
     public void Load()
-    {
+    {   
+        if (saveableList.Count == 2) {
+            StartCoroutine(FadeText());
+        }
+        
         foreach (var saveable in saveableList)
         {
+            Debug.Log(saveable.GetDataID());
             saveable.LoadData(saveData);
         }
+    }
+
+    private IEnumerator FadeText()
+    {
+        fadeEvent.FadeIn(0.3f);
+        yield return new WaitForSeconds(1f);
+        fadeEvent.FadeOut(0.5f);
     }
 
     private void ReadSavedData()
