@@ -194,15 +194,28 @@ public class Enemy : MonoBehaviour
         rb.AddForce(transform.up * attacker.hurtForceY, ForceMode2D.Impulse);
 
         // Hurt SFX
-        hurtSFX.position = new Vector3(transform.position.x, transform.position.y + 2f, transform.position.z);
-        hurtSFX.gameObject.SetActive(false);
-        hurtSFX.gameObject.SetActive(true);
+        HurtSFX(attacker);
 
         // Hurt FX
         HurtFX(attacker);
 
         yield return new WaitForSeconds(0.5f);
         isHurt = false;
+    }
+
+    private void HurtSFX(Attack attacker)
+    {
+        hurtSFX.position = new Vector3(transform.position.x, transform.position.y + 2f, transform.position.z);
+
+        if (!hurtSFX.gameObject.activeSelf)
+        {
+            hurtSFX.gameObject.SetActive(true);
+        }
+        else
+        {
+            Transform clone = Instantiate(hurtSFX, hurtSFX.transform.parent);
+            Destroy(clone.gameObject, 2f);
+        }
     }
 
     private void HurtFX(Attack attacker)

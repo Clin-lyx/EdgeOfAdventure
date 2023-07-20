@@ -7,7 +7,8 @@ using UnityEngine.Audio;
 public class AudioManager : MonoBehaviour
 {
     [Header("Event listeners")]
-    public PlayAudioEventSO FXEvent;
+    public PlayAudioEventSO FXEvent1;
+    public PlayAudioEventSO FXEvent2;
     public PlayAudioEventSO HurtFXEvent;
     public PlayAudioEventSO BGMEvent;
     public FloatEventSO volumeEvent;
@@ -17,14 +18,16 @@ public class AudioManager : MonoBehaviour
     public FloatEventSO syncVolumeEvent;
 
     [Header("Components")]
-    public AudioSource FXSource;
+    public AudioSource FXSource1;
+    public AudioSource FXSource2;
     public AudioSource HurtFXSource;
     public AudioSource BGMSource;
     public AudioMixer mixer;
 
     private void OnEnable()
     {
-        FXEvent.OnEventRaised += OnFXEvent;
+        FXEvent1.OnEventRaised += OnFXEvent1;
+        FXEvent2.OnEventRaised += OnFXEvent2;
         HurtFXEvent.OnEventRaised += OnHurtFXEvent;
         BGMEvent.OnEventRaised += OnBGMEvent;
         volumeEvent.OnEventRaised += OnVolumeEvent;
@@ -33,7 +36,8 @@ public class AudioManager : MonoBehaviour
 
     private void OnDisable()
     {
-        FXEvent.OnEventRaised -= OnFXEvent;
+        FXEvent1.OnEventRaised -= OnFXEvent1;
+        FXEvent2.OnEventRaised -= OnFXEvent2;
         HurtFXEvent.OnEventRaised -= OnHurtFXEvent;
         BGMEvent.OnEventRaised -= OnBGMEvent;
         volumeEvent.OnEventRaised -= OnVolumeEvent;
@@ -65,9 +69,14 @@ public class AudioManager : MonoBehaviour
         HurtFXSource.Play();
     }
 
-    private void OnFXEvent(AudioClip clip)
+    private void OnFXEvent1(AudioClip clip)
     {
-        FXSource.clip = clip;
-        FXSource.Play();
+        FXSource1.clip = clip;
+        FXSource1.Play();
+    }
+    private void OnFXEvent2(AudioClip clip)
+    {
+        FXSource2.clip = clip;
+        FXSource2.Play();
     }
 }
