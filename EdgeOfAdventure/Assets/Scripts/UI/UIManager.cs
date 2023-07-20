@@ -33,7 +33,7 @@ public class UIManager : MonoBehaviour
 
     private void Awake() {
         SettingsBtn.onClick.AddListener(TogglePausePanel);
-        commandListbtn.onClick.AddListener(ToggleCommandList);
+        commandListbtn.onClick.AddListener(OpenCommandList);
         commandListclose.onClick.AddListener(CloseCommandList);
     }
 
@@ -96,7 +96,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    private void ToggleCommandList() {
+    private void OpenCommandList() {
         commandListclose.gameObject.SetActive(true);
         SettingsBtn.gameObject.SetActive(false);
         commandList.SetActive(true);
@@ -110,6 +110,11 @@ public class UIManager : MonoBehaviour
 
     public void ClickSettingsBtn() {
         SettingsBtn.onClick.Invoke();
+    }
+
+    public void ResumeGame() {
+        Time.timeScale = 1;
+        pausePanel.SetActive(false);
     }
 
     public void ExitGame() {
