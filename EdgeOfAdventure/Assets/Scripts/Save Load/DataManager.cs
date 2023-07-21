@@ -17,6 +17,7 @@ public class DataManager : MonoBehaviour
     [Header("Broadcast")]
     [SerializeField]private FadeTextEventSO fadeEvent;
 
+    [SerializeField]private GameObject player;
     private List<ISaveable> saveableList = new List<ISaveable>();
     private Data saveData;
     private string jsonFolder;
@@ -90,6 +91,8 @@ public class DataManager : MonoBehaviour
             return;
         }
         
+        player.layer = LayerMask.NameToLayer("Player");
+
         foreach (var saveable in saveableList)
         {            
             saveable.LoadData(saveData);

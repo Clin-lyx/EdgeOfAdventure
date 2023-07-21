@@ -11,6 +11,7 @@ public class Character : MonoBehaviour, ISaveable
     [Header("Attributes")]
     public float maxHealth;
     public float currentHealth;
+    private bool isNewgame;
     private Rigidbody2D rb;
     private PhysicsCheck physicsCheck;
     private GameObject enemy;
@@ -36,6 +37,8 @@ public class Character : MonoBehaviour, ISaveable
     }
 
     private void NewGame() {
+        isNewgame = true;
+        TriggerInvulnerable();
         currentHealth = maxHealth;
         OnHealthChange?.Invoke(this);
     }
@@ -49,6 +52,7 @@ public class Character : MonoBehaviour, ISaveable
     private void OnDisable() {
         newGameEvent.OnEventRaised -= NewGame;
         ISaveable saveable = this;
+        isNewgame = false;
         saveable.UnRegisterSaveData();
     }
 
@@ -65,7 +69,7 @@ public class Character : MonoBehaviour, ISaveable
     {
         if (collision.CompareTag("Death Trigger"))
         {
-            if (currentHealth > 0)
+            if (currentHealth > 0 && !isNewgame)
             {
                 // make character die, and update the health
                 currentHealth = 0;
