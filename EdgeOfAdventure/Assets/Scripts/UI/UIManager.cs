@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -8,6 +9,7 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public PlayerStatBar playerStatBar;
+    private string jsonFolder;
 
     [Header("Event listeners")]
     public CharacterEventSO healthEvent;
@@ -16,6 +18,7 @@ public class UIManager : MonoBehaviour
     public VoidEventSO loadDataEvent;
     public VoidEventSO gameOverEvent;
     public VoidEventSO backToMenuEvent;
+    [SerializeField]private VoidEventSO NewGameEvent;
 
     [Header("Component")]
     [SerializeField]private Button SettingsBtn;
@@ -35,6 +38,7 @@ public class UIManager : MonoBehaviour
         SettingsBtn.onClick.AddListener(TogglePausePanel);
         commandListbtn.onClick.AddListener(OpenCommandList);
         commandListclose.onClick.AddListener(CloseCommandList);
+        jsonFolder = Application.persistentDataPath + "/SAVE DATA/";
     }
 
     private void OnEnable()
@@ -45,6 +49,7 @@ public class UIManager : MonoBehaviour
         loadDataEvent.OnEventRaised += OnLoadDataEvent;
         gameOverEvent.OnEventRaised += OnGameOverEvent;
         backToMenuEvent.OnEventRaised += OnLoadDataEvent;
+        NewGameEvent.OnEventRaised += OnNewGameEvent;
     }
 
     private void OnDisable()
@@ -55,6 +60,12 @@ public class UIManager : MonoBehaviour
         loadDataEvent.OnEventRaised -= OnLoadDataEvent;
         gameOverEvent.OnEventRaised -= OnGameOverEvent;
         backToMenuEvent.OnEventRaised -= OnLoadDataEvent;
+        NewGameEvent.OnEventRaised -= OnNewGameEvent;
+    }
+
+    private void OnNewGameEvent()
+    {
+        gameOverPanel.SetActive(false);
     }
 
     private void OnGameOverEvent()
@@ -65,7 +76,8 @@ public class UIManager : MonoBehaviour
 
     private void OnLoadDataEvent()
     {
-        gameOverPanel.SetActive(false);
+        var resultPath = jsonFolder + "data.sav";
+        if (File.Exists(resultPath)) gameOverPanel.SetActive(false);
     }
 
     private void OnUnLoadedSceneEvent(GameSceneSO sceneToload, Vector3 arg1, bool arg2)

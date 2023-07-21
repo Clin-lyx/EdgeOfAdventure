@@ -83,13 +83,15 @@ public class DataManager : MonoBehaviour
     }
     public void Load()
     {   
-        if (saveableList.Count == 2) {
+        var resultPath = jsonFolder + "data.sav";
+
+        if (!File.Exists(resultPath)) {
             StartCoroutine(FadeText());
+            return;
         }
         
         foreach (var saveable in saveableList)
-        {
-            Debug.Log(saveable.GetDataID());
+        {            
             saveable.LoadData(saveData);
         }
     }

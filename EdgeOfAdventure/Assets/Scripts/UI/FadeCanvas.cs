@@ -23,7 +23,7 @@ public class FadeCanvas : MonoBehaviour
 
     private void OnDisable() {
         fadeEvent.OnEventRaised -= OnFadeEvent;
-        fadeTextevent.OnEventRaised += OnFadeTextEvent;
+        fadeTextevent.OnEventRaised -= OnFadeTextEvent;
     }
 
     private void OnFadeTextEvent(Color target, float fadeDuration, bool fadeIn)

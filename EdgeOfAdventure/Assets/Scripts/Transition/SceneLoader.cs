@@ -7,6 +7,7 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SceneLoader : MonoBehaviour, ISaveable
 {
@@ -35,11 +36,15 @@ public class SceneLoader : MonoBehaviour, ISaveable
     [SerializeField]public Transform playerTrans;
     [SerializeField]public Vector3 firstPosition;
 
+    [Header("Component")]
+    [SerializeField]private Button NewGameBtn;
+
     private void Awake() {
         //Addressables.LoadSceneAsync(firstLoadscene.GetRef(), LoadSceneMode.Additive);
         //currentLoadedscene = firstLoadscene;
         //currentLoadedscene.GetRef().LoadSceneAsync(LoadSceneMode.Additive);
         path = Application.persistentDataPath + "/SAVE DATA/data.sav";
+        NewGameBtn.onClick.AddListener(NewGame);
     }
 
     private void Start()

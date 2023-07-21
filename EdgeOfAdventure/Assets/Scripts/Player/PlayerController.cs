@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]private VoidEventSO afterSceneloadedEvent;
     [SerializeField]private VoidEventSO loadDataEvent;
     [SerializeField]private VoidEventSO backToMenuEvent;
+    [SerializeField]private VoidEventSO NewGameEvent;
 
     [Header("Components")]
     private PlayerInputControl inputControl;
@@ -106,6 +107,7 @@ public class PlayerController : MonoBehaviour
         afterSceneloadedEvent.OnEventRaised += OnAfterSceneLoadedEvent;
         loadDataEvent.OnEventRaised += OnLoadDataEvent;
         backToMenuEvent.OnEventRaised += OnLoadDataEvent;
+        NewGameEvent.OnEventRaised += OnLoadDataEvent;
     }
 
     private void OnDisable() {
@@ -114,6 +116,7 @@ public class PlayerController : MonoBehaviour
         afterSceneloadedEvent.OnEventRaised -= OnAfterSceneLoadedEvent;
         loadDataEvent.OnEventRaised -= OnLoadDataEvent;
         backToMenuEvent.OnEventRaised -= OnLoadDataEvent;
+        NewGameEvent.OnEventRaised -= OnLoadDataEvent;
     }
 
 
