@@ -20,7 +20,7 @@ public class UIManager : MonoBehaviour
     public VoidEventSO backToMenuEvent;
     [SerializeField]private VoidEventSO NewGameEvent;
 
-    [Header("Component")]
+    [Header("Components")]
     [SerializeField]private Button SettingsBtn;
     [SerializeField]private GameObject pausePanel;
     [SerializeField]private Slider volumeSlider;
@@ -30,8 +30,9 @@ public class UIManager : MonoBehaviour
     [SerializeField]private GameSceneSO MainMenu;
     [SerializeField]private GameObject gameOverPanel;
     [SerializeField]private GameObject restartBtn;
+    [SerializeField]private GameObject mobileTouch;
 
-    [Header("Broadcast")]
+    [Header("Broadcasts")]
     [SerializeField]private VoidEventSO pauseEvent;
 
     private void Awake() {
@@ -39,6 +40,10 @@ public class UIManager : MonoBehaviour
         commandListbtn.onClick.AddListener(OpenCommandList);
         commandListclose.onClick.AddListener(CloseCommandList);
         jsonFolder = Application.persistentDataPath + "/SAVE DATA/";
+
+#if UNITY_STANDALONE
+        mobileTouch.SetActive(false);
+#endif
     }
 
     private void OnEnable()

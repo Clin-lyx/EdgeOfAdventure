@@ -159,7 +159,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Base-UI_2
+      name: Stick
       rect:
         serializedVersion: 2
         x: 374
@@ -1839,7 +1839,6 @@ TextureImporter:
       Base-UI_17: 888422910
       Base-UI_18: 454994942
       Base-UI_19: 1489283893
-      Base-UI_2: -123277692
       Base-UI_20: 441012
       Base-UI_21: -1251189783
       Base-UI_22: -1419359146
@@ -1908,6 +1907,7 @@ TextureImporter:
       Base-UI_HP2: 32058401
       Base-UI_HP3: -1117827385
       Settings: 1593963251
+      Stick: -123277692
       cross: -1077130819
   spritePackingTag: 
   pSDRemoveMatte: 0
