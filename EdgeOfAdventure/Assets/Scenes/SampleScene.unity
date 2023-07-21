@@ -56157,6 +56157,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5659735366499220691, guid: 4fd62ac2100a6f4418c9970de63d5338, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5659735366499220691, guid: 4fd62ac2100a6f4418c9970de63d5338, type: 3}
       propertyPath: m_LocalPosition.x
       value: 100.7
       objectReference: {fileID: 0}
@@ -56203,6 +56207,14 @@ PrefabInstance:
     - target: {fileID: 5659735366499220693, guid: 4fd62ac2100a6f4418c9970de63d5338, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5659735366499220701, guid: 4fd62ac2100a6f4418c9970de63d5338, type: 3}
+      propertyPath: manual
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5659735366499220701, guid: 4fd62ac2100a6f4418c9970de63d5338, type: 3}
+      propertyPath: leftOffset.y
+      value: 0.48
       objectReference: {fileID: 0}
     - target: {fileID: 5659735366499220703, guid: 4fd62ac2100a6f4418c9970de63d5338, type: 3}
       propertyPath: maxHealth

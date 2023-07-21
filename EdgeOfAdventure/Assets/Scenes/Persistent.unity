@@ -8529,6 +8529,7 @@ MonoBehaviour:
   saveDataEvent: {fileID: 11400000, guid: 3098865040df08b458d122289c09a2ef, type: 2}
   loadDataEvent: {fileID: 11400000, guid: 0f9c9fcb16344634e998971c85730253, type: 2}
   fadeEvent: {fileID: 11400000, guid: 08697f2a79839b048a7274653f8fd160, type: 2}
+  player: {fileID: 1909171897}
 --- !u!1 &1497646620
 GameObject:
   m_ObjectHideFlags: 0
