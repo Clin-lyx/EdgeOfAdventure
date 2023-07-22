@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "com.unity.addressables": "1.19.19",
+    "com.unity.addressables": "1.21.14",
+    "com.unity.ai.navigation": "1.1.1",
     "com.unity.cinemachine": "file:../New packages/com.unity.cinemachine@2.9.7",
     "com.unity.collab-proxy": "2.0.4",
     "com.unity.feature.2d": "1.0.0",
@@ -9,10 +10,10 @@
     "com.unity.ide.vscode": "1.2.5",
     "com.unity.inputsystem": "1.5.1",
     "com.unity.nuget.newtonsoft-json": "3.2.1",
-    "com.unity.render-pipelines.universal": "12.1.11",
-    "com.unity.test-framework": "1.1.31",
+    "com.unity.render-pipelines.universal": "14.0.7",
+    "com.unity.test-framework": "1.1.33",
     "com.unity.textmeshpro": "3.0.6",
-    "com.unity.timeline": "1.6.5",
+    "com.unity.timeline": "1.7.4",
     "com.unity.ugui": "1.0.0",
     "com.unity.visualscripting": "1.8.0",
     "com.unity.modules.ai": "1.0.0",
