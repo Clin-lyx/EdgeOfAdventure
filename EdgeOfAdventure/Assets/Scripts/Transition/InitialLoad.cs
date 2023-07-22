@@ -1,18 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 public class InitialLoad : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public AssetReference persistentScene;
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        Addressables.LoadSceneAsync(persistentScene);
     }
 }

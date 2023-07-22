@@ -17,20 +17,20 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: b78aa1d3a1d62d544a7c9648e6d5ad1d
   m_SerializeEntries:
-  - m_GUID: 8c9cfa26abfee488c85f1582747f6a02
-    m_Address: SampleScene
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 3e1598213316f134ca8816dbcf552185
-    m_Address: MainMenu
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 6bcbdfc76079754458ad7b996d29b35e
+    m_Address: EndScene
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8c9cfa26abfee488c85f1582747f6a02
     m_Address: GameScene_1
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: fc39b02578cb7514c8212c82752795e3
     m_Address: TutorialScene
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3e1598213316f134ca8816dbcf552185
+    m_Address: MainMenu
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 5e0b88628f93b574aa0113b2df64800e
