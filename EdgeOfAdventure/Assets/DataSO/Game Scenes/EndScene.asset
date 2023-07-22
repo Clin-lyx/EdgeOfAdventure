@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: EndScene
   m_EditorClassIdentifier: 
   sceneReference:
-    m_AssetGUID: 6bcbdfc76079754458ad7b996d29b35e
+    m_AssetGUID: 35b98413e974ebe4cb7ee454ea9c0216
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
+  sceneType: 0
