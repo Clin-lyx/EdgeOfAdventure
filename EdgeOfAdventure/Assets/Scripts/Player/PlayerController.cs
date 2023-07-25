@@ -8,11 +8,11 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [Header("Event Listeners")]
-    [SerializeField]private SceneLoadEventSO sceneLoadEvent;
-    [SerializeField]private VoidEventSO afterSceneloadedEvent;
-    [SerializeField]private VoidEventSO loadDataEvent;
-    [SerializeField]private VoidEventSO backToMenuEvent;
-    [SerializeField]private VoidEventSO NewGameEvent;
+    [SerializeField] private SceneLoadEventSO sceneLoadEvent;
+    [SerializeField] private VoidEventSO afterSceneloadedEvent;
+    [SerializeField] private VoidEventSO loadDataEvent;
+    [SerializeField] private VoidEventSO backToMenuEvent;
+    [SerializeField] private VoidEventSO NewGameEvent;
 
     [Header("Components")]
     private PlayerInputControl inputControl;
@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     private CapsuleCollider2D cap;
     private PlayerAnimation playerAnimation;
 
-    
+
     [Header("Fundamental Arguments")]
     public float speed;
     public float runSpeed;
@@ -33,12 +33,12 @@ public class PlayerController : MonoBehaviour
     public float dashSpeed;
     public float dashCooldown;
     private float dashTimer;
-    [SerializeField]private float perfectDodge;
-    [SerializeField]private float dodgeTimer;
+    public float perfectDodge;
+    private float dodgeTimer;
     private Vector2 originalOffset;
     private Vector2 orginalSize;
     private CapsuleCollider2D coll;
-    
+
     [Header("physics material")]
     public PhysicsMaterial2D normal;
     public PhysicsMaterial2D wall;
@@ -49,11 +49,13 @@ public class PlayerController : MonoBehaviour
     public bool isCrouch;
     public bool isAttack;
     public bool isDash;
+    public bool holdS;
     public bool holdW;
     public bool isSkill;
     public bool perfect;
-    
-    private void Awake() {
+
+    private void Awake()
+    {
         // Initialization
         rb = GetComponent<Rigidbody2D>();
         inputControl = new PlayerInputControl();
@@ -62,7 +64,7 @@ public class PlayerController : MonoBehaviour
         playerAnimation = GetComponent<PlayerAnimation>();
         coll = GetComponent<CapsuleCollider2D>();
         inputControl.Enable();
-        
+
         // setting running speed
         runSpeed = speed;
 
@@ -75,14 +77,16 @@ public class PlayerController : MonoBehaviour
 
         // Walking performed when left shift is being pressed
         inputControl.Gameplay.Walk.performed += ctx => {
-            if(physicsCheck.OnGround()) {
+            if (physicsCheck.OnGround())
+            {
                 speed = walkSpeed;
             }
         };
 
         // Back to running once left shift is released
         inputControl.Gameplay.Walk.canceled += ctx => {
-            if (physicsCheck.OnGround()){
+            if (physicsCheck.OnGround())
+            {
                 speed = runSpeed;
             }
         };
@@ -102,7 +106,8 @@ public class PlayerController : MonoBehaviour
 
 
 
-    private void OnEnable() {
+    private void OnEnable()
+    {
         sceneLoadEvent.LoadRequestEvent += OnLoadEvent;
         afterSceneloadedEvent.OnEventRaised += OnAfterSceneLoadedEvent;
         loadDataEvent.OnEventRaised += OnLoadDataEvent;
@@ -110,7 +115,8 @@ public class PlayerController : MonoBehaviour
         NewGameEvent.OnEventRaised += OnLoadDataEvent;
     }
 
-    private void OnDisable() {
+    private void OnDisable()
+    {
         inputControl.Disable();
         sceneLoadEvent.LoadRequestEvent -= OnLoadEvent;
         afterSceneloadedEvent.OnEventRaised -= OnAfterSceneLoadedEvent;
@@ -120,7 +126,8 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    private void Update() {
+    private void Update()
+    {
         // consistently reading input from input devices.
         inputDirection = inputControl.Gameplay.Move.ReadValue<Vector2>();
 
@@ -128,15 +135,19 @@ public class PlayerController : MonoBehaviour
         checkState();
 
         // Dash cool down
-        dashTimer -= Time.deltaTime;
+        if (dashTimer > 0)
+            dashTimer -= Time.deltaTime;
 
-        // Perfect Dodge 
-        dodgeTimer -= Time.deltaTime;
+        // Perfect Dodge
+        if (dodgeTimer > 0)
+            dodgeTimer -= Time.deltaTime;
     }
 
-    private void FixedUpdate() {
+    private void FixedUpdate()
+    {
         if (!isHurt && !isAttack) Move();
 
+        holdS = inputDirection.y < -0.1f;
         holdW = inputDirection.y > 0.1f;
     }
 
@@ -156,51 +167,55 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    private void Move() {
+    private void Move()
+    {
         isCrouch = physicsCheck.OnGround() && inputDirection.y < -0.5f && !isAttack;
-        if (isCrouch) {
+        if (isCrouch)
+        {
             // adjusting collider size when crouching and immediately goes stop
             cap.size = new Vector2(1.4f, 1.7f);
             cap.offset = new Vector2(0.1f, 0.9f);
             rb.velocity = new Vector2(0f, rb.velocity.y);
-            
-        } else {
+
+        }
+        else
+        {
             // adjusting collider size when back at standing
             cap.size = orginalSize;
             cap.offset = originalOffset;
             rb.velocity = new Vector2(inputDirection.x * speed * Time.deltaTime, rb.velocity.y);
         }
         // maintaining the value of facing Direction if no input is given. 
-        int temp = (int) transform.localScale.x;
-        int faceDir = inputDirection.x < 0 ? -1 
+        int temp = (int)transform.localScale.x;
+        int faceDir = inputDirection.x < 0 ? -1
             : inputDirection.x > 0 ? 1 : temp;
 
         // establishing new facing direction.
         transform.localScale = new Vector3(faceDir, transform.localScale.y, transform.localScale.z);
     }
-    
+
     private void Jump(InputAction.CallbackContext context)
     {
         // Jump if the character is on the ground and not attack and not crouch
-        if (physicsCheck.OnGround() && !isCrouch && !isAttack) 
+        if (physicsCheck.OnGround() && !isCrouch && !isAttack)
             rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
-            
+
 
         // Jump if the character is on the ground and not attack and crouching
-        if (physicsCheck.OnGround() && isCrouch && !isAttack) 
+        if (physicsCheck.OnGround() && isCrouch && !isAttack)
             rb.AddForce(transform.up * jumpWhencrouch, ForceMode2D.Impulse);
     }
     private void PlayerAttack(InputAction.CallbackContext context)
     {
         // Player only throws attack when standing on Ground
-        if (!isHurt && !isDash) {
+        if (!isHurt && !isDash)
+        {
             rb.velocity = new Vector2(0, rb.velocity.y);
-            playerAnimation.PlayAttack();
             isAttack = true;
-            
-            isSkill = isAttack && (holdW || isCrouch);
-        }
+            playerAnimation.PlayAttack();
 
+            isSkill = isAttack && (holdW || holdS);
+        }
     }
 
     private void PlayerSkill(InputAction.CallbackContext context)
@@ -209,9 +224,9 @@ public class PlayerController : MonoBehaviour
         if (!isHurt && physicsCheck.OnGround())
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
-            playerAnimation.PlaySkill();
             isAttack = true;
             isSkill = true;
+            playerAnimation.PlaySkill();
             dodgeTimer = perfectDodge;
         }
 
@@ -220,48 +235,52 @@ public class PlayerController : MonoBehaviour
     private void Dash(InputAction.CallbackContext context)
     {
         // Player can only dash when on ground not throwing attacks, and the dash is cooled down
-        if (!isDash && physicsCheck.OnGround() && !isAttack && dashTimer <= 0f) {
+        if (!isDash && physicsCheck.OnGround() && !isAttack && dashTimer <= 0f)
+        {
             isDash = true;
 
             // target position after dash
-            var targetPos = new Vector2(transform.position.x + dashDistance * transform.localScale.x, 
+            var targetPos = new Vector2(transform.position.x + dashDistance * transform.localScale.x,
                 transform.position.y);
-            
+
             // avoid being attack from enemies;
             gameObject.layer = LayerMask.NameToLayer("Enemy");
 
             StartCoroutine(TriggerDash(targetPos));
             dashTimer = dashCooldown;
-       }
+        }
     }
 
-    private IEnumerator TriggerDash(Vector2 target) 
+    private IEnumerator TriggerDash(Vector2 target)
     {
         float faceDir = transform.localScale.x;
-        do {
-            
+        do
+        {
+
             yield return null;
 
             // if player is on air the dash is terminates.
-            if (!physicsCheck.OnGround()) {
+            if (!physicsCheck.OnGround())
+            {
                 break;
             }
-            
+
             // if player turns the dash terminates
             if (faceDir != transform.localScale.x) break;
 
             // if player hits wall the dash terminates
-            if (physicsCheck.TouchLeftWall() && transform.localScale.x < 0f 
-                || physicsCheck.TouchRightWall() && transform.localScale.x > 0f) {
+            if (physicsCheck.TouchLeftWall() && transform.localScale.x < 0f
+                || physicsCheck.TouchRightWall() && transform.localScale.x > 0f)
+            {
                 break;
             }
-            
+
             // moving towards target position
             rb.MovePosition(new Vector2(transform.position.x + transform.localScale.x * dashSpeed,
                 transform.position.y));
-            
-            
-            
+
+
+
         } while (MathF.Abs(target.x - transform.position.x) > 0.5f);
 
         isDash = false;
@@ -269,12 +288,13 @@ public class PlayerController : MonoBehaviour
         gameObject.layer = LayerMask.NameToLayer("Player");
     }
 
-    public void GetHurt(Attack attacker) {
+    public void GetHurt(Attack attacker)
+    {
         isHurt = true;
-        
+
         // reset player velocity so that it wont fly away after receiving damage frequently 
         rb.velocity = Vector2.zero;
-        
+
         // direction of attack
         Vector2 dir = new Vector2(rb.position.x - attacker.transform.position.x, 0).normalized;
 
@@ -283,21 +303,25 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(transform.up * attacker.hurtForceY, ForceMode2D.Impulse);
     }
 
-    public void PlayerDead() {
+    public void PlayerDead()
+    {
         isDead = true;
         inputControl.Gameplay.Disable();
         gameObject.layer = LayerMask.NameToLayer("Enemy");
-    }    
+    }
 
-    private void checkState() {
+    private void checkState()
+    {
         coll.sharedMaterial = physicsCheck.OnGround() ? normal : wall;
     }
 
-    public void SetInputControlToDisable() {
+    public void SetInputControlToDisable()
+    {
         inputControl.Disable();
     }
 
-    public bool IsPerfectDodge() {
+    public bool IsPerfectDodge()
+    {
         return dodgeTimer > 0;
     }
 }
