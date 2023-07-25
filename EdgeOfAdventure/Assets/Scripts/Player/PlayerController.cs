@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour
     public bool isAttack;
     public bool isDash;
     public bool holdS;
+    public bool holdW;
     public bool isSkill;
     public bool perfect;
     
@@ -137,7 +138,8 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate() {
         if (!isHurt && !isAttack) Move();
 
-        holdS = inputDirection.y < -0.5f;
+        holdS = inputDirection.y < -0.1f;
+        holdW = inputDirection.y > 0.1f;
     }
 
     private void OnLoadEvent(GameSceneSO arg0, Vector3 arg1, bool arg2)
@@ -198,7 +200,7 @@ public class PlayerController : MonoBehaviour
             playerAnimation.PlayAttack();
             isAttack = true;
 
-            if (holdS && isAttack)
+            if ((holdS && isAttack) || (holdW && isAttack))
             {
                 isSkill = true;
             }

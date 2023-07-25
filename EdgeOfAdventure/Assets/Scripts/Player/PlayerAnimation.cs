@@ -53,6 +53,9 @@ public class PlayerAnimation : MonoBehaviour
         // if holding S key
         anim.SetBool("holdS", playerController.holdS);
 
+        // if holding W key
+        anim.SetBool("holdW", playerController.holdW);
+
         // if using skill
         anim.SetBool("isSkill", playerController.isSkill);
 
