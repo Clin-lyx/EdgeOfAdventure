@@ -49,7 +49,6 @@ public class PlayerController : MonoBehaviour
     public bool isCrouch;
     public bool isAttack;
     public bool isDash;
-    public bool holdS;
     public bool holdW;
     public bool isSkill;
     public bool perfect;
@@ -138,7 +137,6 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate() {
         if (!isHurt && !isAttack) Move();
 
-        holdS = inputDirection.y < -0.1f;
         holdW = inputDirection.y > 0.1f;
     }
 
@@ -195,15 +193,12 @@ public class PlayerController : MonoBehaviour
     private void PlayerAttack(InputAction.CallbackContext context)
     {
         // Player only throws attack when standing on Ground
-        if (!isHurt) {
+        if (!isHurt && !isDash) {
             rb.velocity = new Vector2(0, rb.velocity.y);
             playerAnimation.PlayAttack();
             isAttack = true;
-
-            if ((holdS && isAttack) || (holdW && isAttack))
-            {
-                isSkill = true;
-            }
+            
+            isSkill = isAttack && (holdW || isCrouch);
         }
 
     }

@@ -5,12 +5,17 @@ using UnityEngine;
 public class PhysicsCheck : MonoBehaviour
 {    
     [Header("Arguments")]
-    public bool manual;
+    [SerializeField]private bool manual;
     public LayerMask Ground;
     private Rigidbody2D rb;
-    public Vector2 bottomOffset;
+    [SerializeField]private Vector2 bottomOffset;
     public Vector2 leftOffset;
     public Vector2 rightOffset;
+    [SerializeField]private Vector2 upperLeftoffset;
+    [SerializeField]private Vector2 lowerLeftoffset;
+    [SerializeField]private Vector2 upperRightoffset;
+    [SerializeField]private Vector2 lowerRightoffset;
+
     public float checkRadius;
     private CapsuleCollider2D coll;
     

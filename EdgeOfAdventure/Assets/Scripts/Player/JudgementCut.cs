@@ -13,8 +13,6 @@ public class JudgementCut : MonoBehaviour
 
     private void Awake()
     {
-        enemy = character.GetEnemy();
-        Debug.Log(enemy);
         judgementCutSFX = GameObject.FindWithTag("SFX").transform.Find("Judgement Cut");
         playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
     }
@@ -34,5 +32,6 @@ public class JudgementCut : MonoBehaviour
 
     private void OnDisable() {
         enemy = null;
+        character.GetComponent<PlayerController>().perfect = false;
     }
 }

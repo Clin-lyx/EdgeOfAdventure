@@ -51,7 +51,7 @@ public class PlayerAnimation : MonoBehaviour
         anim.SetBool("isDash", playerController.isDash);
 
         // if holding S key
-        anim.SetBool("holdS", playerController.holdS);
+        anim.SetBool("holdS", playerController.isCrouch);
 
         // if holding W key
         anim.SetBool("holdW", playerController.holdW);
