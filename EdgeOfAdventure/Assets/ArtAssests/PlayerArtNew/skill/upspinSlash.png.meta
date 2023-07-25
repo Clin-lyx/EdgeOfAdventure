@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 76958beb80932d04bbd6fd8341cf1d66
+guid: 098e382153b73904e9a7da7a345b7054
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -108,7 +108,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -120,7 +120,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -131,13 +131,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: judgement cut_0
+      name: upspinSlash_0
       rect:
         serializedVersion: 2
-        x: 32
-        y: 3640
-        width: 1052
-        height: 456
+        x: 0
+        y: 3291
+        width: 752
+        height: 805
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7785e0ff20471145b660c021d05bf0e
-      internalID: 1104622417
+      spriteID: ce53355259268a040b9fe5826d89979b
+      internalID: -1006346377
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: judgement cut_1
+      name: upspinSlash_1
       rect:
         serializedVersion: 2
-        x: 1126
-        y: 3642
-        width: 1052
-        height: 454
+        x: 762
+        y: 3294
+        width: 752
+        height: 802
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a244199ab759e8742be7936a19a04845
-      internalID: 2140034394
+      spriteID: cae555557c696874587dd79f8ade35d0
+      internalID: -1869327014
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: judgement cut_2
+      name: upspinSlash_2
       rect:
         serializedVersion: 2
-        x: 2220
-        y: 3642
-        width: 1052
-        height: 454
+        x: 1524
+        y: 3294
+        width: 752
+        height: 802
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b95d704da0a97b46893ddc5c228ec71
-      internalID: 1523021479
+      spriteID: f42e9f1dc14c3a94893d1f572b711168
+      internalID: -2038704707
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: judgement cut_3
+      name: upspinSlash_3
       rect:
         serializedVersion: 2
-        x: 32
-        y: 3176
-        width: 1052
-        height: 452
+        x: 2286
+        y: 3294
+        width: 752
+        height: 802
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84396be6e1141d7429d05995b0ac6ebf
-      internalID: 1696532663
+      spriteID: fd0aee3ca3e93454f88368e7c340de3c
+      internalID: -392611282
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: judgement cut_4
+      name: upspinSlash_4
       rect:
         serializedVersion: 2
-        x: 1126
-        y: 3176
-        width: 1052
-        height: 452
+        x: 3048
+        y: 3294
+        width: 752
+        height: 802
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 390aaa0f083ecae4b86bc90113ce1536
-      internalID: -1277347279
+      spriteID: 4dc99953b187cc54db18ab41fa65101f
+      internalID: 1048942649
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: judgement cut_5
+      name: upspinSlash_5
       rect:
         serializedVersion: 2
-        x: 2220
-        y: 3176
-        width: 1052
-        height: 452
+        x: 0
+        y: 2479
+        width: 752
+        height: 802
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +250,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12fc0a7dc1c4de84fb8520f3772e490c
-      internalID: -1253300947
+      spriteID: 739cdb3942baece49870d006dab86bf4
+      internalID: 1923368463
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: judgement cut_6
+      name: upspinSlash_6
       rect:
         serializedVersion: 2
-        x: 32
-        y: 2708
-        width: 1052
-        height: 454
+        x: 762
+        y: 2479
+        width: 752
+        height: 802
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,20 +271,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 376a60271bdb56446936f4b589803f7e
-      internalID: -629410752
+      spriteID: d64974f5c2c0bd341af90274ce97b02a
+      internalID: 1949251372
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: judgement cut_7
+      name: upspinSlash_7
       rect:
         serializedVersion: 2
-        x: 1126
-        y: 2708
-        width: 1052
-        height: 454
+        x: 1524
+        y: 2479
+        width: 752
+        height: 802
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,20 +292,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7cf4a922c1475194cbd5c79c19e87ff4
-      internalID: -1144354390
+      spriteID: 906117ffeb2eb944f9d16aa5b5b4734a
+      internalID: 862236107
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: judgement cut_8
+      name: upspinSlash_8
       rect:
         serializedVersion: 2
-        x: 2220
-        y: 2708
-        width: 1052
-        height: 454
+        x: 2286
+        y: 2479
+        width: 752
+        height: 802
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,20 +313,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62468030cff001c4baa907e76d56a93c
-      internalID: 460999451
+      spriteID: 0468146521b60434388855f3e941e6f3
+      internalID: -556769397
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: judgement cut_9
+      name: upspinSlash_9
       rect:
         serializedVersion: 2
-        x: 32
-        y: 2242
-        width: 1052
-        height: 452
+        x: 3048
+        y: 2479
+        width: 752
+        height: 802
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -334,20 +334,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f3023d5414665643ad4993908297570
-      internalID: 1684725108
+      spriteID: 1394d4776820ffc4a89cb78b391bb700
+      internalID: 1686806178
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: judgement cut_10
+      name: upspinSlash_10
       rect:
         serializedVersion: 2
-        x: 1126
-        y: 2242
-        width: 1052
-        height: 452
+        x: 0
+        y: 1664
+        width: 752
+        height: 802
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -355,20 +355,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 234d3fa580f0b46439ec3371e996cbc1
-      internalID: 623735659
+      spriteID: e440b1d733f7c0b4bab5ded1774ffcfb
+      internalID: -131027883
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: judgement cut_11
+      name: upspinSlash_11
       rect:
         serializedVersion: 2
-        x: 2220
-        y: 2242
-        width: 1052
-        height: 452
+        x: 762
+        y: 1664
+        width: 752
+        height: 802
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -376,20 +376,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d4f534dced4fa04b832b9c91d930ec0
-      internalID: -213906698
+      spriteID: 460fa4e12f7cc894ab205098dd36dbea
+      internalID: 1603754713
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: judgement cut_12
+      name: upspinSlash_12
       rect:
         serializedVersion: 2
-        x: 32
-        y: 1774
-        width: 1052
-        height: 454
+        x: 1524
+        y: 1664
+        width: 752
+        height: 802
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -397,20 +397,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fef424fd496a449478fbc545ff7237f1
-      internalID: -1706822493
+      spriteID: d90139a996ecf9f4e93fb3b3c0e3f750
+      internalID: -781206278
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: judgement cut_13
+      name: upspinSlash_13
       rect:
         serializedVersion: 2
-        x: 1126
-        y: 1774
-        width: 1052
-        height: 454
+        x: 2286
+        y: 1664
+        width: 752
+        height: 802
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -418,20 +418,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d01a309ad9a0687468e93f891edfbef5
-      internalID: -2077823269
+      spriteID: bffc76e071aa9bb47b54d85de796cd35
+      internalID: 1448814669
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: judgement cut_14
+      name: upspinSlash_14
       rect:
         serializedVersion: 2
-        x: 2220
-        y: 1774
-        width: 1052
-        height: 454
+        x: 3048
+        y: 1664
+        width: 752
+        height: 802
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -439,20 +439,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f8eecec986e0454a8e8c0e78ed87e55
-      internalID: -1320649243
+      spriteID: 95d229a9576f1094ab946e234f811ada
+      internalID: 439530102
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: judgement cut_15
+      name: upspinSlash_15
       rect:
         serializedVersion: 2
-        x: 32
-        y: 1308
-        width: 1052
-        height: 452
+        x: 0
+        y: 849
+        width: 752
+        height: 802
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -460,20 +460,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc470ad4c42a16e4eb18e9debbb16cf1
-      internalID: 1961677054
+      spriteID: b4be81d7c28bd3b40841cd8366e89525
+      internalID: -107394883
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: judgement cut_16
+      name: upspinSlash_16
       rect:
         serializedVersion: 2
-        x: 1126
-        y: 1308
-        width: 1052
-        height: 452
+        x: 762
+        y: 849
+        width: 752
+        height: 802
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -481,20 +481,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b7299addd2f9a74e94c8b1746800b8c
-      internalID: -737018475
+      spriteID: 4b820bfc24759d74e89d8b7501c8b5a3
+      internalID: 923666224
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: judgement cut_17
+      name: upspinSlash_17
       rect:
         serializedVersion: 2
-        x: 2220
-        y: 1308
-        width: 1052
-        height: 452
+        x: 1524
+        y: 849
+        width: 752
+        height: 802
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -502,134 +502,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c299103236a90734c91d1f7185452254
-      internalID: 164869211
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: judgement cut_18
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 840
-        width: 1052
-        height: 454
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ef668c4836b7ad0479a9d816b3b5c390
-      internalID: -1456643867
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: judgement cut_19
-      rect:
-        serializedVersion: 2
-        x: 1126
-        y: 840
-        width: 1052
-        height: 454
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dde94502c4f23144bacab2801b869472
-      internalID: 1443076387
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: judgement cut_20
-      rect:
-        serializedVersion: 2
-        x: 2220
-        y: 840
-        width: 1052
-        height: 454
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 29316c7ca53f8804a96e385f584db780
-      internalID: 124991591
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: judgement cut_21
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 374
-        width: 1052
-        height: 452
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d3beacc6ce288ea44a687bd1ca38f63f
-      internalID: 144864253
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: judgement cut_22
-      rect:
-        serializedVersion: 2
-        x: 1126
-        y: 374
-        width: 1052
-        height: 452
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a1c8b52c4eb06b44bb485753d2943e07
-      internalID: -2017928596
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: judgement cut_23
-      rect:
-        serializedVersion: 2
-        x: 2220
-        y: 374
-        width: 1052
-        height: 452
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 56629205bb50e1641a095ce8f434972b
-      internalID: 1512535192
+      spriteID: 2f1a37558b2004c4992c9eb422bf3a78
+      internalID: 44349717
       vertices: []
       indices: 
       edges: []
@@ -645,30 +519,24 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      judgement cut_0: 1104622417
-      judgement cut_1: 2140034394
-      judgement cut_10: 623735659
-      judgement cut_11: -213906698
-      judgement cut_12: -1706822493
-      judgement cut_13: -2077823269
-      judgement cut_14: -1320649243
-      judgement cut_15: 1961677054
-      judgement cut_16: -737018475
-      judgement cut_17: 164869211
-      judgement cut_18: -1456643867
-      judgement cut_19: 1443076387
-      judgement cut_2: 1523021479
-      judgement cut_20: 124991591
-      judgement cut_21: 144864253
-      judgement cut_22: -2017928596
-      judgement cut_23: 1512535192
-      judgement cut_3: 1696532663
-      judgement cut_4: -1277347279
-      judgement cut_5: -1253300947
-      judgement cut_6: -629410752
-      judgement cut_7: -1144354390
-      judgement cut_8: 460999451
-      judgement cut_9: 1684725108
+      upspinSlash_0: -1006346377
+      upspinSlash_1: -1869327014
+      upspinSlash_10: -131027883
+      upspinSlash_11: 1603754713
+      upspinSlash_12: -781206278
+      upspinSlash_13: 1448814669
+      upspinSlash_14: 439530102
+      upspinSlash_15: -107394883
+      upspinSlash_16: 923666224
+      upspinSlash_17: 44349717
+      upspinSlash_2: -2038704707
+      upspinSlash_3: -392611282
+      upspinSlash_4: 1048942649
+      upspinSlash_5: 1923368463
+      upspinSlash_6: 1949251372
+      upspinSlash_7: 862236107
+      upspinSlash_8: -556769397
+      upspinSlash_9: 1686806178
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
