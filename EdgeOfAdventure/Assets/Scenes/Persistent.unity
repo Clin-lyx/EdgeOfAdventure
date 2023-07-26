@@ -6569,7 +6569,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   hurtForceX: 0
-  hurtForceY: 10
+  hurtForceY: 25
 --- !u!70 &1128127128
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -8252,7 +8252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   hurtForceX: 0
-  hurtForceY: 22
+  hurtForceY: 15
 --- !u!70 &1334608507
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

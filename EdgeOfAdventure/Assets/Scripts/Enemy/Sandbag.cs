@@ -17,6 +17,7 @@ public class Sandbag : MonoBehaviour
 
     public LayerMask attackLayer;
 
+
     [Header("State")]
     public bool isHurt;
     public bool isDead;
