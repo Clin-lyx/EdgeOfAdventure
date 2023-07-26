@@ -59,6 +59,8 @@ public class PlayerAnimation : MonoBehaviour
         // if using skill
         anim.SetBool("isSkill", playerController.isSkill);
 
+        anim.SetBool("TouchingWall", physicsCheck.TouchLeftWall() || physicsCheck.TouchRightWall());
+
     }
 
     public void PlayerHurt() {

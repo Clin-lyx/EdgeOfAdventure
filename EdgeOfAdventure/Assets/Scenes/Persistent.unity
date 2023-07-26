@@ -11717,10 +11717,10 @@ MonoBehaviour:
   bottomOffset: {x: -0.03, y: 0.03}
   leftOffset: {x: 0.39, y: 1.31}
   rightOffset: {x: -0.49, y: 1.31}
-  upperLeftoffset: {x: 0, y: 0}
-  lowerLeftoffset: {x: 0, y: 0}
-  upperRightoffset: {x: 0, y: 0}
-  lowerRightoffset: {x: 0, y: 0}
+  upperLeftoffset: {x: 0.39, y: 1.89}
+  lowerLeftoffset: {x: 0.39, y: 0.69}
+  upperRightoffset: {x: -0.49, y: 1.89}
+  lowerRightoffset: {x: -0.49, y: 0.69}
   checkRadius: 0.12
 --- !u!114 &1909171899
 MonoBehaviour:

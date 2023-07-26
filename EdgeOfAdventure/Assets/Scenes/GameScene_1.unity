@@ -56403,7 +56403,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5659735366499220701, guid: 4fd62ac2100a6f4418c9970de63d5338, type: 3}
       propertyPath: manual
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5659735366499220701, guid: 4fd62ac2100a6f4418c9970de63d5338, type: 3}
       propertyPath: leftOffset.y
@@ -56488,6 +56488,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1274684585026114949, guid: b6bb02c03c6682542adeb9162e8e5be9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274684585026114950, guid: b6bb02c03c6682542adeb9162e8e5be9, type: 3}
+      propertyPath: manual
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1274684585026115007, guid: b6bb02c03c6682542adeb9162e8e5be9, type: 3}
