@@ -235,7 +235,8 @@ public class PlayerController : MonoBehaviour
     private void Dash(InputAction.CallbackContext context)
     {
         // Player can only dash when on ground not throwing attacks, and the dash is cooled down
-        if (!isDash && physicsCheck.OnGround() && !isAttack && dashTimer <= 0f)
+        if (!isDash && physicsCheck.OnGround() && !isAttack && dashTimer <= 0f && !physicsCheck.TouchLeftWall()
+            && !physicsCheck.TouchRightWall())
         {
             isDash = true;
 
