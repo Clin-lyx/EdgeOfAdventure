@@ -1484,7 +1484,7 @@ GameObject:
   - component: {fileID: 269046710}
   - component: {fileID: 269046711}
   m_Layer: 0
-  m_Name: WaveFX_2
+  m_Name: WaveFX_wave sword 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2098,7 +2098,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -0.39196777, y: 99.823}
+  m_AnchoredPosition: {x: 0, y: 100}
   m_SizeDelta: {x: 0, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &453894119
@@ -2371,7 +2371,7 @@ GameObject:
   - component: {fileID: 496567444}
   - component: {fileID: 496567445}
   m_Layer: 0
-  m_Name: WaveFX_
+  m_Name: WaveFX_Retract1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2404,8 +2404,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 737466db4965e154e9d38e45c6a30f77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playAudioEvent: {fileID: 11400000, guid: e21ba76ff721c0648975cee5a7914ff8, type: 2}
+  audioClip: {fileID: 8300000, guid: 2347fa8e83f29974c9c853747b8fe84c, type: 3}
+  playOnEnable: 1
+--- !u!1 &496954530
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 496954531}
+  - component: {fileID: 496954532}
+  m_Layer: 0
+  m_Name: WaveFX_Retract2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &496954531
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496954530}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1321166388}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &496954532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496954530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 737466db4965e154e9d38e45c6a30f77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   playAudioEvent: {fileID: 11400000, guid: 94bd0cfbd7a835341b2a5978282ba916, type: 2}
-  audioClip: {fileID: 8300000, guid: f4cc8ca0fc444a34aae9670246e6fbb1, type: 3}
+  audioClip: {fileID: 8300000, guid: 6a9942322b81268429d63bdd6408501d, type: 3}
   playOnEnable: 1
 --- !u!1 &503265545
 GameObject:
@@ -3724,7 +3771,7 @@ GameObject:
   - component: {fileID: 552121114}
   - component: {fileID: 552121115}
   m_Layer: 0
-  m_Name: WaveFX_9
+  m_Name: WaveFX_double wave 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5701,6 +5748,53 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &931883758
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 931883759}
+  - component: {fileID: 931883760}
+  m_Layer: 0
+  m_Name: WaveFX_Retract3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &931883759
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931883758}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1321166388}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &931883760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931883758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 737466db4965e154e9d38e45c6a30f77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playAudioEvent: {fileID: 11400000, guid: 94bd0cfbd7a835341b2a5978282ba916, type: 2}
+  audioClip: {fileID: 8300000, guid: 28d8a31bc9e289243aa52a5a1676cbce, type: 3}
+  playOnEnable: 1
 --- !u!1 &947898958
 GameObject:
   m_ObjectHideFlags: 3
@@ -6696,9 +6790,9 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.31, y: 2.46}
-  m_Size: {x: 3.82, y: 4.7}
-  m_Direction: 0
+  m_Offset: {x: 0.35, y: 1.36}
+  m_Size: {x: 3.46, y: 2.6}
+  m_Direction: 1
 --- !u!1 &1136728992
 GameObject:
   m_ObjectHideFlags: 0
@@ -7408,8 +7502,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 737466db4965e154e9d38e45c6a30f77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playAudioEvent: {fileID: 11400000, guid: 94bd0cfbd7a835341b2a5978282ba916, type: 2}
+  playAudioEvent: {fileID: 11400000, guid: e21ba76ff721c0648975cee5a7914ff8, type: 2}
   audioClip: {fileID: 8300000, guid: 28f0951cfcb4e1041935433680883ecd, type: 3}
+  playOnEnable: 1
+--- !u!1 &1211303527
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1211303528}
+  - component: {fileID: 1211303529}
+  m_Layer: 0
+  m_Name: WaveFX_Retract4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1211303528
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211303527}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1321166388}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1211303529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211303527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 737466db4965e154e9d38e45c6a30f77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playAudioEvent: {fileID: 11400000, guid: 94bd0cfbd7a835341b2a5978282ba916, type: 2}
+  audioClip: {fileID: 8300000, guid: 4779e991e288ef94b8dbcfd6e7985ec4, type: 3}
   playOnEnable: 1
 --- !u!1 &1222028963
 GameObject:
@@ -8269,9 +8410,13 @@ Transform:
   - {fileID: 1158582852}
   - {fileID: 242177914}
   - {fileID: 552121114}
+  - {fileID: 1980717399}
   - {fileID: 1379658128}
   - {fileID: 1343236469}
   - {fileID: 496567444}
+  - {fileID: 496954531}
+  - {fileID: 931883759}
+  - {fileID: 1211303528}
   - {fileID: 589670027}
   - {fileID: 1065275157}
   - {fileID: 146339649}
@@ -8282,6 +8427,7 @@ Transform:
   - {fileID: 511266006}
   - {fileID: 1710166735}
   - {fileID: 226092161}
+  - {fileID: 1473796983}
   m_Father: {fileID: 1909171903}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8467,7 +8613,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   hurtForceX: 0
-  hurtForceY: 13
+  hurtForceY: 15
 --- !u!70 &1334608507
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -8635,7 +8781,7 @@ GameObject:
   - component: {fileID: 1343236469}
   - component: {fileID: 1343236470}
   m_Layer: 0
-  m_Name: WaveFX_rub_2
+  m_Name: WaveFX_draw a sword 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9304,6 +9450,53 @@ MonoBehaviour:
   loadDataEvent: {fileID: 11400000, guid: 0f9c9fcb16344634e998971c85730253, type: 2}
   fadeEvent: {fileID: 11400000, guid: 08697f2a79839b048a7274653f8fd160, type: 2}
   player: {fileID: 1909171897}
+--- !u!1 &1473796982
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1473796983}
+  - component: {fileID: 1473796984}
+  m_Layer: 0
+  m_Name: WaveFX_Cut and Tear
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1473796983
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473796982}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1321166388}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1473796984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473796982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 737466db4965e154e9d38e45c6a30f77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playAudioEvent: {fileID: 11400000, guid: e21ba76ff721c0648975cee5a7914ff8, type: 2}
+  audioClip: {fileID: 8300000, guid: 096e1c3824236dd42b011214ddf701d1, type: 3}
+  playOnEnable: 1
 --- !u!1 &1478468076
 GameObject:
   m_ObjectHideFlags: 0
@@ -9661,7 +9854,7 @@ GameObject:
   - component: {fileID: 1542872497}
   - component: {fileID: 1542872498}
   m_Layer: 0
-  m_Name: WaveFX_1
+  m_Name: WaveFX_wave sword 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11959,7 +12152,7 @@ SpriteRenderer:
   m_SortingLayerID: 1166163455
   m_SortingLayer: 3
   m_SortingOrder: 2
-  m_Sprite: {fileID: 1303646125, guid: 8a0791789fa7c7441b2e1d120c7f848e, type: 3}
+  m_Sprite: {fileID: 1686806178, guid: 098e382153b73904e9a7da7a345b7054, type: 3}
   m_Color: {r: 0.7686275, g: 0.7686275, b: 0.7686275, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -12449,6 +12642,53 @@ Transform:
   m_Father: {fileID: 1856164155}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1980717398
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1980717399}
+  - component: {fileID: 1980717400}
+  m_Layer: 0
+  m_Name: WaveFX_double wave 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1980717399
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980717398}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1321166388}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1980717400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980717398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 737466db4965e154e9d38e45c6a30f77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playAudioEvent: {fileID: 11400000, guid: 94bd0cfbd7a835341b2a5978282ba916, type: 2}
+  audioClip: {fileID: 8300000, guid: 55120f7c79fea124cb0920baed2e2e43, type: 3}
+  playOnEnable: 1
 --- !u!1 &2055869987
 GameObject:
   m_ObjectHideFlags: 0
