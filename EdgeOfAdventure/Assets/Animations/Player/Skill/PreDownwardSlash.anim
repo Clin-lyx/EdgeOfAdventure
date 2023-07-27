@@ -26,9 +26,9 @@ AnimationClip:
       value: {fileID: 746191638, guid: 8a0791789fa7c7441b2e1d120c7f848e, type: 3}
     - time: 0.083333336
       value: {fileID: 732133956, guid: 8a0791789fa7c7441b2e1d120c7f848e, type: 3}
-    - time: 0.125
-      value: {fileID: 1579636062, guid: 8a0791789fa7c7441b2e1d120c7f848e, type: 3}
     - time: 0.16666667
+      value: {fileID: 1579636062, guid: 8a0791789fa7c7441b2e1d120c7f848e, type: 3}
+    - time: 0.25
       value: {fileID: 73324159, guid: 8a0791789fa7c7441b2e1d120c7f848e, type: 3}
     attribute: m_Sprite
     path: 
@@ -62,7 +62,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.20833334
+    m_StopTime: 0.29166666
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -86,10 +86,10 @@ AnimationClip:
     functionName: ForceOnAir
     data: 
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 15
+    floatParameter: 25
     intParameter: 0
     messageOptions: 0
-  - time: 0.16666667
+  - time: 0.25
     functionName: ForceOnAir
     data: 
     objectReferenceParameter: {fileID: 0}

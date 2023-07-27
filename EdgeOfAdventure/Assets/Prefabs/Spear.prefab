@@ -284,7 +284,7 @@ MonoBehaviour:
   newGameEvent: {fileID: 11400000, guid: 7e9bf69a8ca90614197e460968f8a6e0, type: 2}
   maxHealth: 60
   currentHealth: 0
-  invulnerableDuration: 0.05
+  invulnerableDuration: 0.06
   invulnerable: 0
   OnHealthChange:
     m_PersistentCalls:
@@ -405,6 +405,9 @@ MonoBehaviour:
   upperRightoffset: {x: 0, y: 0}
   lowerRightoffset: {x: 0, y: 0}
   checkRadius: 0.1
+  onGround: 0
+  touchRightwall: 0
+  touchLeftwall: 0
 --- !u!114 &6651008089973317093
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -368,6 +368,6 @@ AnimationClip:
     functionName: ForceOnAir
     data: 
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 20
+    floatParameter: 22
     intParameter: 0
     messageOptions: 0
