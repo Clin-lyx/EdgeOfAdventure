@@ -5,14 +5,14 @@ using UnityEngine;
 public class SavePoint : MonoBehaviour, IInteractable
 {
     [Header("Broadcast")]
-    public VoidEventSO saveGameEvent;
+    [SerializeField]private VoidEventSO saveGameEvent;
 
     [Header("Arguments")]
-    public SpriteRenderer spriteRenderer;
-    public GameObject lightObj;
-    public Sprite darkSprite;
-    public Sprite lightSprite;
-    public bool isDone;
+    [SerializeField]private SpriteRenderer spriteRenderer;
+    [SerializeField]private GameObject lightObj;
+    [SerializeField]private Sprite darkSprite;
+    [SerializeField]private Sprite lightSprite;
+    private bool isDone;
 
     private void OnEnable()
     {

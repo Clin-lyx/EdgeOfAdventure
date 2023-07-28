@@ -5,8 +5,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     private Rigidbody2D rb;
-    [HideInInspector]public Animator anim;
-    [HideInInspector]public PhysicsCheck physicsCheck;
+    protected internal Animator anim;
+    protected internal PhysicsCheck physicsCheck;
     private GameObject player;
     private Transform hurtSFX;
     private GameObject hurtAudio;
@@ -60,28 +60,35 @@ public class Enemy : MonoBehaviour
     private void OnEnable()
     {
         //Patrolling when start the game
-        currentState = patrolState;
-        currentState.OnEnter(this);
+        if (!gameObject.CompareTag("Sand Bag")) {
+            currentState = patrolState;
+            currentState.OnEnter(this);
+        }
+    
     }
 
     
     private void Update() {
         //Axe axe = (Axe) this;
         //Debug.Log(axe.isAttack);
-        faceDir = rb.transform.localScale.x;
-        currentState.LogicUpdate();
-        TimeCounter();
+        if (!gameObject.CompareTag("Sand Bag")) {
+            faceDir = rb.transform.localScale.x;
+            currentState.LogicUpdate();
+            TimeCounter();
+        }
+
     }
 
     private void FixedUpdate(){
         if (!isHurt && !isDead && !wait && physicsCheck.OnGround())
             Move();
-        currentState.PhysicsUpdate();
+
+        if(!gameObject.CompareTag("Sand Bag")) currentState.PhysicsUpdate();
     }
 
     private void OnDisable()
     {
-        currentState.OnExit();
+        if(!gameObject.CompareTag("Sand Bag")) currentState.OnExit();
     }
     public void ChangeSpeedIdle() {
         currentSpeed = normalSpeed;
@@ -90,7 +97,25 @@ public class Enemy : MonoBehaviour
     public void ChangeSpeedChase() {
         currentSpeed = chaseSpeed;
     }
+    public float LostTimeCounter() {
+        return lostTimeCounter;
+    }
 
+    public void SetWaitTimeCounter(float time) {
+        waitTimeCounter= time;
+    }
+
+    public float GetFaceDir() {
+        return faceDir;
+    }
+
+    public void SetWait(bool wait) {
+        this.wait = wait;
+    }
+
+    public void ResetLostTimer() {
+        lostTimeCounter = lostTime;
+    }
     public void ChangeSpeedEncounter() {
         currentSpeed = encounterSpeed;
     }
@@ -146,7 +171,6 @@ public class Enemy : MonoBehaviour
         RaycastHit2D feedback = Physics2D.BoxCast(transform.position + (Vector3)centerOffset, 
             checkSize, 0, new Vector3(faceDir, 0, 0), checkDistance, attackLayer);
         if (feedback != false) player = feedback.transform.gameObject;
-        Debug.Log(feedback == true);
         return feedback;
     }
 
@@ -189,8 +213,7 @@ public class Enemy : MonoBehaviour
     //Return the result of being attacked
     private IEnumerator OnHurt(Vector2 dir, Attack attacker)
     {
-
-        anim.SetBool("isAttack", false);
+        if (!gameObject.CompareTag("Sand Bag")) anim.SetBool("isAttack", false);
         rb.AddForce(dir * attacker.ForceX(), ForceMode2D.Impulse);
         rb.AddForce(transform.up * attacker.ForceY(), ForceMode2D.Impulse);
 
@@ -272,23 +295,5 @@ public class Enemy : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position + (Vector3)centerOffset + new Vector3(checkDistance * transform.localScale.x, 0), 0.2f);
     }
 
-    public float LostTimeCounter() {
-        return lostTimeCounter;
-    }
 
-    public void SetWaitTimeCounter(float time) {
-        waitTimeCounter= time;
-    }
-
-    public float GetFaceDir() {
-        return faceDir;
-    }
-
-    public void SetWait(bool wait) {
-        this.wait = wait;
-    }
-
-    public void ResetLostTimer() {
-        lostTimeCounter = lostTime;
-    }
 }

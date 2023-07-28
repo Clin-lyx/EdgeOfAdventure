@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Components")]
     private PlayerInputControl inputControl;
-    public Vector2 inputDirection;
+    private Vector2 inputDirection;
     private Rigidbody2D rb;
     private PhysicsCheck physicsCheck;
     private CapsuleCollider2D cap;
@@ -324,5 +324,9 @@ public class PlayerController : MonoBehaviour
     public bool IsPerfectDodge()
     {
         return dodgeTimer > 0;
+    }
+
+    public Vector2 InputDirection() {
+        return inputDirection;
     }
 }

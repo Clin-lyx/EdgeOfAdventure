@@ -11,7 +11,7 @@ public class AttackStart : StateMachineBehaviour
     {   
         // player can switch its facing direction when attempting attack at the very beginning 
         transform = animator.GetComponent<Transform>();
-        inputDirection = animator.GetComponent<PlayerController>().inputDirection;
+        inputDirection = animator.GetComponent<PlayerController>().InputDirection();
         int temp = (int)transform.localScale.x;
         int faceDir = inputDirection.x < 0 ? -1
             : inputDirection.x > 0 ? 1 : temp;

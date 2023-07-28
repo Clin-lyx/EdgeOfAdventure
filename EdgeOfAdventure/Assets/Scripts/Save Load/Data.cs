@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Data
 {
-    public string sceneToSave;
+    private string sceneToSave;
 
     public Dictionary<string, SerializeVector3> characterPosDict = new Dictionary<string, SerializeVector3>();
     public Dictionary<string, float> floatSavedData = new Dictionary<string, float>();
@@ -26,7 +26,7 @@ public class Data
 
 public class SerializeVector3
 {
-    public float x, y, z;
+    private float x, y, z;
 
     public SerializeVector3(Vector3 pos)
     {

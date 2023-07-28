@@ -12,7 +12,7 @@ public class DownwardSlash : StateMachineBehaviour
     {
         // player can switch its facing direction when attempting attack at the very beginning 
         transform = animator.GetComponent<Transform>();
-        inputDirection = animator.GetComponent<PlayerController>().inputDirection;
+        inputDirection = animator.GetComponent<PlayerController>().InputDirection();
         rb = animator.GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(0f, rb.velocity.y);
         int temp = (int)transform.localScale.x;

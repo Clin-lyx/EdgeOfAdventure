@@ -13441,7 +13441,7 @@ GameObject:
   - component: {fileID: 607783171}
   m_Layer: 8
   m_Name: Sandbag
-  m_TagString: Enemy
+  m_TagString: Sand Bag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13653,14 +13653,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e268784ccc294a498f9c39b88e0d1ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
-  physicsCheck: {fileID: 0}
-  attack: {fileID: 0}
-  faceDir: 0
-  attacker: {fileID: 0}
+  normalSpeed: 0
+  chaseSpeed: 0
+  encounterSpeed: 0
+  centerOffset: {x: 0, y: 0}
+  checkSize: {x: 0, y: 0}
+  checkDistance: 0
   attackLayer:
     serializedVersion: 2
     m_Bits: 0
+  waitTime: 0
+  lostTime: 0
   isHurt: 0
   isDead: 0
 --- !u!70 &607783170

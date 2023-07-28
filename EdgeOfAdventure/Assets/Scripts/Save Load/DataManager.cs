@@ -11,8 +11,8 @@ public class DataManager : MonoBehaviour
     public static DataManager instance;
 
     [Header("Event listeners")]
-    public VoidEventSO saveDataEvent;
-    public VoidEventSO loadDataEvent;
+    [SerializeField]private VoidEventSO saveDataEvent;
+    [SerializeField]private VoidEventSO loadDataEvent;
 
     [Header("Broadcast")]
     [SerializeField]private FadeTextEventSO fadeEvent;
