@@ -12,8 +12,7 @@ public class SpearPatrolState : BaseState
 
         // resizing collider and physics check
         Spear spear = (Spear) currentEnemy;
-        spear.collid.offset = spear.offsetWhenidle;
-        spear.collid.size = spear.sizeWhenidle;
+        spear.ResetCollidToIdle();
         spear.physicsCheck.rightOffset =  new Vector2((spear.sizeWhenidle.x + spear.offsetWhenidle.x) / 2, 
             spear.sizeWhenidle.y / 2);
         spear.physicsCheck.leftOffset = new Vector2(-spear.physicsCheck.rightOffset.x,
@@ -29,10 +28,10 @@ public class SpearPatrolState : BaseState
         }
         //If touching the wall, trun around
         if (!currentEnemy.physicsCheck.OnGround() ||
-                (currentEnemy.physicsCheck.TouchLeftWall() && currentEnemy.faceDir < 0) ||
-                (currentEnemy.physicsCheck.TouchRightWall() && currentEnemy.faceDir > 0))
+                (currentEnemy.physicsCheck.TouchLeftWall() && currentEnemy.GetFaceDir() < 0) ||
+                (currentEnemy.physicsCheck.TouchRightWall() && currentEnemy.GetFaceDir() > 0))
         {
-            currentEnemy.wait = true;
+            currentEnemy.SetWait(true);
             //If touching the wall, idle
             currentEnemy.anim.SetBool("walk", false);
         }

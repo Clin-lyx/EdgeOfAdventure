@@ -35,19 +35,19 @@ public class AxeEncounterState : BaseState
         // if player gets out off attack range
         if (Mathf.Abs(diff) > 2f && !anim.GetBool("isAttack"))
         {
-            currentEnemy.waitTimeCounter = 0;
+            currentEnemy.SetWaitTimeCounter(0);
             currentEnemy.anim.SetBool("isAttack", false);
             currentEnemy.SwitchState(NPCState.Chase);
         } 
 
         // when player and axe is not at the same level
         if (Mathf.Abs(diff) < 2f && axe.PlayerOnGround() && !axe.FoundPlayer() && !anim.GetBool("isAttack")) {
-            currentEnemy.waitTimeCounter = 0;
+            currentEnemy.SetWaitTimeCounter(0);
             currentEnemy.anim.SetBool("isAttack", false);
             currentEnemy.SwitchState(NPCState.Chase);
         }
 
-        if (currentEnemy.lostTimeCounter <= 0) 
+        if (currentEnemy.LostTimeCounter() <= 0) 
         {
             currentEnemy.SwitchState(NPCState.Patrol);
         }        

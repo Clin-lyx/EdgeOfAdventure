@@ -64,8 +64,8 @@ public class Sandbag : MonoBehaviour
     //Return the result of being attacked
     private IEnumerator OnHurt(Vector2 dir, Attack attacker)
     {
-        rb.AddForce(dir * attacker.hurtForceX, ForceMode2D.Impulse);
-        rb.AddForce(transform.up * attacker.hurtForceY, ForceMode2D.Impulse);
+        rb.AddForce(dir * attacker.ForceX(), ForceMode2D.Impulse);
+        rb.AddForce(transform.up * attacker.ForceY(), ForceMode2D.Impulse);
 
         // Hurt SFX
         HurtSFX(attacker);
@@ -96,12 +96,12 @@ public class Sandbag : MonoBehaviour
         Transform hurtFX1 = hurtAudio.transform.Find("Hurt1");
         Transform hurtFX2 = hurtAudio.transform.Find("Hurt2");
         Transform hurtFX3 = hurtAudio.transform.Find("Hurt3");
-        if (attacker.damage == 10)
+        if (attacker.Damage() == 10)
         {
             hurtFX2.gameObject.SetActive(true);
             hurtFX2.gameObject.SetActive(false);
         }
-        else if (attacker.damage == 4)
+        else if (attacker.Damage() == 4)
         {
             hurtFX3.gameObject.SetActive(true);
             hurtFX3.gameObject.SetActive(false);

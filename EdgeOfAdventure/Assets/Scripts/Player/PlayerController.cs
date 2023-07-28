@@ -8,11 +8,11 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [Header("Event Listeners")]
-    [SerializeField] private SceneLoadEventSO sceneLoadEvent;
-    [SerializeField] private VoidEventSO afterSceneloadedEvent;
-    [SerializeField] private VoidEventSO loadDataEvent;
-    [SerializeField] private VoidEventSO backToMenuEvent;
-    [SerializeField] private VoidEventSO NewGameEvent;
+    [SerializeField]private SceneLoadEventSO sceneLoadEvent;
+    [SerializeField]private VoidEventSO afterSceneloadedEvent;
+    [SerializeField]private VoidEventSO loadDataEvent;
+    [SerializeField]private VoidEventSO backToMenuEvent;
+    [SerializeField]private VoidEventSO NewGameEvent;
 
     [Header("Components")]
     private PlayerInputControl inputControl;
@@ -24,24 +24,24 @@ public class PlayerController : MonoBehaviour
 
 
     [Header("Fundamental Arguments")]
-    public float speed;
-    public float runSpeed;
-    public float walkSpeed => speed / 3f;
-    public float jumpForce;
-    public float jumpWhencrouch;
-    public float dashDistance;
-    public float dashSpeed;
-    public float dashCooldown;
+    [SerializeField]private float speed;
+    [SerializeField]private float runSpeed;
+    [SerializeField]private float walkSpeed => speed / 3f;
+    [SerializeField]private float jumpForce;
+    [SerializeField]private float jumpWhencrouch;
+    [SerializeField]private float dashDistance;
+    [SerializeField]private float dashSpeed;
+    [SerializeField]private float dashCooldown;
     private float dashTimer;
-    public float perfectDodge;
+    [SerializeField]private float perfectDodge;
     private float dodgeTimer;
     private Vector2 originalOffset;
     private Vector2 orginalSize;
     private CapsuleCollider2D coll;
 
     [Header("physics material")]
-    public PhysicsMaterial2D normal;
-    public PhysicsMaterial2D wall;
+    [SerializeField]private PhysicsMaterial2D normal;
+    [SerializeField]private PhysicsMaterial2D wall;
 
     [Header("Player States")]
     public bool isHurt;
@@ -147,8 +147,8 @@ public class PlayerController : MonoBehaviour
     {
         if (!isHurt && !isAttack) Move();
 
-        holdS = inputDirection.y < -0.1f;
-        holdW = inputDirection.y > 0.1f;
+        holdS = Input.GetKey(KeyCode.S);
+        holdW = Input.GetKey(KeyCode.W);
     }
 
     private void OnLoadEvent(GameSceneSO arg0, Vector3 arg1, bool arg2)
@@ -300,8 +300,8 @@ public class PlayerController : MonoBehaviour
         Vector2 dir = new Vector2(rb.position.x - attacker.transform.position.x, 0).normalized;
 
         //Adding force on player
-        rb.AddForce(dir * attacker.hurtForceX, ForceMode2D.Impulse);
-        rb.AddForce(transform.up * attacker.hurtForceY, ForceMode2D.Impulse);
+        rb.AddForce(dir * attacker.ForceX(), ForceMode2D.Impulse);
+        rb.AddForce(transform.up * attacker.ForceY(), ForceMode2D.Impulse);
     }
 
     public void PlayerDead()

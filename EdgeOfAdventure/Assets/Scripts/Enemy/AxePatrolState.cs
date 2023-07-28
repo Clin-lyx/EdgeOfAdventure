@@ -26,10 +26,10 @@ public class AxePatrolState : BaseState
         } 
         //When touching the wall, trun around
         if (!currentEnemy.physicsCheck.OnGround() ||
-                (currentEnemy.physicsCheck.TouchLeftWall() && currentEnemy.faceDir < 0) ||
-                (currentEnemy.physicsCheck.TouchRightWall() && currentEnemy.faceDir > 0))
+                (currentEnemy.physicsCheck.TouchLeftWall() && currentEnemy.GetFaceDir() < 0) ||
+                (currentEnemy.physicsCheck.TouchRightWall() && currentEnemy.GetFaceDir() > 0))
         {
-            currentEnemy.wait = true;
+            currentEnemy.SetWait(true);
             //When touching the wall, idle
             currentEnemy.anim.SetBool("walk", false);
             currentEnemy.anim.SetBool("speedWalk", false);

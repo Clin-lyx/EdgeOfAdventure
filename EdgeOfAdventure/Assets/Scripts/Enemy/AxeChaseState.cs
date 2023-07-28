@@ -9,7 +9,7 @@ public class AxeChaseState : BaseState
         currentEnemy = enemy;
         Axe axe = (Axe) enemy;
         //Debug.Log("Chase");
-        currentEnemy.waitTimeCounter = -1f;
+        currentEnemy.SetWaitTimeCounter(-1f);
         currentEnemy.ChangeSpeedChase();
         currentEnemy.anim.SetBool("speedWalk", true);
         currentEnemy.anim.SetBool("foundPlayer", true);        
@@ -17,7 +17,7 @@ public class AxeChaseState : BaseState
 
     public override void LogicUpdate()
     {
-        if (currentEnemy.lostTimeCounter <= 0 || currentEnemy.PlayerDead()) 
+        if (currentEnemy.LostTimeCounter() <= 0 || currentEnemy.PlayerDead()) 
         {
             currentEnemy.SwitchState(NPCState.Patrol);
         }
@@ -52,6 +52,6 @@ public class AxeChaseState : BaseState
     {
         currentEnemy.anim.SetBool("speedWalk", false);
         currentEnemy.anim.SetBool("foundPlayer", currentEnemy.FoundPlayer());
-        currentEnemy.lostTimeCounter = currentEnemy.lostTime;
+        currentEnemy.ResetLostTimer();
     }
 }

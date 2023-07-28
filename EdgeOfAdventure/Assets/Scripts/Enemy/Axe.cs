@@ -28,10 +28,6 @@ public class Axe : Enemy
             }
         }
     }
-
-    private void Chase() {
-
-    }
     
     //Frame event to finish attack
     public void EndAttack()

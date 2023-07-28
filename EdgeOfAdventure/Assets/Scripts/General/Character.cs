@@ -92,8 +92,8 @@ public class Character : MonoBehaviour, ISaveable
             }
         }
 
-        if (currentHealth - attacker.damage > 0) {
-            this.currentHealth -= attacker.damage;
+        if (currentHealth - attacker.Damage() > 0) {
+            this.currentHealth -= attacker.Damage();
             TriggerInvulnerable();
             OnTakeDamage?.Invoke(attacker);
         } else {

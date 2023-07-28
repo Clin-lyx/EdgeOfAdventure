@@ -4,11 +4,23 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
-    public int damage;
-    public float hurtForceX;
-    public float hurtForceY;
+    [SerializeField]private int damage;
+    [SerializeField]private float hurtForceX;
+    [SerializeField]private float hurtForceY;
 
     private void OnTriggerEnter2D(Collider2D other) {
         other.GetComponent<Character>()?.TakeDamage(this);
+    }
+
+    public float ForceX() {
+        return hurtForceX;
+    }
+
+    public float ForceY() {
+        return hurtForceY;
+    }
+
+    public int Damage() {
+        return damage;
     }
 }

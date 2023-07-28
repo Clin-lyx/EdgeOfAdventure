@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Spear : Enemy
 {
-    [HideInInspector]public CapsuleCollider2D collid;
+    private CapsuleCollider2D collid;
     
 
     public Vector2 offsetWhenrun;
@@ -26,4 +26,13 @@ public class Spear : Enemy
         sizeWhenrun = new Vector2(2.21f, 2.625f);
     }
 
+    public void ResetCollidToIdle() {
+        collid.offset = offsetWhenidle;
+        collid.size = sizeWhenidle;
+    }
+
+    public void ResetCollidToRun() {
+        collid.offset = offsetWhenrun;
+        collid.size = sizeWhenrun;
+    }
 }

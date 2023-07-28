@@ -12,28 +12,28 @@ public class Enemy : MonoBehaviour
     private GameObject hurtAudio;
 
     [Header("Arguments")]
-    public float normalSpeed;
-    public float chaseSpeed;
-    public float encounterSpeed = 0;
+    [SerializeField]private float normalSpeed;
+    [SerializeField]private float chaseSpeed;
+    [SerializeField]private float encounterSpeed = 0;
     private float currentSpeed;
     
     //public float hurtForce;
-    public Attack attack;
-    public float faceDir;
-    public Transform attacker;
+    private Attack attack;
+    private float faceDir;
+    private Transform attacker;
 
     [Header("Player Detect")]
-    public Vector2 centerOffset;
-    public Vector2 checkSize;
-    public float checkDistance;
-    public LayerMask attackLayer;
+    [SerializeField]private Vector2 centerOffset;
+    [SerializeField]private Vector2 checkSize;
+    [SerializeField]private float checkDistance;
+    [SerializeField]private LayerMask attackLayer;
 
     [Header("Timer")]
-    public float waitTime;
-    public float waitTimeCounter;
-    public bool wait;
-    public float lostTime;
-    public float lostTimeCounter;
+    [SerializeField]private float waitTime;
+    [SerializeField]private float lostTime;    
+    private float waitTimeCounter;
+    private bool wait;
+    private float lostTimeCounter;
 
     [Header("State")]
     public bool isHurt;
@@ -146,6 +146,7 @@ public class Enemy : MonoBehaviour
         RaycastHit2D feedback = Physics2D.BoxCast(transform.position + (Vector3)centerOffset, 
             checkSize, 0, new Vector3(faceDir, 0, 0), checkDistance, attackLayer);
         if (feedback != false) player = feedback.transform.gameObject;
+        Debug.Log(feedback == true);
         return feedback;
     }
 
@@ -190,8 +191,8 @@ public class Enemy : MonoBehaviour
     {
 
         anim.SetBool("isAttack", false);
-        rb.AddForce(dir * attacker.hurtForceX, ForceMode2D.Impulse);
-        rb.AddForce(transform.up * attacker.hurtForceY, ForceMode2D.Impulse);
+        rb.AddForce(dir * attacker.ForceX(), ForceMode2D.Impulse);
+        rb.AddForce(transform.up * attacker.ForceY(), ForceMode2D.Impulse);
 
         // Hurt SFX
         HurtSFX(attacker);
@@ -223,12 +224,12 @@ public class Enemy : MonoBehaviour
         Transform hurtFX1 = hurtAudio.transform.Find("Hurt1");
         Transform hurtFX2 = hurtAudio.transform.Find("Hurt2");
         Transform hurtFX3 = hurtAudio.transform.Find("Hurt3");
-        if (attacker.damage == 10)
+        if (attacker.Damage() == 10)
         {
             hurtFX2.gameObject.SetActive(true);
             hurtFX2.gameObject.SetActive(false);
         }
-        else if (attacker.damage == 4)
+        else if (attacker.Damage() == 4)
         {
             hurtFX3.gameObject.SetActive(true);
             hurtFX3.gameObject.SetActive(false);
@@ -269,5 +270,25 @@ public class Enemy : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(transform.position + (Vector3)centerOffset + new Vector3(checkDistance * transform.localScale.x, 0), 0.2f);
+    }
+
+    public float LostTimeCounter() {
+        return lostTimeCounter;
+    }
+
+    public void SetWaitTimeCounter(float time) {
+        waitTimeCounter= time;
+    }
+
+    public float GetFaceDir() {
+        return faceDir;
+    }
+
+    public void SetWait(bool wait) {
+        this.wait = wait;
+    }
+
+    public void ResetLostTimer() {
+        lostTimeCounter = lostTime;
     }
 }
