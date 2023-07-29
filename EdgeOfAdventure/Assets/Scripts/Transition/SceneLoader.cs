@@ -24,7 +24,7 @@ public class SceneLoader : MonoBehaviour, ISaveable
     [Header("Game Scenes")]
     [SerializeField]private GameSceneSO firstLoadscene;
     [SerializeField]private GameSceneSO menuScene;
-    [SerializeField]private GameSceneSO currentLoadedscene;
+    private GameSceneSO currentLoadedscene;
     private GameSceneSO sceneToload;
 
     [Header("Arguments")]

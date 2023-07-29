@@ -8,16 +8,16 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public PlayerStatBar playerStatBar;
+    [SerializeField]private PlayerStatBar playerStatBar;
     private string jsonFolder;
 
     [Header("Event listeners")]
-    public CharacterEventSO healthEvent;
-    public FloatEventSO syncVolumeEvent;
-    public SceneLoadEventSO unloadedSceneEvent;
-    public VoidEventSO loadDataEvent;
-    public VoidEventSO gameOverEvent;
-    public VoidEventSO backToMenuEvent;
+    [SerializeField]private CharacterEventSO healthEvent;
+    [SerializeField]private FloatEventSO syncVolumeEvent;
+    [SerializeField]private SceneLoadEventSO unloadedSceneEvent;
+    [SerializeField]private VoidEventSO loadDataEvent;
+    [SerializeField]private VoidEventSO gameOverEvent;
+    [SerializeField]private VoidEventSO backToMenuEvent;
     [SerializeField]private VoidEventSO NewGameEvent;
 
     [Header("Components")]
@@ -98,8 +98,7 @@ public class UIManager : MonoBehaviour
 
     private void OnHealthEvent(Character character)
     {
-        var persentage = character.currentHealth / character.maxHealth;
-        playerStatBar.OnHealthChange(persentage);
+        playerStatBar.OnHealthChange(character.HealthPercentage());
     }
 
     private void TogglePausePanel() {

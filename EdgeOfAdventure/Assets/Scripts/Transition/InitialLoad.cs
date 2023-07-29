@@ -5,7 +5,7 @@ using UnityEngine.AddressableAssets;
 
 public class InitialLoad : MonoBehaviour
 {
-    public AssetReference persistentScene;
+    [SerializeField]private AssetReference persistentScene;
 
     private void Awake()
     {
