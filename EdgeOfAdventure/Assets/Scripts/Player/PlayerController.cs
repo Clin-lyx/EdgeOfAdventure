@@ -169,7 +169,7 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        isCrouch = physicsCheck.OnGround() && inputDirection.y < -0.5f && !isAttack;
+        isCrouch = physicsCheck.OnGround() && inputDirection.y < -0.5f && !isAttack && !isSkill && !isHurt && !isDash;
         if (isCrouch)
         {
             // adjusting collider size when crouching and immediately goes stop
@@ -202,7 +202,7 @@ public class PlayerController : MonoBehaviour
 
 
         // Jump if the character is on the ground and not attack and crouching
-        if (physicsCheck.OnGround() && isCrouch && !isAttack)
+        if (physicsCheck.OnGround() && holdS && !isAttack)
             rb.AddForce(transform.up * jumpWhencrouch, ForceMode2D.Impulse);
     }
     private void PlayerAttack(InputAction.CallbackContext context)
@@ -239,6 +239,7 @@ public class PlayerController : MonoBehaviour
             && !physicsCheck.TouchRightWall())
         {
             isDash = true;
+            isCrouch = false;
 
             // target position after dash
             var targetPos = new Vector2(transform.position.x + dashDistance * transform.localScale.x,
