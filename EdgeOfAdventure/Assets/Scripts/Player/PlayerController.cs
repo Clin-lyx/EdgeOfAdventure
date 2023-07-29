@@ -169,7 +169,7 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        isCrouch = physicsCheck.OnGround() && inputDirection.y < -0.5f && !isAttack && !isSkill && !isHurt && !isDash;
+        isCrouch = physicsCheck.OnGround() && Input.GetKey(KeyCode.S) && !isAttack && !isSkill && !isHurt && !isDash;
         if (isCrouch)
         {
             // adjusting collider size when crouching and immediately goes stop

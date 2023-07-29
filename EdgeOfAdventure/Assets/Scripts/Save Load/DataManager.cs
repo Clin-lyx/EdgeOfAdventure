@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.UI;
 
 [DefaultExecutionOrder(-100)]
 public class DataManager : MonoBehaviour
@@ -16,8 +17,9 @@ public class DataManager : MonoBehaviour
 
     [Header("Broadcast")]
     [SerializeField]private FadeTextEventSO fadeEvent;
-
     [SerializeField]private GameObject player;
+
+    [SerializeField]private GameObject textButton;
     private List<ISaveable> saveableList = new List<ISaveable>();
     private Data saveData;
     private string jsonFolder;
@@ -88,6 +90,7 @@ public class DataManager : MonoBehaviour
 
         if (!File.Exists(resultPath)) {
             StartCoroutine(FadeText());
+            textButton.SetActive(false);
             return;
         }
         
@@ -103,6 +106,7 @@ public class DataManager : MonoBehaviour
     {
         fadeEvent.FadeIn(0.3f);
         yield return new WaitForSeconds(1f);
+        textButton.SetActive(true);
         fadeEvent.FadeOut(0.5f);
     }
 

@@ -9,8 +9,8 @@ public class Character : MonoBehaviour, ISaveable
     [SerializeField] VoidEventSO newGameEvent;
 
     [Header("Attributes")]
-    public float maxHealth;
-    public float currentHealth;
+    [SerializeField]private float maxHealth;
+    private float currentHealth;
     private bool isNewgame;
     private Rigidbody2D rb;
     private PhysicsCheck physicsCheck;
@@ -110,6 +110,10 @@ public class Character : MonoBehaviour, ISaveable
             invulnerable = true;
             invulnerableCounter = invulnerableDuration;
         }
+    }
+
+    public float HealthPercentage() {
+        return currentHealth / maxHealth;
     }
 
     //Frame event for attack displacement

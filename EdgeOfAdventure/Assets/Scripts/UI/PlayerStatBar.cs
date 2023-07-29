@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerStatBar : MonoBehaviour
 {
-    public Image healthImage;
-    public Image healthDelayImage;
+    [SerializeField]private Image healthImage;
+    [SerializeField]private Image healthDelayImage;
 
     public void Update()
     {
