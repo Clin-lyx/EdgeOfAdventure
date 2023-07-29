@@ -147,8 +147,8 @@ public class PlayerController : MonoBehaviour
     {
         if (!isHurt && !isAttack) Move();
 
-        holdS = Input.GetKey(KeyCode.S);
-        holdW = Input.GetKey(KeyCode.W);
+        holdS = inputDirection.y < -0.1f;
+        holdW = inputDirection.y > 0.1f;
     }
 
     private void OnLoadEvent(GameSceneSO arg0, Vector3 arg1, bool arg2)

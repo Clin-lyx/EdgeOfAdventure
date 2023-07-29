@@ -12029,7 +12029,6 @@ MonoBehaviour:
   loadDataEvent: {fileID: 11400000, guid: 0f9c9fcb16344634e998971c85730253, type: 2}
   backToMenuEvent: {fileID: 11400000, guid: 8b372ec679e8c464592083d9c6c4c103, type: 2}
   NewGameEvent: {fileID: 11400000, guid: 7e9bf69a8ca90614197e460968f8a6e0, type: 2}
-  inputDirection: {x: 0, y: 0}
   speed: 500
   runSpeed: 0
   jumpForce: 17
