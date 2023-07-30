@@ -8,7 +8,7 @@ public class AxeChaseState : BaseState
     { 
         currentEnemy = enemy;
         Axe axe = (Axe) enemy;
-        //Debug.Log("Chase");
+        Debug.Log("Chase");
         currentEnemy.SetWaitTimeCounter(-1f);
         currentEnemy.ChangeSpeedChase();
         currentEnemy.anim.SetBool("speedWalk", true);
@@ -41,6 +41,9 @@ public class AxeChaseState : BaseState
         if (Mathf.Abs(diff) <= 1.5f && currentEnemy.FoundPlayer()) {
             currentEnemy.SwitchState(NPCState.Encounter);
         } 
+        
+        float facing = diff > 0 ? -1f : diff < 0 ? 1f : currentEnemy.transform.localScale.x;
+        currentEnemy.transform.localScale = new Vector3(facing, 1f, 1f);
         
     }
 

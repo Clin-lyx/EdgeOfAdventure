@@ -9,11 +9,13 @@ public class AxeEncounterState : BaseState
     { 
         currentEnemy = enemy;
         
-        //Debug.Log("Encounter");
+        Debug.Log("Encounter");
         currentEnemy.ChangeSpeedEncounter();
         currentEnemy.anim.SetBool("walk", false);
         currentEnemy.anim.SetBool("speedWalk", false);
         currentEnemy.anim.SetBool("foundPlayer", true);
+        
+        currentEnemy.GetComponent<BoxCollider2D>().enabled = true;
     }
 
     public override void LogicUpdate()
@@ -63,5 +65,6 @@ public class AxeEncounterState : BaseState
         currentEnemy.anim.SetBool("speedWalk", true);
         currentEnemy.anim.SetBool("foundPlayer", true);
         currentEnemy.anim.SetBool("isAttack", false);
+        currentEnemy.GetComponent<BoxCollider2D>().enabled = false;
     }
 }

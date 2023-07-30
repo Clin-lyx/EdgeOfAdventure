@@ -246,7 +246,7 @@ public class PlayerController : MonoBehaviour
                 transform.position.y);
 
             // avoid being attack from enemies;
-            gameObject.layer = LayerMask.NameToLayer("Enemy");
+            gameObject.layer = LayerMask.NameToLayer("EnemyWeapon");
 
             StartCoroutine(TriggerDash(targetPos));
             dashTimer = dashCooldown;
