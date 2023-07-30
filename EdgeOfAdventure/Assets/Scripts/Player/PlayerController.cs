@@ -197,7 +197,7 @@ public class PlayerController : MonoBehaviour
     private void Jump(InputAction.CallbackContext context)
     {
         // Jump if the character is on the ground and not attack and not crouch
-        if (physicsCheck.OnGround() && !isCrouch && !isAttack)
+        if (physicsCheck.OnGround() && !holdS && !isAttack)
             rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
 
 

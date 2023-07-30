@@ -1215,7 +1215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
-  hurtForceX: 20
+  hurtForceX: 8
   hurtForceY: 0
 --- !u!70 &240836747
 CapsuleCollider2D:
@@ -6452,8 +6452,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
-  hurtForceX: 0
-  hurtForceY: -100
+  hurtForceX: 10
+  hurtForceY: 5
 --- !u!61 &1107474475
 BoxCollider2D:
   m_ObjectHideFlags: 0
