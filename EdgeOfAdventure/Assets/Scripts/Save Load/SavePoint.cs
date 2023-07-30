@@ -31,8 +31,8 @@ public class SavePoint : MonoBehaviour, IInteractable
             spriteRenderer.sprite = lightSprite;
             lightObj.SetActive(true);
             saveGameEvent.RaiseEvent();
-            StartCoroutine(FadeText());
             this.gameObject.tag = "Untagged";
+            StartCoroutine(FadeText());
         }
     }
 

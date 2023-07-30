@@ -160,7 +160,7 @@ public class SceneLoader : MonoBehaviour, ISaveable
         }
 
         isLoading = false;
-        aftSceneLoadedEvent.RaiseEvent();
+        if (currentLoadedscene.GetSceneType() == SceneType.Location) aftSceneLoadedEvent.RaiseEvent();
     }
 
     public DataDefination GetDataID()

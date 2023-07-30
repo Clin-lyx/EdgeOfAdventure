@@ -667,7 +667,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   waitTime: 2
-  lostTime: 3
+  lostTime: 10
   isHurt: 0
   isDead: 0
 --- !u!114 &5659735366499220701

@@ -17,8 +17,8 @@ public class DataManager : MonoBehaviour
 
     [Header("Broadcast")]
     [SerializeField]private FadeTextEventSO fadeEvent;
-    [SerializeField]private GameObject player;
 
+    [SerializeField]private GameObject player;
     [SerializeField]private GameObject textButton;
     private List<ISaveable> saveableList = new List<ISaveable>();
     private Data saveData;

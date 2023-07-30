@@ -24,7 +24,7 @@ public class AxeEncounterState : BaseState
         Transform playerTransform = axe.PlayerTransformWhenChase();
         float diff  = axe.transform.position.x - playerTransform.position.x;
         int facing = diff < 0 ? 1 : -1;
-        
+        if (!axe.physicsCheck.OnGround()) axe.anim.SetBool("isAttack", false);
         axe.AttackCoolDown();
 
         if (!anim.GetBool("isAttack"))
