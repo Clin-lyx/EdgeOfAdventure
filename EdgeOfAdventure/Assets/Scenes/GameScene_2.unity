@@ -123498,8 +123498,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d51af33737c21047a9b97c59b89cb05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motionDelay: 0.9
-  xOffset: 6
+  motionDelay: 0.945
+  xOffset: 0
   yOffset: -3
 --- !u!1 &1318962670
 GameObject:
@@ -134324,8 +134324,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d51af33737c21047a9b97c59b89cb05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motionDelay: 0.95
-  xOffset: 3
+  motionDelay: 0.96
+  xOffset: -0.4
   yOffset: -2
 --- !u!1 &1812658773
 GameObject:
@@ -134540,8 +134540,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d51af33737c21047a9b97c59b89cb05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motionDelay: 0.85
-  xOffset: 10
+  motionDelay: 0.93
+  xOffset: -0.5
   yOffset: -4
 --- !u!1 &2085808928
 GameObject:

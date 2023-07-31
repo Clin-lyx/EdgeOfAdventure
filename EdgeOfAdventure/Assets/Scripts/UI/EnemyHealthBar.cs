@@ -14,7 +14,7 @@ public class EnemyHealthBar : MonoBehaviour
 
     private void UpdateSlider(){
         slider.value = character.HealthPercentage();
-        if (slider.value == 0) slider.gameObject.SetActive(false);
+        if (slider.value <= 0) slider.gameObject.SetActive(false);
         slider.transform.localScale = new Vector3(character.transform.localScale.x * 0.01f, 0.02f, 1f);
     }
 
