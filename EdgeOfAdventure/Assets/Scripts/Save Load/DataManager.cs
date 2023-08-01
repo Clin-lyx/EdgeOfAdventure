@@ -93,8 +93,6 @@ public class DataManager : MonoBehaviour
             textButton.SetActive(false);
             return;
         }
-        
-        player.layer = LayerMask.NameToLayer("Player");
 
         foreach (var saveable in saveableList)
         {            

@@ -79,7 +79,6 @@ public class SceneLoader : MonoBehaviour, ISaveable
 
     private void NewGame()
     {
-        playerTrans.gameObject.layer = LayerMask.NameToLayer("Player");
         sceneToload = firstLoadscene;
         //OnLoadRequestEvent(sceneToload, firstPosition, true);
         loadEventSO.RaiseLoadRequestEvent(sceneToload, firstPosition, true);
@@ -143,7 +142,6 @@ public class SceneLoader : MonoBehaviour, ISaveable
         sceneToload = menuScene;
         Debug.Log("Back to Main");
         playerTrans.GetComponent<PlayerController>().SetInputControlToDisable();
-        playerTrans.gameObject.layer = LayerMask.NameToLayer("Enemy");
         OnLoadRequestEvent(sceneToload, firstPosition, true);
     }
 

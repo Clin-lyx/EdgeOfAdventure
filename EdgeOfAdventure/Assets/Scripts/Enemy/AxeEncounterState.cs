@@ -35,7 +35,7 @@ public class AxeEncounterState : BaseState
         }
         
         // if player gets out off attack range
-        if (Mathf.Abs(diff) > 2f && !anim.GetBool("isAttack"))
+        if (Mathf.Abs(diff) > 2.5f && !anim.GetBool("isAttack"))
         {
             currentEnemy.SetWaitTimeCounter(0);
             currentEnemy.anim.SetBool("isAttack", false);

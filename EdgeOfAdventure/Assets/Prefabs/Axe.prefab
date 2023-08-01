@@ -577,7 +577,7 @@ BoxCollider2D:
     m_Bits: 4294967295
   m_ContactCaptureLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -713,7 +713,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   waitTime: 2
-  lostTime: 10
+  lostTime: 5
   isHurt: 0
   isDead: 0
 --- !u!114 &5659735366499220701

@@ -10,7 +10,7 @@ public class Character : MonoBehaviour, ISaveable
 
     [Header("Attributes")]
     [SerializeField]private float maxHealth;
-    private float currentHealth;
+    [SerializeField]private float currentHealth;
     private bool isNewgame;
     private Rigidbody2D rb;
     private PhysicsCheck physicsCheck;
@@ -159,11 +159,12 @@ public class Character : MonoBehaviour, ISaveable
 
     public void LoadData(Data data)
     {
+        Debug.Log(GetDataID());
         if (data.characterPosDict.ContainsKey(GetDataID().ID))
         {
             transform.position = data.characterPosDict[GetDataID().ID].ToVector3();
             this.currentHealth = data.floatSavedData[GetDataID().ID + "health"];
-
+            
             // UI update
             OnHealthChange?.Invoke(this);
         }
