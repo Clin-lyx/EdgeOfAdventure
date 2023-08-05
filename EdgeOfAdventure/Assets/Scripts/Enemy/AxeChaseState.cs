@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AxeChaseState : BaseState
-{
+{ 
+
     public override void OnEnter(Enemy enemy)
     { 
         currentEnemy = enemy;
         Axe axe = (Axe) enemy;
-        Debug.Log("Chase");
+        //Debug.Log("Chase");
         currentEnemy.SetWaitTimeCounter(-1f);
         currentEnemy.ChangeSpeedChase();
         currentEnemy.anim.SetBool("speedWalk", true);
@@ -34,11 +35,13 @@ public class AxeChaseState : BaseState
         }
         
         
+        Axe axe = (Axe) currentEnemy;
+
         Transform playerTransform = currentEnemy.PlayerTransformWhenChase();
         
-        // if player is within 2f, switch to encounter state and attack player
+        // if player is within range, switch to encounter state and attack player
         float diff  = currentEnemy.transform.position.x - playerTransform.position.x;
-        if (Mathf.Abs(diff) <= 2f && currentEnemy.FoundPlayer()) {
+        if (Mathf.Abs(diff) <= axe.Range() && currentEnemy.FoundPlayer()) {
             currentEnemy.SwitchState(NPCState.Encounter);
         } 
         

@@ -8,6 +8,7 @@ public class Axe : Enemy
     private float timer;
     private float attackTimer = 0.2f;
     
+    [SerializeField] private float range;
 
     protected override void Awake()
     {
@@ -35,4 +36,8 @@ public class Axe : Enemy
         anim.SetBool("isAttack", false);
     }
 
+
+    public float Range() {
+        return range;
+    }
 }

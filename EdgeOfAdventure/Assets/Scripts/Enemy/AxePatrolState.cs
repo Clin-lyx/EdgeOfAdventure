@@ -7,7 +7,7 @@ public class AxePatrolState : BaseState
     public override void OnEnter(Enemy enemy)
     {
         currentEnemy = enemy;
-        Debug.Log("Patrol");
+        //Debug.Log("Patrol");
         currentEnemy.ChangeSpeedIdle();
         currentEnemy.anim.SetBool("speedWalk", false);
         if (currentEnemy.TouchingWalls()) {
@@ -21,7 +21,7 @@ public class AxePatrolState : BaseState
     {
         //If the player is found, start chasing
         
-        if (currentEnemy.FoundPlayer() && currentEnemy.physicsCheck.OnGround()) {
+        if (currentEnemy.FoundPlayer() && currentEnemy.physicsCheck.OnGround() && currentEnemy.PlayerOnGround()) {
             currentEnemy.SwitchState(NPCState.Chase);
         } 
         //When touching the wall, trun around

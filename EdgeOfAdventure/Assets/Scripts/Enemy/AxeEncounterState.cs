@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class AxeEncounterState : BaseState
 {
-    
+
     public override void OnEnter(Enemy enemy)
     { 
         currentEnemy = enemy;
         
-        Debug.Log("Encounter");
+        //Debug.Log("Encounter");
         currentEnemy.ChangeSpeedEncounter();
         currentEnemy.anim.SetBool("walk", false);
         currentEnemy.anim.SetBool("speedWalk", false);
         currentEnemy.anim.SetBool("foundPlayer", true);
         
-        currentEnemy.GetComponent<BoxCollider2D>().enabled = true;
     }
 
     public override void LogicUpdate()
@@ -35,7 +34,7 @@ public class AxeEncounterState : BaseState
         }
         
         // if player gets out off attack range
-        if (Mathf.Abs(diff) > 2.5f && !anim.GetBool("isAttack"))
+        if (Mathf.Abs(diff) > axe.Range() && !anim.GetBool("isAttack"))
         {
             currentEnemy.SetWaitTimeCounter(0);
             currentEnemy.anim.SetBool("isAttack", false);
@@ -43,7 +42,7 @@ public class AxeEncounterState : BaseState
         } 
 
         // when player and axe is not at the same level
-        if (Mathf.Abs(diff) < 2f && axe.PlayerOnGround() && !axe.FoundPlayer() && !anim.GetBool("isAttack")) {
+        if (Mathf.Abs(diff) < axe.Range() && axe.PlayerOnGround() && !axe.FoundPlayer() && !anim.GetBool("isAttack")) {
             currentEnemy.SetWaitTimeCounter(0);
             currentEnemy.anim.SetBool("isAttack", false);
             currentEnemy.SwitchState(NPCState.Chase);
@@ -65,6 +64,5 @@ public class AxeEncounterState : BaseState
         currentEnemy.anim.SetBool("speedWalk", true);
         currentEnemy.anim.SetBool("foundPlayer", true);
         currentEnemy.anim.SetBool("isAttack", false);
-        currentEnemy.GetComponent<BoxCollider2D>().enabled = false;
     }
 }

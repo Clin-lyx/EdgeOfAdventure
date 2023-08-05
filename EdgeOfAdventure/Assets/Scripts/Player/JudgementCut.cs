@@ -23,9 +23,7 @@ public class JudgementCut : MonoBehaviour
         if (enemy != null) {
 
             Vector3 cutPos = new Vector3(enemy.transform.position.x, enemy.transform.position.y + 2f, 0);
-            judgementCutSFX.position = cutPos;
-            
-            Debug.Log(playerController.perfect);
+            judgementCutSFX.position = cutPos;          
             judgementCutSFX.gameObject.SetActive(playerController.perfect);
         }
     }

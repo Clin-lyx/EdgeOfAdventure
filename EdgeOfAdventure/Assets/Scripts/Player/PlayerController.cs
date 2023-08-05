@@ -159,6 +159,7 @@ public class PlayerController : MonoBehaviour
     private void OnLoadDataEvent()
     {
         isDead = false;
+        gameObject.layer = LayerMask.NameToLayer("Player");
     }
 
     private void OnAfterSceneLoadedEvent()
@@ -309,7 +310,7 @@ public class PlayerController : MonoBehaviour
     {
         isDead = true;
         inputControl.Gameplay.Disable();
-        gameObject.layer = LayerMask.NameToLayer("Enemy");
+        gameObject.layer = LayerMask.NameToLayer("Spear");
     }
 
     private void checkState()
