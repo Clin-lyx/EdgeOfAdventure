@@ -2970,8 +2970,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadEventSO: {fileID: 11400000, guid: 1b3c4b33eb8f8ec4ca94ae77d799a7b9, type: 2}
-  destPos: {x: 155.55, y: 10, z: 0}
-  sceneTogo: {fileID: 11400000, guid: b0f36ff60b0ba9d4f82703742fffe572, type: 2}
+  destPos: {x: -144.6, y: 13.53, z: 0}
+  sceneTogo: {fileID: 11400000, guid: 32d463bfaea48a74da5c8c5d35ab9e35, type: 2}
 --- !u!61 &613171724
 BoxCollider2D:
   m_ObjectHideFlags: 0
