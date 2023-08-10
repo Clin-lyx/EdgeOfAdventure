@@ -6,11 +6,11 @@ public class PhysicsCheck : MonoBehaviour
 {    
     [Header("Arguments")]
     [SerializeField]private bool manual;
-    public LayerMask Ground;
+    [SerializeField]private LayerMask Ground;
     private Rigidbody2D rb;
     [SerializeField]private Vector2 bottomOffset;
-    public Vector2 leftOffset;
-    public Vector2 rightOffset;
+    [SerializeField]private Vector2 leftOffset;
+    [SerializeField]private Vector2 rightOffset;
     [SerializeField]private Vector2 upperLeftoffset;
     [SerializeField]private Vector2 lowerLeftoffset;
     [SerializeField]private Vector2 upperRightoffset;
@@ -43,18 +43,25 @@ public class PhysicsCheck : MonoBehaviour
 
     private void Check(){
         // checks if player object is overlapping with the platform layer mask
-        onGround = Physics2D.OverlapCircle((Vector2)transform.position + new Vector2(bottomOffset.x * transform.localScale.x, bottomOffset.y), checkRadius, Ground);
+        onGround = Physics2D.OverlapCircle((Vector2)transform.position + 
+            new Vector2(bottomOffset.x * transform.localScale.x, bottomOffset.y), checkRadius, Ground);
 
         // check if player is overlapping with the left wall
-        touchLeftwall = Physics2D.OverlapCircle((Vector2)transform.position + new Vector2(leftOffset.x, leftOffset.y), checkRadius, Ground) 
-            || Physics2D.OverlapCircle((Vector2)transform.position + new Vector2(upperLeftoffset.x, upperLeftoffset.y), checkRadius, Ground)
-            || Physics2D.OverlapCircle((Vector2)transform.position + new Vector2(lowerLeftoffset.x, lowerLeftoffset.y), checkRadius, Ground);
+        touchLeftwall = Physics2D.OverlapCircle((Vector2)transform.position + 
+            new Vector2(leftOffset.x, leftOffset.y), checkRadius, Ground) 
+            || Physics2D.OverlapCircle((Vector2)transform.position + 
+                new Vector2(upperLeftoffset.x, upperLeftoffset.y), checkRadius, Ground)
+            || Physics2D.OverlapCircle((Vector2)transform.position + 
+                new Vector2(lowerLeftoffset.x, lowerLeftoffset.y), checkRadius, Ground);
 
 
         // check if player is overlapping with the right wall
-        touchRightwall = Physics2D.OverlapCircle((Vector2)transform.position + new Vector2(rightOffset.x, rightOffset.y), checkRadius, Ground)
-            || Physics2D.OverlapCircle((Vector2)transform.position + new Vector2(upperRightoffset.x, upperRightoffset.y), checkRadius, Ground)
-            || Physics2D.OverlapCircle((Vector2)transform.position + new Vector2(lowerRightoffset.x, lowerRightoffset.y), checkRadius, Ground);
+        touchRightwall = Physics2D.OverlapCircle((Vector2)transform.position + 
+            new Vector2(rightOffset.x, rightOffset.y), checkRadius, Ground)
+            || Physics2D.OverlapCircle((Vector2)transform.position + 
+                new Vector2(upperRightoffset.x, upperRightoffset.y), checkRadius, Ground)
+            || Physics2D.OverlapCircle((Vector2)transform.position + 
+                new Vector2(lowerRightoffset.x, lowerRightoffset.y), checkRadius, Ground);
     }
 
     private void OnDrawGizmosSelected() {
@@ -79,4 +86,14 @@ public class PhysicsCheck : MonoBehaviour
     public bool TouchRightWall() {
         return touchRightwall;
     }
+
+    public void ResetLeftOffset() {
+        leftOffset = new Vector2(-rightOffset.x, rightOffset.y);
+    }
+
+    public void ResetRightOffset(Vector2 vector2) {
+        rightOffset = vector2;
+    }
+
+
 }

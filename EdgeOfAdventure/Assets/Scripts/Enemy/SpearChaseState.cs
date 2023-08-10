@@ -15,10 +15,9 @@ public class SpearChaseState : BaseState
         // resizing physics check and collider
         Spear spear = (Spear) currentEnemy;
         spear.ResetCollidToRun();
-        spear.physicsCheck.rightOffset =  new Vector2((spear.sizeWhenrun.x + spear.offsetWhenrun.x) / 2 + 0.1f, 
-            spear.sizeWhenrun.y / 2);
-        spear.physicsCheck.leftOffset = new Vector2(-spear.physicsCheck.rightOffset.x,
-            spear.physicsCheck.rightOffset.y);
+        spear.physicsCheck.ResetRightOffset(new Vector2((spear.sizeWhenrun.x + spear.offsetWhenrun.x) / 2 + 0.1f, 
+            spear.sizeWhenrun.y / 2));
+        spear.physicsCheck.ResetLeftOffset();
     }
 
     public override void LogicUpdate()
