@@ -10,12 +10,6 @@ public class SpearPatrolState : BaseState
         currentEnemy = enemy;
         currentEnemy.ChangeSpeedIdle();
 
-        // resizing collider and physics check
-        Spear spear = (Spear) currentEnemy;
-        spear.ResetCollidToIdle();
-        spear.physicsCheck.ResetRightOffset(new Vector2((spear.sizeWhenrun.x + spear.offsetWhenrun.x) / 2 + 0.1f, 
-            spear.sizeWhenrun.y / 2));
-        spear.physicsCheck.ResetLeftOffset();
     }
 
     public override void LogicUpdate()
